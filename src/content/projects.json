@@ -17,19 +17,19 @@
   },
   {
     "id": 3,
+    "name": "Next.js Personal Portfolio",
+    "image": "/images/personal-site.png",
+    "text": "Modern, responsive personal portfolio and blog built with Next.js 15 App Router, TypeScript, and Tailwind CSS. Features static site generation with 16 pre-rendered pages, comprehensive SEO optimization with Open Graph and Twitter Cards, Google Analytics integration, and automated sitemap generation. Deployed to AWS S3 with CloudFront CDN for global edge caching. Includes technology leadership insights, cloud architecture discussions, and project showcases. Migrated from Gatsby to Next.js for improved developer experience and modern React patterns.",
+    "demo_link": "https://synepho.com/",
+    "github_link": "https://github.com/jxman/nextjs-personal-site"
+  },
+  {
+    "id": 4,
     "name": "Tesla Dashboard",
     "image": "/images/tesla-app.png",
     "text": "A comprehensive React-based dashboard designed for Tesla vehicle browsers, providing location-based weather, traffic conditions, news updates, and nearby points of interest. Features real-time weather with detailed forecasts, live news feeds, traffic conditions via Waze integration, and GPS location detection. Built with React 18 and Tailwind CSS with a Tesla-themed dark UI optimized for in-vehicle use. Future roadmap includes Google Maps integration, Tesla Supercharger finder, and EV charging station search.",
     "demo_link": "https://teslaweather.netlify.app/",
     "github_link": "https://github.com/jxman/tesla-app"
-  },
-  {
-    "id": 4,
-    "name": "Gatsby Personal Portfolio Website",
-    "image": "/images/personal-site.png",
-    "text": "A modern, responsive personal portfolio website built with Gatsby.js, React 18, and Tailwind CSS, deployed to AWS S3 with CloudFront CDN. Features comprehensive SEO optimization, StaticImage performance enhancements, structured data (JSON-LD), accessibility compliance, and functional contact forms. Utilizes direct AWS CLI deployment for enhanced security, eliminating vulnerable plugin dependencies. Includes Google Analytics, sitemap generation, and follows modern git best practices with conventional commits.",
-    "demo_link": "https://synepho.com/",
-    "github_link": "https://github.com/jxman/gatsby-personal-site"
   },
   {
     "id": 5,
