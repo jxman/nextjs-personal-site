@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://www.synepho.com/resume/</loc><lastmod>2025-11-03T16:08:13.780Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/projects/aws-rss/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/about/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/projects/aws-site/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/blog/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/blog/ai-pair-programming-journey/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/projects/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/projects/lawn/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/contact/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/blog/lawnsmartapp-release/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/blog/aws-services-dashboard-release/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.synepho.com/projects/aws-health/</loc><lastmod>2025-11-03T16:08:13.782Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/blog/</loc><lastmod>2025-11-03T16:42:14.753Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/blog/ai-pair-programming-journey/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/blog/aws-services-dashboard-release/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/projects/aws-health/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/blog/lawnsmartapp-release/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/projects/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/projects/aws-rss/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/projects/lawn/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/projects/aws-site/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/about/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/contact/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.synepho.com/resume/</loc><lastmod>2025-11-03T16:42:14.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
