@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.synepho.com
+
+# Sitemaps
+Sitemap: https://www.synepho.com/sitemap.xml

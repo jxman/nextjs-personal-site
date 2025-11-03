@@ -1,0 +1,44 @@
+{
+  "name": "nextjs-personal-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio website for John Xanthopoulos - Next.js migration from Gatsby",
+  "author": "John Xanthopoulos",
+  "homepage": "https://synepho.com",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "export": "next build && next export",
+    "deploy:prod": "npm run build && aws s3 sync ./out/ s3://www.synepho.com --delete --cache-control max-age=31536000 --exclude='*.html' && aws s3 sync ./out/ s3://www.synepho.com --cache-control max-age=0 --include='*.html'",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID:-E2UW9JLSX34HRT} --paths '/*'",
+    "deploy:full": "npm run build && npm run deploy:prod && npm run invalidate"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^16.4.1",
+    "next": "^15.0.3",
+    "next-sitemap": "^4.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.20",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.0.3",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.6.3"
+  }
+}

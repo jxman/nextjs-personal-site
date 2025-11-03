@@ -1,0 +1,74 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Testing
+/coverage
+
+# Next.js Build Output
+/.next/
+/out/
+/build
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment Variables
+.env
+.env*.local
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS Specific Files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows Specific Files
+Thumbs.db
+ehthumbs.db
+
+# Backup Files
+*.backup
+*.bak
+*.orig
+
+# Log Files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary Files
+tmp/
+temp/
+.tmp/
+*.tmp
+
+# Security Files
+*.pem
+*.key
+*.p12
+*.p8
+id_rsa*
+id_ed25519*
+*.ppk
+
+# Archived Files
+archived/
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.github/instructions/snyk_rules.instructions.md
