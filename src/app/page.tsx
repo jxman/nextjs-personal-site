@@ -18,11 +18,11 @@ export default function IndexPage() {
         <div className="hero-content flex-col lg:flex-row-reverse gap-12 max-w-6xl mx-auto px-4">
           {/* Profile Image */}
           <AnimatedSection animation="fadeInRight" delay={200}>
-            <div className="flex-shrink-0">
+            <div className="w-full max-w-sm overflow-hidden">
               <Image
                 src="/images/me2.jpeg"
                 alt="Professional headshot of John Xanthopoulos"
-                className="max-w-sm rounded-lg shadow-2xl hover:shadow-3xl transition-shadow duration-300"
+                className="w-full h-auto rounded-lg shadow-2xl hover:shadow-3xl transition-shadow duration-300 object-cover"
                 width={384}
                 height={512}
                 priority

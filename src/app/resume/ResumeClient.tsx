@@ -38,8 +38,8 @@ export default function ResumeClient({ html }: ResumeClientProps) {
     <>
       <div className="max-w-5xl mx-auto px-4 py-8">
         {/* Header with Download/Print Actions */}
-        <div className="flex justify-between items-center mb-8 print:hidden">
-          <div>
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8 print:hidden">
+          <div className="flex-1">
             <h1 className="text-3xl font-bold text-base-content">
               Professional Resume
             </h1>
@@ -50,7 +50,7 @@ export default function ResumeClient({ html }: ResumeClientProps) {
               Contact via LinkedIn or website contact form
             </p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-shrink-0">
             <button
               onClick={handlePrint}
               disabled={isProcessing}
@@ -59,7 +59,7 @@ export default function ResumeClient({ html }: ResumeClientProps) {
             >
               {!isProcessing && (
                 <svg
-                  className="w-4 h-4 mr-2"
+                  className="w-4 h-4 sm:mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -72,7 +72,7 @@ export default function ResumeClient({ html }: ResumeClientProps) {
                   />
                 </svg>
               )}
-              {isProcessing ? 'Opening...' : 'Print'}
+              <span className="hidden sm:inline">{isProcessing ? 'Opening...' : 'Print'}</span>
             </button>
             <button
               onClick={handleDownload}
@@ -82,7 +82,7 @@ export default function ResumeClient({ html }: ResumeClientProps) {
             >
               {!isProcessing && (
                 <svg
-                  className="w-4 h-4 mr-2"
+                  className="w-4 h-4 sm:mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -95,7 +95,7 @@ export default function ResumeClient({ html }: ResumeClientProps) {
                   />
                 </svg>
               )}
-              {isProcessing ? 'Opening...' : 'Download PDF'}
+              <span className="hidden sm:inline">{isProcessing ? 'Opening...' : 'Download PDF'}</span>
             </button>
           </div>
         </div>
