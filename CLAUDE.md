@@ -4,12 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Context
 
-This is a **Next.js 15 portfolio website** that is being **migrated from Gatsby 5**.
+This is a **Next.js 15 portfolio website** that was **successfully migrated from Gatsby 5** in November 2025.
 
 - **Current Project:** `/Users/johxan/Documents/my-projects/nextjs/nextjs-personal-site` (this directory)
-- **Source Project:** `/Users/johxan/Documents/my-projects/gatsby/personal-site-new`
+- **Source Project:** `/Users/johxan/Documents/my-projects/gatsby/personal-site-new` (archived)
 - **Live Site:** https://synepho.com
 - **Deployment:** AWS S3 + CloudFront (static export)
+- **Migration Status:** ✅ Complete - See [ROADMAP.md](./docs/ROADMAP.md) for ongoing improvements
 
 ## Essential Commands
 
@@ -62,12 +63,23 @@ src/
 │   ├── contact/page.tsx      # /contact
 │   └── blog/[slug]/page.tsx  # Dynamic blog routes
 ├── components/               # Shared React components
+│   ├── BlogCard.tsx          # Blog post card (reusable)
+│   ├── ProjectCard.tsx       # Project card (reusable)
+│   ├── StructuredData.tsx    # JSON-LD schema markup
+│   ├── Layout.tsx            # Main layout wrapper
+│   ├── Navbar.tsx            # Navigation
+│   └── Footer.tsx            # Footer
 ├── content/                  # Static content (JSON, Markdown)
+│   ├── blog-posts.json       # Centralized blog metadata
+│   ├── projects-enhanced.json # Projects with tech stacks
+│   ├── about.md              # About page content
+│   └── resume.md             # Resume content
 ├── lib/                      # Utility functions
 └── types/                    # TypeScript type definitions
 
 public/
 ├── images/                   # Static images (unoptimized for S3)
+│   └── blog/                 # Blog post thumbnails (optimized)
 ├── favicon.svg
 ├── social-image.png
 └── manifest.json
@@ -77,28 +89,32 @@ public/
 - `@/*` maps to `./src/*` (configured in tsconfig.json)
 - Use `import X from '@/components/X'` instead of relative paths
 
-## Migration Workflow
+## Component Development Standards
 
-**When migrating components or pages from Gatsby:**
+**When creating or modifying components:**
 
-1. **Read source file** from Gatsby project:
-   ```
-   /Users/johxan/Documents/my-projects/gatsby/personal-site-new/src/...
-   ```
+1. **Reusable Components:**
+   - Extract repeated UI patterns into components (e.g., BlogCard, ProjectCard)
+   - Use TypeScript interfaces for props
+   - Support both server and client rendering where appropriate
+   - Example: `BlogCard.tsx`, `ProjectCard.tsx`
 
-2. **Apply conversions:**
-   - Gatsby `Link` component → Next.js `Link` (change `to` prop to `href`)
-   - `gatsby-plugin-image` → `next/image` (add `unoptimized` prop)
-   - Remove GraphQL queries → Use direct imports or Server Components
-   - Add TypeScript types and interfaces
-   - Add `'use client'` directive only when needed (see below)
+2. **Content Management:**
+   - Centralize content in JSON files (e.g., `blog-posts.json`, `projects-enhanced.json`)
+   - Use consistent data structures with proper TypeScript types
+   - Keep content separate from presentation logic
 
-3. **Test compilation:**
+3. **SEO Best Practices:**
+   - Add canonical URLs to all page metadata
+   - Include structured data (JSON-LD) for rich search results
+   - Use proper Open Graph and Twitter Card meta tags
+   - Optimize images (1200x630 for social sharing)
+
+4. **Testing:**
    ```bash
-   npm run build
+   npm run build   # Verify compilation
+   npm run lint    # Check code quality
    ```
-
-4. **Update progress** in README.md checkboxes
 
 ## Client vs Server Components
 
@@ -217,32 +233,40 @@ npm run lint
 ## Documentation References
 
 Before starting work, reference these files:
-- **MIGRATION_GUIDE.md** - Complete migration roadmap and phase details
-- **COMPONENT_MAPPING.md** - Detailed component conversion patterns
-- **README.md** - Current migration status and progress tracking
+- **[ROADMAP.md](./docs/ROADMAP.md)** - Project roadmap with completed and planned features
+- **[README.md](./README.md)** - Project overview and current status
+- **[DEPLOYMENT.md](./docs/DEPLOYMENT.md)** - AWS deployment guide
+- **[MIGRATION_COMPLETE.md](./docs/MIGRATION_COMPLETE.md)** - Migration completion summary
 
-## Migration Progress Tracking
+## Recent Enhancements (November 2025)
 
-After completing tasks, update the checkboxes in README.md:
-```markdown
-- [x] Completed task
-- [ ] Pending task
-```
+**✅ Completed:**
+- Blog page with dynamic card grid layout and optimized images
+- Projects page with tech stack badges and status indicators
+- Custom 404 error page with navigation
+- Mobile responsive improvements (hero image, resume buttons)
+- Comprehensive SEO enhancements (sitemap priorities, canonical URLs, structured data)
 
-Current migration status: **Phase 1 Complete (Setup)** → **Phase 2 In Progress (Components)**
+**📋 Next Steps:**
+- See [ROADMAP.md](./docs/ROADMAP.md) for planned medium and low priority items
+- Contact form functionality integration
+- Performance optimization (image formats, caching)
+- Accessibility improvements (WCAG AA compliance)
 
 ## Success Criteria
 
-A migrated component/page is complete when:
+A feature/component is complete when:
 - TypeScript compiles without errors (`npm run build` succeeds)
+- ESLint passes with no errors (`npm run lint`)
 - No console errors or warnings in browser
-- Styling matches Gatsby version
+- Responsive design works on mobile, tablet, and desktop
+- SEO metadata is properly configured (canonical URLs, Open Graph)
 - All interactive features work correctly
-- Progress updated in README.md
+- Documentation updated (README.md, ROADMAP.md if applicable)
 
 ---
 
-**Last Updated:** November 2, 2025
+**Last Updated:** November 5, 2025
 **Next.js Version:** 15.0.3
 **React Version:** 18.3.1
-**Migration Status:** Setup Complete - Component Migration Phase
+**Migration Status:** ✅ Complete - Ongoing Enhancement Phase

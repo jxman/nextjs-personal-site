@@ -152,9 +152,11 @@ Developer ────▶ Markdown/JSON ────▶ Next.js Build ───�
 - **Content Format:** Markdown files + JSON data files
 
 ### SEO & Analytics
-- **Sitemap:** [next-sitemap 4.2.3](https://github.com/iamvishnusankar/next-sitemap) - Automated sitemap generation
+- **Sitemap:** [next-sitemap 4.2.3](https://github.com/iamvishnusankar/next-sitemap) - Automated sitemap with priority structure
 - **Analytics:** Google Analytics (G-2HLT4VSZHW) - Site traffic tracking
-- **Meta Tags:** Next.js Metadata API - Open Graph, Twitter Cards, structured data
+- **Meta Tags:** Next.js Metadata API - Open Graph, Twitter Cards
+- **Structured Data:** JSON-LD schemas (Person, WebSite, Organization)
+- **Canonical URLs:** All pages include canonical tags to prevent duplicate content
 
 ### Development Tools
 - **Linting:** [ESLint 8.57.1](https://eslint.org/) - Code quality checks
@@ -198,6 +200,9 @@ nextjs-personal-site/
 │   │   ├── Layout.tsx          # Main layout wrapper
 │   │   ├── Navbar.tsx          # Navigation (client component)
 │   │   ├── Footer.tsx          # Footer with links
+│   │   ├── BlogCard.tsx        # Blog post card component
+│   │   ├── ProjectCard.tsx     # Project card component
+│   │   ├── StructuredData.tsx  # JSON-LD schema markup
 │   │   ├── AnimatedSection.tsx # Intersection Observer animations
 │   │   ├── ScrollToTop.tsx     # Scroll-to-top button
 │   │   ├── GoogleAnalytics.tsx # GA4 integration
@@ -205,7 +210,8 @@ nextjs-personal-site/
 │   ├── content/                # Static content
 │   │   ├── about.md            # About page content
 │   │   ├── resume.md           # Resume content
-│   │   └── projects.json       # Projects data
+│   │   ├── blog-posts.json     # Blog metadata (centralized)
+│   │   └── projects-enhanced.json  # Projects data with tech stacks
 │   ├── lib/                    # Utility functions
 │   │   └── markdown.ts         # Markdown processing
 │   └── types/                  # TypeScript type definitions
@@ -217,6 +223,7 @@ nextjs-personal-site/
 │   ├── social-image.png        # Open Graph image (1200x630)
 │   └── manifest.json           # PWA manifest
 ├── docs/                       # Documentation
+│   ├── ROADMAP.md              # Project roadmap with completed/planned features
 │   ├── MIGRATION_GUIDE.md      # Gatsby to Next.js migration guide
 │   ├── MIGRATION_COMPLETE.md   # Migration completion summary
 │   ├── COMPONENT_MAPPING.md    # Component conversion patterns
@@ -322,11 +329,12 @@ npm run deploy:full      # Build + Deploy + Invalidate (recommended)
 - 🔝 **Scroll to Top** - Convenient navigation for long pages
 
 ### SEO & Analytics
-- 🔍 **SEO Optimized** - Meta tags, Open Graph, Twitter Cards
-- 🗺️ **Automated Sitemap** - Generated on every build
+- 🔍 **SEO Optimized** - Meta tags, Open Graph, Twitter Cards on all pages
+- 🗺️ **Smart Sitemap** - Priority-based structure (homepage: 1.0, key pages: 0.8, blog: 0.7)
+- 🔗 **Canonical URLs** - All 16 pages include canonical tags to prevent duplicate content
 - 🤖 **Robots.txt** - Search engine crawling instructions
 - 📊 **Google Analytics** - GA4 integration with page view tracking
-- 🎯 **Structured Data** - Rich snippets for better search results
+- 🎯 **Structured Data** - JSON-LD schemas (Person, WebSite, Organization) for rich search results
 
 ### Content Management
 - 📝 **Markdown Support** - Blog posts written in Markdown
@@ -366,6 +374,7 @@ Comprehensive documentation is available in the [`docs/`](./docs) folder:
 - **[QUICK_START.md](./docs/QUICK_START.md)** - Quick reference guide for common tasks
 - **[DEPLOYMENT.md](./docs/DEPLOYMENT.md)** - AWS deployment setup and configuration
 - **[CLAUDE.md](./CLAUDE.md)** - Instructions for AI-assisted development with Claude Code
+- **[ROADMAP.md](./docs/ROADMAP.md)** - 📋 Project roadmap with completed features and future plans
 
 ### Migration Documentation
 - **[MIGRATION_COMPLETE.md](./docs/MIGRATION_COMPLETE.md)** - ✅ Migration completion summary
@@ -489,18 +498,34 @@ IT Executive & Developer | 20+ Years in Technology
 
 ## 🎯 Project History
 
-**November 2025** - Migrated from Gatsby 5 to Next.js 15
-- Modernized tech stack to Next.js App Router
+### November 2025 - Major Enhancements
+
+**Initial Migration (Nov 2, 2025)**
+- Migrated from Gatsby 5 to Next.js 15 App Router
+- Modernized tech stack with TypeScript and modern React patterns
 - Improved build performance and developer experience
 - Enhanced SEO with Next.js Metadata API
 - Maintained all existing content and functionality
-- Documentation available in [`docs/`](./docs) folder
+
+**UI/UX Improvements (Nov 5, 2025)**
+- ✅ Blog page enhancement with dynamic card grid layout
+- ✅ Projects page grid with tech stack badges and status indicators
+- ✅ Custom 404 error page with helpful navigation
+- ✅ Mobile responsive improvements (hero image, resume buttons)
+- ✅ Image optimization (reduced blog images by 1.1 MB)
+
+**SEO Enhancements (Nov 5, 2025)**
+- ✅ Enhanced sitemap with intelligent priority structure
+- ✅ Canonical URLs on all 16 pages to prevent duplicate content
+- ✅ Structured data (JSON-LD) with Person, WebSite, and Organization schemas
+- ✅ Rich search results optimization for Google indexing
 
 **Going Forward** - Platform for sharing knowledge
 - Technology leadership insights
 - Cloud architecture patterns
 - Modern development practices
 - Portfolio updates and project showcases
+- See [ROADMAP.md](./docs/ROADMAP.md) for planned improvements
 
 ---
 
