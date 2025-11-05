@@ -1,0 +1,58 @@
+{
+  "posts": [
+    {
+      "slug": "aws-services-dashboard-release",
+      "title": "Building AWS Services Dashboard: A Modular Architecture Journey with AI-Assisted Development",
+      "excerpt": "How strategic planning and modular serverless architecture led to a production-ready AWS monitoring platform, built entirely with Claude Code. Learn why design sessions matter more than rushing to code when working with AI assistants.",
+      "author": "John Xanthopoulos",
+      "publishedDate": "2025-10-24",
+      "readingTime": 8,
+      "tags": ["AWS", "Serverless", "AI Development", "Architecture"],
+      "featured": true,
+      "thumbnail": "/images/blog/aws-dashboard.png",
+      "category": "Cloud Architecture"
+    },
+    {
+      "slug": "lawnsmartapp-release",
+      "title": "From Weekend Lawn Care to Zone-Intelligent App: Releasing Lawn.Smart",
+      "excerpt": "How my passion for lawn care and AI-powered development led to creating a comprehensive USDA zone-customized lawn management application. From \"vibe coding\" with Claude to launching at lawnsmartapp.com.",
+      "author": "John Xanthopoulos",
+      "publishedDate": "2025-06-07",
+      "readingTime": 6,
+      "tags": ["AI Development", "React", "Full-Stack", "Product Launch"],
+      "featured": false,
+      "thumbnail": "/images/blog/lawnsmartapp.png",
+      "category": "Product Development"
+    },
+    {
+      "slug": "ai-pair-programming-journey",
+      "title": "From Coding Challenges to Real-World Solutions: My Journey with AI Pair Programming",
+      "excerpt": "Exploring how AI pair programming tools like Claude Code and GitHub Copilot have transformed my development workflow, from solving complex coding challenges to building production applications.",
+      "author": "John Xanthopoulos",
+      "publishedDate": "2024-12-16",
+      "readingTime": 5,
+      "tags": ["AI Development", "Developer Tools", "Productivity", "Workflow"],
+      "featured": false,
+      "thumbnail": "/images/blog/ai-pair-programming.png",
+      "category": "Developer Experience"
+    }
+  ],
+  "categories": [
+    "Cloud Architecture",
+    "Product Development",
+    "Developer Experience",
+    "Technology Leadership"
+  ],
+  "tags": [
+    "AWS",
+    "Serverless",
+    "AI Development",
+    "Architecture",
+    "React",
+    "Full-Stack",
+    "Product Launch",
+    "Developer Tools",
+    "Productivity",
+    "Workflow"
+  ]
+}
