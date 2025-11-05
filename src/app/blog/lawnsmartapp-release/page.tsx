@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'From Weekend Lawn Care to Zone-Intelligent App: Releasing Lawn.Smart',
   description:
     'How my passion for lawn care and AI-powered development led to creating a comprehensive USDA zone-customized lawn management application',
+  alternates: {
+    canonical: '/blog/lawnsmartapp-release',
+  },
 }
 
 export default function LawnSmartAppReleasePost() {

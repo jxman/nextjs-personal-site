@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Building AWS Services Dashboard: A Modular Architecture Journey with AI-Assisted Development',
   description:
     'How strategic planning and modular serverless architecture led to a production-ready AWS monitoring platform, built entirely with Claude Code',
+  alternates: {
+    canonical: '/blog/aws-services-dashboard-release',
+  },
 }
 
 export default function AWSServicesDashboardPost() {

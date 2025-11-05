@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'AWS Multi-Region Hosting Architecture - Cloud Infrastructure Project',
   description:
     "Explore John Xanthopoulos' AWS multi-region hosting solution featuring Terraform automation, CloudFront distribution, geo-load balancing, and automated failover capabilities.",
+  alternates: {
+    canonical: '/projects/aws-site',
+  },
 }
 
 export default function AWSSite() {

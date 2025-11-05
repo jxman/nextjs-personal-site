@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     'From Coding Challenges to Real-World Solutions: My Journey with AI Pair Programming',
   description:
     'Exploring how AI pair programming tools like Claude Code and GitHub Copilot have transformed my development workflow',
+  alternates: {
+    canonical: '/blog/ai-pair-programming-journey',
+  },
 }
 
 export default function AIPairProgrammingPost() {

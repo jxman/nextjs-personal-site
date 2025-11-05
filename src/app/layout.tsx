@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import StructuredData from '@/components/StructuredData'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.synepho.com'),
   title: 'John Xanthopoulos - IT Executive & Developer',
   description:
     'IT Executive by day, developer on weekends. Sharing insights on software development, cloud architecture, and technology leadership. AWS, React, Terraform, and more.',
@@ -18,6 +20,9 @@ export const metadata: Metadata = {
     apple: [{ url: '/apple-touch-icon.png', sizes: '144x144', type: 'image/png' }],
   },
   manifest: '/manifest.json',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'John Xanthopoulos - IT Executive & Developer',
     description:
@@ -52,6 +57,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <StructuredData />
+      </head>
       <body className="overflow-x-hidden">
         <GoogleAnalytics />
         {children}

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'About Me',
   description:
     'Learn about John Xanthopoulos - IT Executive and developer with expertise in cloud architecture, software development, and technology leadership.',
+  alternates: {
+    canonical: '/about',
+  },
 }
 
 export default function AboutMe() {

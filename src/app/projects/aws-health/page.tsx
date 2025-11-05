@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'AWS Health Notifications Architecture - Cloud Monitoring Project',
   description:
     "Explore John Xanthopoulos' AWS Health Event notification system featuring Terraform automation, EventBridge integration, Lambda processing, and multi-environment deployment capabilities.",
+  alternates: {
+    canonical: '/projects/aws-health',
+  },
 }
 
 export default function AWSHealth() {

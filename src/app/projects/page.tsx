@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Projects',
   description:
     'Explore my portfolio of web development projects featuring AWS, React, Terraform, and modern cloud architecture solutions.',
+  alternates: {
+    canonical: '/projects',
+  },
 }
 
 interface Project {
