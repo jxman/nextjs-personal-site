@@ -16,7 +16,8 @@
     "export": "npm run build && next export",
     "deploy:prod": "npm run build && aws s3 sync ./out/ s3://www.synepho.com --delete --cache-control max-age=31536000 --exclude='*.html' && aws s3 sync ./out/ s3://www.synepho.com --cache-control max-age=0 --include='*.html'",
     "invalidate": "aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID:-E2UW9JLSX34HRT} --paths '/*'",
-    "deploy:full": "npm run build && npm run deploy:prod && npm run invalidate"
+    "deploy:full": "npm run build && npm run deploy:prod && npm run invalidate",
+    "prepare": "husky"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
@@ -36,6 +37,8 @@
     "daisyui": "^4.12.20",
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.0.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
     "tailwindcss": "^3.4.16",
@@ -43,5 +46,14 @@
   },
   "overrides": {
     "js-yaml": "^3.14.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
   }
 }

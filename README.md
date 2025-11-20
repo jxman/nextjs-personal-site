@@ -139,6 +139,7 @@ Developer ────▶ Markdown/JSON ────▶ Next.js Build ───�
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **Framework:** [Next.js 15.0.3](https://nextjs.org/) - React framework with App Router
 - **Language:** [TypeScript 5.6.3](https://www.typescriptlang.org/) - Type-safe JavaScript
 - **UI Library:** [React 18.3.1](https://react.dev/) - Component-based UI
@@ -147,11 +148,13 @@ Developer ────▶ Markdown/JSON ────▶ Next.js Build ───�
 - **Icons:** [React Icons 5.4.0](https://react-icons.github.io/react-icons/) - Icon library
 
 ### Content & Data
+
 - **Markdown:** [marked 16.4.1](https://marked.js.org/) - Markdown parser
 - **Frontmatter:** [gray-matter 4.0.3](https://github.com/jonschlinkert/gray-matter) - Parse YAML frontmatter
 - **Content Format:** Markdown files + JSON data files
 
 ### SEO & Analytics
+
 - **Sitemap:** [next-sitemap 4.2.3](https://github.com/iamvishnusankar/next-sitemap) - Automated sitemap with priority structure
 - **Analytics:** Google Analytics (G-2HLT4VSZHW) - Site traffic tracking
 - **Meta Tags:** Next.js Metadata API - Open Graph, Twitter Cards
@@ -159,11 +162,13 @@ Developer ────▶ Markdown/JSON ────▶ Next.js Build ───�
 - **Canonical URLs:** All pages include canonical tags to prevent duplicate content
 
 ### Development Tools
+
 - **Linting:** [ESLint 8.57.1](https://eslint.org/) - Code quality checks
 - **Formatting:** [Prettier 3.4.2](https://prettier.io/) - Code formatting
 - **CSS Processing:** [PostCSS 8.4.49](https://postcss.org/) + [Autoprefixer 10.4.20](https://github.com/postcss/autoprefixer)
 
 ### Deployment & Infrastructure
+
 - **Cloud Provider:** [AWS](https://aws.amazon.com/)
 - **Hosting:** Amazon S3 (static website hosting)
 - **CDN:** Amazon CloudFront (global content delivery)
@@ -252,6 +257,7 @@ nextjs-personal-site/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - **Node.js**: 18.x or higher
 - **npm**: 9.x or higher
 - **AWS CLI**: Configured with credentials (for deployment)
@@ -290,6 +296,28 @@ npm run format       # Format all files with Prettier
 npm run format:check # Check if files are formatted correctly
 ```
 
+### Code Quality & Pre-commit Hooks
+
+This project uses **Husky** and **lint-staged** to automatically run code quality checks before each commit:
+
+**What happens on `git commit`:**
+
+1. ✅ **ESLint** runs on all staged `.ts`, `.tsx`, `.js`, `.jsx` files
+2. ✅ **Prettier** formats all staged files automatically
+3. ✅ **Auto-fix** issues when possible
+4. ❌ **Prevents commit** if there are unfixable errors
+
+**Configured checks:**
+
+- JavaScript/TypeScript files: ESLint + Prettier
+- JSON/Markdown/CSS files: Prettier
+
+**To bypass hooks** (not recommended):
+
+```bash
+git commit --no-verify -m "message"
+```
+
 ### Deployment (AWS S3 + CloudFront)
 
 ```bash
@@ -304,6 +332,7 @@ npm run deploy:full      # Build + Deploy + Invalidate (recommended)
 ```
 
 **Deployment Details:**
+
 - Static assets (JS, CSS, images): 1-year cache (`max-age=31536000`)
 - HTML files: No cache (`max-age=0`) for instant updates
 - CloudFront invalidation: All paths (`/*`)
@@ -315,6 +344,7 @@ npm run deploy:full      # Build + Deploy + Invalidate (recommended)
 ## 🎨 Key Features
 
 ### Performance
+
 - ⚡ **Static Site Generation (SSG)** - All pages pre-rendered at build time
 - 🚀 **Optimized Bundles** - Code splitting and tree shaking (102 kB shared JS)
 - 📦 **CDN Distribution** - Global edge caching via CloudFront
@@ -322,6 +352,7 @@ npm run deploy:full      # Build + Deploy + Invalidate (recommended)
 - 🎯 **Lighthouse Score** - 90+ performance, accessibility, SEO
 
 ### User Experience
+
 - 🌓 **Dark Mode** - System preference detection with DaisyUI themes
 - 📱 **Fully Responsive** - Mobile-first design with Tailwind breakpoints
 - ♿ **Accessible** - Semantic HTML, ARIA labels, keyboard navigation
@@ -329,6 +360,7 @@ npm run deploy:full      # Build + Deploy + Invalidate (recommended)
 - 🔝 **Scroll to Top** - Convenient navigation for long pages
 
 ### SEO & Analytics
+
 - 🔍 **SEO Optimized** - Meta tags, Open Graph, Twitter Cards on all pages
 - 🗺️ **Smart Sitemap** - Priority-based structure (homepage: 1.0, key pages: 0.8, blog: 0.7)
 - 🔗 **Canonical URLs** - All 16 pages include canonical tags to prevent duplicate content
@@ -337,6 +369,7 @@ npm run deploy:full      # Build + Deploy + Invalidate (recommended)
 - 🎯 **Structured Data** - JSON-LD schemas (Person, WebSite, Organization) for rich search results
 
 ### Content Management
+
 - 📝 **Markdown Support** - Blog posts written in Markdown
 - 📄 **JSON Data** - Structured content for projects and resume
 - 🏷️ **Frontmatter** - YAML metadata for blog posts
@@ -346,21 +379,21 @@ npm run deploy:full      # Build + Deploy + Invalidate (recommended)
 
 ## 🌐 Pages & Routes
 
-| Route | Description | Type |
-|-------|-------------|------|
-| `/` | Homepage with introduction and recent work | Static |
-| `/about` | About me, experience, expertise | Static |
-| `/projects` | Portfolio projects showcase | Static |
-| `/projects/aws-health` | AWS Health Dashboard project details | Static |
-| `/projects/aws-rss` | AWS RSS Reader project details | Static |
-| `/projects/aws-site` | AWS Static Hosting project details | Static |
-| `/projects/lawn` | LawnSmart App project details | Static |
-| `/blog` | Blog listing page | Static |
-| `/blog/aws-services-dashboard-release` | AWS Dashboard blog post | Static |
-| `/blog/lawnsmartapp-release` | LawnSmart App blog post | Static |
-| `/blog/ai-pair-programming-journey` | AI Development blog post | Static |
-| `/resume` | Professional resume | Static |
-| `/contact` | Contact form | Static |
+| Route                                  | Description                                | Type   |
+| -------------------------------------- | ------------------------------------------ | ------ |
+| `/`                                    | Homepage with introduction and recent work | Static |
+| `/about`                               | About me, experience, expertise            | Static |
+| `/projects`                            | Portfolio projects showcase                | Static |
+| `/projects/aws-health`                 | AWS Health Dashboard project details       | Static |
+| `/projects/aws-rss`                    | AWS RSS Reader project details             | Static |
+| `/projects/aws-site`                   | AWS Static Hosting project details         | Static |
+| `/projects/lawn`                       | LawnSmart App project details              | Static |
+| `/blog`                                | Blog listing page                          | Static |
+| `/blog/aws-services-dashboard-release` | AWS Dashboard blog post                    | Static |
+| `/blog/lawnsmartapp-release`           | LawnSmart App blog post                    | Static |
+| `/blog/ai-pair-programming-journey`    | AI Development blog post                   | Static |
+| `/resume`                              | Professional resume                        | Static |
+| `/contact`                             | Contact form                               | Static |
 
 **Total Pages:** 16 pre-rendered HTML pages
 
@@ -371,12 +404,14 @@ npm run deploy:full      # Build + Deploy + Invalidate (recommended)
 Comprehensive documentation is available in the [`docs/`](./docs) folder:
 
 ### For Developers
+
 - **[QUICK_START.md](./docs/QUICK_START.md)** - Quick reference guide for common tasks
 - **[DEPLOYMENT.md](./docs/DEPLOYMENT.md)** - AWS deployment setup and configuration
 - **[CLAUDE.md](./CLAUDE.md)** - Instructions for AI-assisted development with Claude Code
 - **[ROADMAP.md](./docs/ROADMAP.md)** - 📋 Project roadmap with completed features and future plans
 
 ### Migration Documentation
+
 - **[MIGRATION_COMPLETE.md](./docs/MIGRATION_COMPLETE.md)** - ✅ Migration completion summary
 - **[MIGRATION_GUIDE.md](./docs/MIGRATION_GUIDE.md)** - Detailed migration roadmap
 - **[COMPONENT_MAPPING.md](./docs/COMPONENT_MAPPING.md)** - Component conversion patterns
@@ -384,6 +419,7 @@ Comprehensive documentation is available in the [`docs/`](./docs) folder:
 - **[IMPROVEMENTS_SUMMARY.md](./docs/IMPROVEMENTS_SUMMARY.md)** - Performance improvements
 
 ### Project Overview
+
 - **[PROJECT_SUMMARY.md](./docs/PROJECT_SUMMARY.md)** - Complete project documentation
 
 ---
@@ -413,8 +449,8 @@ Key settings in `next.config.js`:
 
 ```javascript
 module.exports = {
-  output: 'export',              // Static site export for S3
-  trailingSlash: true,           // Better routing for S3
+  output: 'export', // Static site export for S3
+  trailingSlash: true, // Better routing for S3
   images: { unoptimized: true }, // Required for static export
   env: {
     SITE_URL: 'https://www.synepho.com',
@@ -428,6 +464,7 @@ module.exports = {
 ## 🚢 Deployment
 
 ### Prerequisites
+
 - AWS CLI installed and configured
 - S3 bucket created (`www.synepho.com`)
 - CloudFront distribution set up
@@ -450,11 +487,13 @@ npm run deploy:full
 ```
 
 ### Cache Strategy
+
 - **Static Assets** (JS, CSS, images): `Cache-Control: max-age=31536000` (1 year)
 - **HTML Files**: `Cache-Control: max-age=0` (no cache, always fresh)
 - **CloudFront Invalidation**: Clears all cached files (`/*`)
 
 ### Deployment Timing
+
 - **Build Time**: ~30-60 seconds
 - **S3 Sync**: ~1-2 minutes
 - **CloudFront Propagation**: 5-15 minutes
@@ -488,6 +527,7 @@ IT Executive & Developer | 20+ Years in Technology
 - **Twitter:** [@jxmam](https://twitter.com/jxmam)
 
 **Expertise:**
+
 - AWS Cloud Architecture
 - React & Next.js Development
 - Terraform Infrastructure as Code
@@ -501,6 +541,7 @@ IT Executive & Developer | 20+ Years in Technology
 ### November 2025 - Major Enhancements
 
 **Initial Migration (Nov 2, 2025)**
+
 - Migrated from Gatsby 5 to Next.js 15 App Router
 - Modernized tech stack with TypeScript and modern React patterns
 - Improved build performance and developer experience
@@ -508,6 +549,7 @@ IT Executive & Developer | 20+ Years in Technology
 - Maintained all existing content and functionality
 
 **UI/UX Improvements (Nov 5, 2025)**
+
 - ✅ Blog page enhancement with dynamic card grid layout
 - ✅ Projects page grid with tech stack badges and status indicators
 - ✅ Custom 404 error page with helpful navigation
@@ -515,12 +557,14 @@ IT Executive & Developer | 20+ Years in Technology
 - ✅ Image optimization (reduced blog images by 1.1 MB)
 
 **SEO Enhancements (Nov 5, 2025)**
+
 - ✅ Enhanced sitemap with intelligent priority structure
 - ✅ Canonical URLs on all 16 pages to prevent duplicate content
 - ✅ Structured data (JSON-LD) with Person, WebSite, and Organization schemas
 - ✅ Rich search results optimization for Google indexing
 
 **Going Forward** - Platform for sharing knowledge
+
 - Technology leadership insights
 - Cloud architecture patterns
 - Modern development practices
@@ -541,4 +585,4 @@ IT Executive & Developer | 20+ Years in Technology
 
 **Built with Next.js • Styled with Tailwind CSS • Deployed on AWS • Crafted with Claude Code**
 
-*Last Updated: November 2025*
+_Last Updated: November 2025_
