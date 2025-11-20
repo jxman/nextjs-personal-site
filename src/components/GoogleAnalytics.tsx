@@ -4,6 +4,13 @@ import Script from 'next/script'
 
 export default function GoogleAnalytics() {
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-2HLT4VSZHW'
+  const ENABLE_ANALYTICS = process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === 'true'
+
+  // Don't load analytics if disabled
+  // This is controlled by .env.development (false) and .env.production (true)
+  if (!ENABLE_ANALYTICS) {
+    return null
+  }
 
   return (
     <>

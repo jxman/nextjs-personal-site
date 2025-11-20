@@ -677,7 +677,7 @@ export default function AWSServicesDashboardPost() {
               journey with Claude Code:
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/projects" className="btn btn-primary btn-sm">
+              <Link href="/projects" className="btn btn-outline btn-primary btn-sm">
                 View All Projects
               </Link>
               <Link

@@ -7,13 +7,13 @@
   "homepage": "https://synepho.com",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "env -u NODE_ENV next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "export": "next build && next export",
+    "export": "npm run build && next export",
     "deploy:prod": "npm run build && aws s3 sync ./out/ s3://www.synepho.com --delete --cache-control max-age=31536000 --exclude='*.html' && aws s3 sync ./out/ s3://www.synepho.com --cache-control max-age=0 --include='*.html'",
     "invalidate": "aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID:-E2UW9JLSX34HRT} --paths '/*'",
     "deploy:full": "npm run build && npm run deploy:prod && npm run invalidate"
@@ -40,5 +40,8 @@
     "prettier": "^3.4.2",
     "tailwindcss": "^3.4.16",
     "typescript": "^5.6.3"
+  },
+  "overrides": {
+    "js-yaml": "^3.14.2"
   }
 }
