@@ -1,0 +1,125 @@
+# Security audit workflow for automated dependency vulnerability scanning
+# Runs weekly on Mondays and can be triggered manually
+
+name: Security Audit
+
+on:
+  # Run every Monday at 9 AM UTC
+  schedule:
+    - cron: '0 9 * * 1'
+
+  # Allow manual triggering from GitHub Actions tab
+  workflow_dispatch:
+
+  # Run on pull requests that modify dependencies
+  pull_request:
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/security-audit.yml'
+
+jobs:
+  audit:
+    name: npm Security Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run npm audit (production dependencies)
+        run: |
+          echo "🔍 Running npm audit on production dependencies..."
+          npm audit --production --audit-level=moderate
+        continue-on-error: true
+
+      - name: Run npm audit (all dependencies)
+        run: |
+          echo "🔍 Running npm audit on all dependencies..."
+          npm audit --audit-level=high
+        continue-on-error: true
+
+      - name: Check for outdated dependencies
+        run: |
+          echo "📦 Checking for outdated dependencies..."
+          npm outdated || true
+
+      - name: Generate audit report
+        if: always()
+        run: |
+          echo "📄 Generating detailed audit report..."
+          npm audit --json > audit-report.json || true
+
+          echo "## Security Audit Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Extract vulnerability counts
+          CRITICAL=$(jq '.metadata.vulnerabilities.critical // 0' audit-report.json)
+          HIGH=$(jq '.metadata.vulnerabilities.high // 0' audit-report.json)
+          MODERATE=$(jq '.metadata.vulnerabilities.moderate // 0' audit-report.json)
+          LOW=$(jq '.metadata.vulnerabilities.low // 0' audit-report.json)
+
+          echo "### Vulnerability Counts" >> $GITHUB_STEP_SUMMARY
+          echo "- 🔴 Critical: $CRITICAL" >> $GITHUB_STEP_SUMMARY
+          echo "- 🟠 High: $HIGH" >> $GITHUB_STEP_SUMMARY
+          echo "- 🟡 Moderate: $MODERATE" >> $GITHUB_STEP_SUMMARY
+          echo "- 🟢 Low: $LOW" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "$CRITICAL" -gt 0 ] || [ "$HIGH" -gt 0 ]; then
+            echo "⚠️ **Action Required:** Critical or high severity vulnerabilities detected!" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ **Status:** No critical or high severity vulnerabilities detected." >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-audit-report
+          path: audit-report.json
+          retention-days: 30
+
+  verify-build:
+    name: Verify Production Build
+    runs-on: ubuntu-latest
+    needs: audit
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Build production bundle
+        run: npm run build
+
+      - name: Check build artifacts
+        run: |
+          echo "📊 Build Statistics" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Generated Files" >> $GITHUB_STEP_SUMMARY
+          ls -lh out/ >> $GITHUB_STEP_SUMMARY || echo "Build output directory not found" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Production build completed successfully" >> $GITHUB_STEP_SUMMARY

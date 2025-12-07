@@ -1,0 +1,117 @@
+# Dependabot configuration for automated dependency updates and security alerts
+# Documentation: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # Enable security and version updates for npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/New_York"
+
+    # Automatically open pull requests for security updates
+    open-pull-requests-limit: 10
+
+    # Group updates for better management
+    groups:
+      # Group all Next.js related packages together
+      nextjs:
+        patterns:
+          - "next"
+          - "next-*"
+          - "eslint-config-next"
+
+      # Group React packages together
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+
+      # Group Tailwind CSS ecosystem
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+          - "daisyui"
+          - "postcss"
+          - "autoprefixer"
+
+      # Group TypeScript and related tools
+      typescript:
+        patterns:
+          - "typescript"
+          - "@types/*"
+
+      # Group development tools
+      dev-tools:
+        patterns:
+          - "eslint"
+          - "prettier"
+          - "husky"
+          - "lint-staged"
+
+    # Commit message configuration
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+
+    # Security updates (applied immediately, not grouped)
+    # Dependabot will create individual PRs for security vulnerabilities
+    labels:
+      - "dependencies"
+      - "automated"
+
+    # Reviewer configuration (optional - add your GitHub username)
+    # reviewers:
+    #   - "jxman"
+
+    # Assignee configuration (optional)
+    # assignees:
+    #   - "jxman"
+
+    # Only allow security updates for pinned dependencies
+    # This prevents Dependabot from trying to upgrade Next.js beyond 15.0.5
+    versioning-strategy: "increase-if-necessary"
+
+    # Ignore specific dependencies (if needed)
+    ignore:
+      # Ignore major version updates for Next.js (we control this manually)
+      - dependency-name: "next"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+
+      # Ignore major version updates for React (stable on 18.x)
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+
+    # Pull request branch name prefix
+    pull-request-branch-name:
+      separator: "/"
+
+    # Rebase strategy for pull requests
+    rebase-strategy: "auto"
+
+    # Target branch for pull requests
+    target-branch: "main"
+
+  # Enable security updates for GitHub Actions workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/New_York"
+
+    commit-message:
+      prefix: "chore(ci)"
+
+    labels:
+      - "ci"
+      - "automated"
