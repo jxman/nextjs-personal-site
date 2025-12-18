@@ -2,7 +2,7 @@
 
 > Personal portfolio and blog sharing insights on technology leadership, cloud architecture, and modern software development.
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.0-black?logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15.5-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 [![AWS](https://img.shields.io/badge/AWS-S3%20%2B%20CloudFront-orange?logo=amazon-aws)](https://aws.amazon.com/)
@@ -140,7 +140,7 @@ Developer ────▶ Markdown/JSON ────▶ Next.js Build ───�
 
 ### Frontend
 
-- **Framework:** [Next.js 15.0.3](https://nextjs.org/) - React framework with App Router
+- **Framework:** [Next.js 15.5.9](https://nextjs.org/) - React framework with App Router
 - **Language:** [TypeScript 5.6.3](https://www.typescriptlang.org/) - Type-safe JavaScript
 - **UI Library:** [React 18.3.1](https://react.dev/) - Component-based UI
 - **Styling:** [Tailwind CSS 3.4.16](https://tailwindcss.com/) - Utility-first CSS

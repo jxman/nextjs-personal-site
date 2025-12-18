@@ -15,6 +15,7 @@ This is a **Next.js 15 portfolio website** that was **successfully migrated from
 ## Essential Commands
 
 ### Development
+
 ```bash
 npm run dev              # Start dev server at http://localhost:3000
 npm run build            # Production build (creates /out folder for static export)
@@ -23,12 +24,14 @@ npm run lint             # Run ESLint checks
 ```
 
 ### Code Quality
+
 ```bash
 npm run format           # Format all files with Prettier
 npm run format:check     # Check if files are formatted correctly
 ```
 
 ### Deployment (AWS S3)
+
 ```bash
 npm run deploy:prod      # Deploy to S3 with cache optimization
 npm run invalidate       # Invalidate CloudFront cache (uses CLOUDFRONT_DISTRIBUTION_ID env var)
@@ -40,6 +43,7 @@ npm run deploy:full      # Complete deployment: build + deploy + invalidate
 ### Next.js 15 App Router Configuration
 
 **Critical Configuration (next.config.js):**
+
 - `output: 'export'` - Enables static export for S3 deployment
 - `images: { unoptimized: true }` - Required for S3 static hosting
 - `trailingSlash: true` - Better routing for S3
@@ -86,6 +90,7 @@ public/
 ```
 
 ### TypeScript Path Alias
+
 - `@/*` maps to `./src/*` (configured in tsconfig.json)
 - Use `import X from '@/components/X'` instead of relative paths
 
@@ -121,12 +126,14 @@ public/
 **Default:** All components in App Router are Server Components.
 
 **Add `'use client'` directive ONLY when using:**
+
 - React hooks: `useState`, `useEffect`, `useRef`, `useContext`
 - Browser APIs: `window`, `document`, `localStorage`, `IntersectionObserver`
 - Event handlers: `onClick`, `onChange`, `onSubmit`, etc.
 - Third-party libraries that require browser context
 
 **Common client components in this project:**
+
 - Navigation with mobile menu toggle
 - Animated sections with IntersectionObserver
 - Scroll-to-top button
@@ -135,6 +142,7 @@ public/
 ## Key Technical Patterns
 
 ### SEO Metadata (Next.js 15)
+
 ```tsx
 // In any page.tsx file
 import type { Metadata } from 'next'
@@ -156,27 +164,30 @@ export const metadata: Metadata = {
 ```
 
 ### Images for S3 Deployment
+
 ```tsx
 import Image from 'next/image'
 
 // Always include unoptimized prop for S3 static export
-<Image
+;<Image
   src="/images/example.jpg"
   alt="Description"
   width={800}
   height={600}
-  unoptimized  // Required for static export
+  unoptimized // Required for static export
 />
 ```
 
 ### Internal Links
+
 ```tsx
 import Link from 'next/link'
 
-<Link href="/about">About</Link>
+;<Link href="/about">About</Link>
 ```
 
 ### Environment Variables
+
 - Variables in `next.config.js` env object are available via `process.env.SITE_URL`
 - For client-side access, prefix with `NEXT_PUBLIC_`
 - CloudFront distribution ID: Use `CLOUDFRONT_DISTRIBUTION_ID` env var or default `E2UW9JLSX34HRT`
@@ -233,6 +244,7 @@ npm run lint
 ## Documentation References
 
 Before starting work, reference these files:
+
 - **[ROADMAP.md](./docs/ROADMAP.md)** - Project roadmap with completed and planned features
 - **[README.md](./README.md)** - Project overview and current status
 - **[DEPLOYMENT.md](./docs/DEPLOYMENT.md)** - AWS deployment guide
@@ -241,6 +253,7 @@ Before starting work, reference these files:
 ## Recent Enhancements (November 2025)
 
 **✅ Completed:**
+
 - Blog page with dynamic card grid layout and optimized images
 - Projects page with tech stack badges and status indicators
 - Custom 404 error page with navigation
@@ -248,6 +261,7 @@ Before starting work, reference these files:
 - Comprehensive SEO enhancements (sitemap priorities, canonical URLs, structured data)
 
 **📋 Next Steps:**
+
 - See [ROADMAP.md](./docs/ROADMAP.md) for planned medium and low priority items
 - Contact form functionality integration
 - Performance optimization (image formats, caching)
@@ -256,6 +270,7 @@ Before starting work, reference these files:
 ## Success Criteria
 
 A feature/component is complete when:
+
 - TypeScript compiles without errors (`npm run build` succeeds)
 - ESLint passes with no errors (`npm run lint`)
 - No console errors or warnings in browser
@@ -266,7 +281,7 @@ A feature/component is complete when:
 
 ---
 
-**Last Updated:** November 5, 2025
-**Next.js Version:** 15.0.3
+**Last Updated:** December 18, 2025
+**Next.js Version:** 15.5.9
 **React Version:** 18.3.1
 **Migration Status:** ✅ Complete - Ongoing Enhancement Phase
