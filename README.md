@@ -140,7 +140,7 @@ Developer ────▶ Markdown/JSON ────▶ Next.js Build ───�
 
 ### Frontend
 
-- **Framework:** [Next.js 15.5.9](https://nextjs.org/) - React framework with App Router
+- **Framework:** [Next.js 15.5.12](https://nextjs.org/) - React framework with App Router
 - **Language:** [TypeScript 5.6.3](https://www.typescriptlang.org/) - Type-safe JavaScript
 - **UI Library:** [React 18.3.1](https://react.dev/) - Component-based UI
 - **Styling:** [Tailwind CSS 3.4.16](https://tailwindcss.com/) - Utility-first CSS

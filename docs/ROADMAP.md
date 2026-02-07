@@ -2,7 +2,7 @@
 
 This document outlines planned improvements and enhancements for the Next.js portfolio website.
 
-**Last Updated:** November 19, 2025
+**Last Updated:** February 7, 2026
 **Status:** Active Development - Environment & Security Updates 🔒
 
 ---
@@ -10,6 +10,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 ## Current Status
 
 ✅ **Recently Completed (November 19, 2025):**
+
 - ✅ Fixed js-yaml security vulnerability (CVE-2025-64718)
 - ✅ Implemented Next.js environment variable best practices
 - ✅ Environment-specific analytics configuration (.env.development, .env.production)
@@ -18,6 +19,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - ✅ Build error resolution and optimization
 
 ✅ **Previously Completed (November 5, 2025):**
+
 - ✅ Blog page enhancement with dynamic card grid
 - ✅ Projects page grid layout with tech badges
 - ✅ Custom 404 error page
@@ -32,11 +34,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ## High Priority Improvements
 
 ### 1. Blog Page Enhancement ✅ COMPLETED
+
 **Status:** ✅ Completed (November 5, 2025)
 **Actual Effort:** Medium
 **Priority:** High
 
 **What Was Built:**
+
 - ✅ Reusable BlogCard component with card-based design
 - ✅ Centralized blog-posts.json for content management
 - ✅ Featured post section with large card
@@ -53,12 +57,14 @@ This document outlines planned improvements and enhancements for the Next.js por
 - ✅ Line-clamp for consistent card heights
 
 **Future Enhancements (Lower Priority):**
+
 - [ ] Categories/tags filtering system (client-side)
 - [ ] Search functionality across blog posts
 - [ ] Related posts section on individual blog pages
 - [ ] Social sharing buttons
 
 **Files Created:**
+
 - `src/components/BlogCard.tsx`
 - `src/content/blog-posts.json`
 - `public/images/blog/` (3 optimized images)
@@ -66,11 +72,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 2. Projects Page Grid Layout ✅ COMPLETED
+
 **Status:** ✅ Completed (November 5, 2025)
 **Actual Effort:** Medium
 **Priority:** High
 
 **What Was Built:**
+
 - ✅ Reusable ProjectCard component
 - ✅ Enhanced projects-enhanced.json with metadata
 - ✅ Tech stack badges (shows top 4 + overflow count)
@@ -87,22 +95,26 @@ This document outlines planned improvements and enhancements for the Next.js por
 - ✅ Mobile-optimized button labels (icon-only on mobile)
 
 **Future Enhancements (Lower Priority):**
+
 - [ ] Filter by technology or category (interactive)
 - [ ] Project search functionality
 - [ ] View toggle (grid vs list)
 
 **Files Created:**
+
 - `src/components/ProjectCard.tsx`
 - `src/content/projects-enhanced.json`
 
 ---
 
 ### 3. Custom 404 Page ✅ COMPLETED
+
 **Status:** ✅ Completed (November 5, 2025)
 **Actual Effort:** Small
 **Priority:** High
 
 **What Was Built:**
+
 - ✅ Friendly error message with tech/cloud theme
 - ✅ Large animated "404" display with pulsing effect
 - ✅ Sad face icon illustration
@@ -115,16 +127,19 @@ This document outlines planned improvements and enhancements for the Next.js por
 - ✅ Consistent DaisyUI styling
 
 **Files Created:**
+
 - `src/app/not-found.tsx`
 
 ---
 
 ### 4. Loading States & Animations
+
 **Status:** Planned
 **Estimated Effort:** Small
 **Priority:** Medium
 
 **Planned Features:**
+
 - [ ] Skeleton loaders for content-heavy pages
 - [ ] Smooth page transitions
 - [ ] Loading indicators for async operations
@@ -135,15 +150,18 @@ This document outlines planned improvements and enhancements for the Next.js por
 ## Medium Priority Improvements
 
 ### 5. Contact Form Functionality
+
 **Status:** Planned
 **Estimated Effort:** Medium
 **Priority:** Medium
 
 **Current State:**
+
 - Contact form UI exists
 - No backend integration
 
 **Planned Improvements:**
+
 - [ ] Email integration (AWS SES or SendGrid)
 - [ ] Form validation (client and server)
 - [ ] Success/error messaging
@@ -152,6 +170,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] Auto-response email
 
 **Technical Approach:**
+
 - Create API route for form submission
 - Integrate with AWS SES
 - Add React Hook Form for validation
@@ -160,11 +179,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 6. SEO Enhancements
+
 **Status:** Planned
 **Estimated Effort:** Large
 **Priority:** Medium
 
 **Planned Features:**
+
 - [ ] Structured data (JSON-LD) for personal/professional schema
 - [ ] Breadcrumb navigation
 - [ ] Canonical URLs for all pages
@@ -175,6 +196,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] XML sitemap enhancement
 
 **Technical Approach:**
+
 - Use next-seo for structured data
 - Create RSS feed generation script
 - Audit all meta tags
@@ -183,11 +205,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 7. Performance Optimization
+
 **Status:** Planned
 **Estimated Effort:** Medium
 **Priority:** Medium
 
 **Planned Improvements:**
+
 - [ ] Image optimization (WebP conversion)
 - [ ] Proper caching headers for S3/CloudFront
 - [ ] JavaScript bundle size analysis
@@ -196,6 +220,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] Lighthouse score optimization (target: 95+)
 
 **Technical Approach:**
+
 - Use next/image optimization
 - Configure CloudFront caching rules
 - Run webpack-bundle-analyzer
@@ -204,11 +229,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 8. Accessibility Improvements
+
 **Status:** Planned
 **Estimated Effort:** Medium
 **Priority:** Medium
 
 **Planned Features:**
+
 - [ ] Skip navigation link
 - [ ] Focus states for all interactive elements
 - [ ] WCAG AA color contrast compliance
@@ -218,6 +245,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] Semantic HTML improvements
 
 **Technical Approach:**
+
 - Use axe DevTools for auditing
 - Add focus-visible styles
 - Test with NVDA/JAWS screen readers
@@ -228,11 +256,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ## Nice to Have Features
 
 ### 9. Dark/Light Mode Toggle
+
 **Status:** Planned
 **Estimated Effort:** Small
 **Priority:** Low
 
 **Planned Features:**
+
 - [ ] Theme switcher component
 - [ ] Persistent theme preference (localStorage)
 - [ ] Smooth theme transitions
@@ -240,6 +270,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] Theme toggle in navbar
 
 **Technical Approach:**
+
 - Use DaisyUI theme system
 - Create ThemeToggle component
 - Store preference in localStorage
@@ -248,20 +279,24 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 10. Analytics Dashboard Integration
+
 **Status:** Planned
 **Estimated Effort:** Medium
 **Priority:** Low
 
 **Current State:**
+
 - Google Analytics integrated
 
 **Planned Features:**
+
 - [ ] Popular posts section on homepage
 - [ ] View counts on blog posts
 - [ ] Project page visit tracking
 - [ ] Analytics dashboard page (admin)
 
 **Technical Approach:**
+
 - Use Google Analytics API
 - Create analytics service layer
 - Cache analytics data
@@ -270,11 +305,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 11. Newsletter Subscription
+
 **Status:** Planned
 **Estimated Effort:** Medium
 **Priority:** Low
 
 **Planned Features:**
+
 - [ ] Email signup form
 - [ ] Integration with email service (Mailchimp/ConvertKit)
 - [ ] GDPR compliance
@@ -283,6 +320,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] Unsubscribe functionality
 
 **Technical Approach:**
+
 - Choose email service provider
 - Create subscription API route
 - Add consent checkbox
@@ -291,11 +329,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 12. Resume Auto-Update System
+
 **Status:** Planned
 **Estimated Effort:** Large
 **Priority:** Low
 
 **Planned Features:**
+
 - [ ] Generate PDF programmatically from markdown
 - [ ] Resume version history
 - [ ] Multiple resume versions (technical vs executive)
@@ -303,6 +343,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] Auto-update notification
 
 **Technical Approach:**
+
 - Use Puppeteer or headless Chrome
 - Create PDF generation API route
 - Version control resume markdown
@@ -311,11 +352,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 13. Testimonials/Recommendations Section
+
 **Status:** Planned
 **Estimated Effort:** Medium
 **Priority:** Low
 
 **Planned Features:**
+
 - [ ] LinkedIn recommendations import
 - [ ] Client testimonials display
 - [ ] Colleague endorsements
@@ -323,6 +366,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] Carousel/grid layout
 
 **Technical Approach:**
+
 - Create testimonials JSON data
 - Build Testimonial component
 - Add filtering logic
@@ -331,11 +375,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 14. Interactive Career Timeline
+
 **Status:** Planned
 **Estimated Effort:** Large
 **Priority:** Low
 
 **Planned Features:**
+
 - [ ] Visual career timeline
 - [ ] Key positions and dates
 - [ ] Major projects/achievements
@@ -344,6 +390,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] Interactive hover/click effects
 
 **Technical Approach:**
+
 - Create timeline data structure
 - Build Timeline component
 - Use CSS animations
@@ -354,11 +401,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ## Quick Wins (Easy to Implement)
 
 ### 15. Social Media Links
+
 **Status:** Planned
 **Estimated Effort:** XS
 **Priority:** Medium
 
 **Planned Features:**
+
 - [ ] Add LinkedIn link to footer/header
 - [ ] Add GitHub profile link
 - [ ] Add Twitter/X profile
@@ -369,11 +418,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 16. Favicon Improvements
+
 **Status:** Planned
 **Estimated Effort:** XS
 **Priority:** Low
 
 **Planned Features:**
+
 - [ ] Generate all PWA icon sizes
 - [ ] Apple touch icons
 - [ ] Windows tile images
@@ -381,6 +432,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] manifest.json optimization
 
 **Technical Approach:**
+
 - Use favicon generator tool
 - Add all sizes to public folder
 - Update manifest.json
@@ -389,11 +441,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 17. Print Stylesheet Refinement
+
 **Status:** Planned
 **Estimated Effort:** Small
 **Priority:** Low
 
 **Planned Features:**
+
 - [ ] Blog posts optimized for printing
 - [ ] Remove navigation/footers in print
 - [ ] Add URL references for links
@@ -403,11 +457,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 18. Code Syntax Highlighting
+
 **Status:** Planned
 **Estimated Effort:** Small
 **Priority:** Medium
 
 **Planned Features:**
+
 - [ ] Syntax highlighting for code blocks
 - [ ] Copy code button
 - [ ] Line numbers
@@ -415,6 +471,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] Theme-aware highlighting
 
 **Technical Approach:**
+
 - Use Prism.js or Shiki
 - Add to markdown processor
 - Create code block component
@@ -425,11 +482,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ## Technical Debt & Maintenance
 
 ### 19. TypeScript Strictness
+
 **Status:** Planned
 **Estimated Effort:** Medium
 **Priority:** Low
 
 **Planned Improvements:**
+
 - [ ] Enable stricter TypeScript config
 - [ ] Add type definitions for all components
 - [ ] Fix implicit `any` types
@@ -439,11 +498,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 20. Testing Infrastructure
+
 **Status:** Planned
 **Estimated Effort:** Large
 **Priority:** Low
 
 **Planned Features:**
+
 - [ ] Unit tests with Jest
 - [ ] Component tests with React Testing Library
 - [ ] E2E tests with Playwright
@@ -451,6 +512,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] CI/CD integration
 
 **Technical Approach:**
+
 - Set up Jest configuration
 - Write test utilities
 - Create test coverage goals
@@ -459,11 +521,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 21. CI/CD Pipeline Enhancement
+
 **Status:** Planned
 **Estimated Effort:** Medium
 **Priority:** Low
 
 **Planned Features:**
+
 - [ ] Automated Lighthouse checks on PR
 - [ ] Accessibility testing in pipeline
 - [ ] Bundle size monitoring
@@ -471,6 +535,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] Automated dependency updates
 
 **Technical Approach:**
+
 - Use GitHub Actions
 - Integrate Lighthouse CI
 - Add bundle analyzer to CI
@@ -479,11 +544,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ### 22. Documentation
+
 **Status:** Planned
 **Estimated Effort:** Medium
 **Priority:** Low
 
 **Planned Features:**
+
 - [ ] Component library/style guide
 - [ ] Content management guide
 - [ ] Deployment documentation

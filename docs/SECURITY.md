@@ -2,7 +2,7 @@
 
 **Project:** Next.js Personal Website (synepho.com)
 **Last Updated:** December 6, 2025
-**Next.js Version:** 15.0.5 (pinned)
+**Next.js Version:** 15.5.12
 
 ## Overview
 
@@ -19,8 +19,8 @@ This document outlines the security monitoring strategy for the Next.js personal
    - All content pre-rendered at build time
 
 2. **Version Control**
-   - Next.js pinned to `15.0.5` (no caret `^`)
-   - Prevents automatic upgrades to vulnerable versions
+   - Next.js at `15.5.12` (latest stable 15.x)
+   - Regular security updates via Snyk and Dependabot
    - Controlled upgrade path
 
 3. **Deployment Security**
@@ -213,7 +213,7 @@ Review during **monthly security check**:
 - **Critical/High vulnerabilities:** Individual PRs created immediately
 - **Patch updates:** Grouped by ecosystem, created weekly
 - **Major version updates:** Ignored for Next.js (manual control required)
-- **Minor version updates:** Ignored for Next.js (pinned at 15.0.x)
+- **Minor version updates:** Allowed for Next.js within 15.x
 
 **Review Process:**
 
