@@ -1,6 +1,26 @@
 [
   {
     "id": 1,
+    "name": "Lawn.Smart - USDA Zone-Intelligent Lawn Care",
+    "image": "/images/lawn-smart-app.png",
+    "text": "A fully redesigned USDA zone-customized lawn care PWA built with React and Tailwind CSS. The v2 release introduces a complete UI overhaul designed with Claude Design — featuring a three-column desktop layout, purpose-built mobile experience with bottom navigation, and a semantic design token system for consistent styling across all components.",
+    "description": "V2 highlights include a Dashboard, Calendar, History, and Settings tab structure; a pinned Critical Task hero card on mobile; month pill navigation; time-aware greetings; and soft amber alert styling replacing the original harsh dark-on-dark cards. New features include a Calendar view with task dot indicators, a yearly History tracker, a monthly notes journal, and a sidebar category filter. Amazon product recommendations now use brand-consistent dark green buttons. Covers all 50 US states and hardiness zones 3a–11b.",
+    "demo_link": "https://www.lawnsmartapp.com",
+    "github_link": "https://github.com/jxman/aws-hosting-lawnsmartapp",
+    "status": "Active",
+    "featured": true,
+    "tech_stack": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "PWA",
+      "AWS S3",
+      "CloudFront"
+    ],
+    "category": "Web Application"
+  },
+  {
+    "id": 2,
     "name": "AWS Services Dashboard",
     "image": "/images/aws-services-dashboard.png",
     "text": "A comprehensive real-time monitoring platform providing visibility into AWS infrastructure across multiple accounts and regions. Built with React 18, Vite, and TanStack Query on the frontend, with AWS Lambda, EventBridge, and S3 on the backend.",
@@ -9,21 +29,15 @@
     "github_link": "https://github.com/jxman/aws-services-dashboard-project",
     "status": "Active",
     "featured": true,
-    "tech_stack": ["React", "TypeScript", "AWS Lambda", "Terraform", "Vite", "TanStack Query"],
+    "tech_stack": [
+      "React",
+      "TypeScript",
+      "AWS Lambda",
+      "Terraform",
+      "Vite",
+      "TanStack Query"
+    ],
     "category": "Cloud Infrastructure"
-  },
-  {
-    "id": 2,
-    "name": "Lawn.Smart - USDA Zone-Intelligent Lawn Care",
-    "image": "/images/lawn-smart-app.png",
-    "text": "A comprehensive USDA zone-customized lawn care management application built with React and Tailwind CSS. Features PWA support, glassmorphism UI design, and personalized guidance for all 50 US states and hardiness zones 3a-11b.",
-    "description": "Includes month-by-month task management, equipment tracking, photo documentation, weather alerts, and zone-specific timing recommendations for optimal lawn health across all US regions.",
-    "demo_link": "https://www.lawnsmartapp.com",
-    "github_link": "https://github.com/jxman/aws-hosting-lawnsmartapp",
-    "status": "Active",
-    "featured": true,
-    "tech_stack": ["React", "TypeScript", "Tailwind CSS", "PWA", "AWS S3", "CloudFront"],
-    "category": "Web Application"
   },
   {
     "id": 3,
@@ -35,7 +49,13 @@
     "github_link": "https://github.com/jxman/nextjs-personal-site",
     "status": "Active",
     "featured": false,
-    "tech_stack": ["Next.js", "TypeScript", "Tailwind CSS", "DaisyUI", "AWS S3"],
+    "tech_stack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "DaisyUI",
+      "AWS S3"
+    ],
     "category": "Portfolio"
   },
   {
@@ -61,7 +81,13 @@
     "github_link": "https://github.com/jxman/awshealthnotification",
     "status": "Active",
     "featured": false,
-    "tech_stack": ["Terraform", "AWS Lambda", "AWS SNS", "EventBridge", "GitHub Actions"],
+    "tech_stack": [
+      "Terraform",
+      "AWS Lambda",
+      "AWS SNS",
+      "EventBridge",
+      "GitHub Actions"
+    ],
     "category": "Cloud Infrastructure"
   },
   {
@@ -87,7 +113,13 @@
     "github_link": "https://github.com/jxman/awsrsschk",
     "status": "Active",
     "featured": false,
-    "tech_stack": ["Terraform", "AWS Lambda", "DynamoDB", "EventBridge", "Node.js"],
+    "tech_stack": [
+      "Terraform",
+      "AWS Lambda",
+      "DynamoDB",
+      "EventBridge",
+      "Node.js"
+    ],
     "category": "Cloud Infrastructure"
   },
   {

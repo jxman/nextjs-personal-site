@@ -2,14 +2,24 @@
 
 This document outlines planned improvements and enhancements for the Next.js portfolio website.
 
-**Last Updated:** February 7, 2026
-**Status:** Active Development - Environment & Security Updates 🔒
+**Last Updated:** April 29, 2026
+**Status:** Active Development - Content & Security Updates 📝
 
 ---
 
 ## Current Status
 
-✅ **Recently Completed (November 19, 2025):**
+✅ **Recently Completed (April 29, 2026):**
+
+- ✅ Published new blog post: "Learning to See Like a Designer: A Cloud Architect's Redesign of Lawn.Smart"
+- ✅ Added desktop and mobile before/after comparison images to blog post
+- ✅ Home page featured article updated to new Claude Design post
+- ✅ Lawn.Smart project moved to first position in featured projects grid
+- ✅ Lawn.Smart project image replaced with v2 screenshot and description updated
+- ✅ Upgraded Next.js 15.5.12 → 15.5.15 (security: CVE-2026-23869)
+- ✅ Resolved picomatch, flatted, and minimatch high severity vulnerabilities
+
+✅ **Previously Completed (November 19, 2025):**
 
 - ✅ Fixed js-yaml security vulnerability (CVE-2025-64718)
 - ✅ Implemented Next.js environment variable best practices

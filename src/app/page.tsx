@@ -58,11 +58,11 @@ export default function IndexPage() {
 
             <AnimatedSection animation="fadeInLeft" delay={200}>
               <p className="text-lg text-base-content/70 mb-8 leading-relaxed">
-                Passionate technology leader with 20+ years of experience driving
-                digital transformation, building high-performing teams, and
-                architecting cloud-native solutions. When I&apos;m not leading
-                strategic initiatives, you&apos;ll find me coding personal projects
-                and exploring the latest technologies.
+                Passionate technology leader with 20+ years of experience
+                driving digital transformation, building high-performing teams,
+                and architecting cloud-native solutions. When I&apos;m not
+                leading strategic initiatives, you&apos;ll find me coding
+                personal projects and exploring the latest technologies.
               </p>
             </AnimatedSection>
 
@@ -143,7 +143,8 @@ export default function IndexPage() {
               Experience Highlights
             </h2>
             <p className="text-base-content/70 max-w-2xl mx-auto">
-              Two decades of technology leadership driving innovation and results
+              Two decades of technology leadership driving innovation and
+              results
             </p>
           </AnimatedSection>
 
@@ -239,37 +240,37 @@ export default function IndexPage() {
                 <div className="card-body">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="badge badge-primary">New</div>
-                    <div className="badge badge-outline">AWS</div>
-                    <div className="badge badge-accent">AI Development</div>
+                    <div className="badge badge-outline">Design</div>
+                    <div className="badge badge-accent">Claude</div>
                   </div>
 
                   <h3 className="card-title text-2xl mb-4">
                     <Link
-                      href="/blog/aws-services-dashboard-release"
+                      href="/blog/lawn-smart-redesign-claude-design"
                       className="hover:text-primary transition-colors"
                     >
-                      Building AWS Services Dashboard: A Modular Architecture
-                      Journey with AI-Assisted Development
+                      Learning to See Like a Designer: A Cloud Architect&apos;s
+                      Redesign of Lawn.Smart
                     </Link>
                   </h3>
 
                   <p className="text-base-content/70 mb-6 leading-relaxed">
-                    How strategic planning and modular serverless architecture led
-                    to a production-ready AWS monitoring platform, built entirely
-                    with Claude Code. Learn why design sessions matter more than
-                    rushing to code when working with AI assistants.
+                    How Claude Design helped a cloud architect without formal
+                    design training execute a complete UI overhaul of Lawn.Smart
+                    — and why design tokens were the most valuable thing learned
+                    along the way.
                   </p>
 
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <div className="flex items-center gap-4 text-sm text-base-content/60">
-                      <span>Published: October 24, 2025</span>
+                      <span>Published: April 29, 2026</span>
                       <span className="hidden sm:inline">•</span>
-                      <span>8 min read</span>
+                      <span>10 min read</span>
                     </div>
 
                     <div className="flex gap-3">
                       <Link
-                        href="/blog/aws-services-dashboard-release"
+                        href="/blog/lawn-smart-redesign-claude-design"
                         className="btn btn-primary hover:scale-105 transition-transform duration-200"
                       >
                         Read More

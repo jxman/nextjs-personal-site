@@ -140,7 +140,7 @@ Developer ────▶ Markdown/JSON ────▶ Next.js Build ───�
 
 ### Frontend
 
-- **Framework:** [Next.js 15.5.12](https://nextjs.org/) - React framework with App Router
+- **Framework:** [Next.js 15.5.15](https://nextjs.org/) - React framework with App Router
 - **Language:** [TypeScript 5.6.3](https://www.typescriptlang.org/) - Type-safe JavaScript
 - **UI Library:** [React 18.3.1](https://react.dev/) - Component-based UI
 - **Styling:** [Tailwind CSS 3.4.16](https://tailwindcss.com/) - Utility-first CSS
@@ -195,6 +195,7 @@ nextjs-personal-site/
 │   │   ├── blog/               # Blog section
 │   │   │   ├── page.tsx        # Blog listing
 │   │   │   ├── [slug]/         # Dynamic blog routes
+│   │   │   ├── lawn-smart-redesign-claude-design/
 │   │   │   ├── ai-pair-programming-journey/
 │   │   │   ├── aws-services-dashboard-release/
 │   │   │   └── lawnsmartapp-release/
@@ -379,23 +380,24 @@ npm run deploy:full      # Build + Deploy + Invalidate (recommended)
 
 ## 🌐 Pages & Routes
 
-| Route                                  | Description                                | Type   |
-| -------------------------------------- | ------------------------------------------ | ------ |
-| `/`                                    | Homepage with introduction and recent work | Static |
-| `/about`                               | About me, experience, expertise            | Static |
-| `/projects`                            | Portfolio projects showcase                | Static |
-| `/projects/aws-health`                 | AWS Health Dashboard project details       | Static |
-| `/projects/aws-rss`                    | AWS RSS Reader project details             | Static |
-| `/projects/aws-site`                   | AWS Static Hosting project details         | Static |
-| `/projects/lawn`                       | LawnSmart App project details              | Static |
-| `/blog`                                | Blog listing page                          | Static |
-| `/blog/aws-services-dashboard-release` | AWS Dashboard blog post                    | Static |
-| `/blog/lawnsmartapp-release`           | LawnSmart App blog post                    | Static |
-| `/blog/ai-pair-programming-journey`    | AI Development blog post                   | Static |
-| `/resume`                              | Professional resume                        | Static |
-| `/contact`                             | Contact form                               | Static |
+| Route                                     | Description                                | Type   |
+| ----------------------------------------- | ------------------------------------------ | ------ |
+| `/`                                       | Homepage with introduction and recent work | Static |
+| `/about`                                  | About me, experience, expertise            | Static |
+| `/projects`                               | Portfolio projects showcase                | Static |
+| `/projects/aws-health`                    | AWS Health Dashboard project details       | Static |
+| `/projects/aws-rss`                       | AWS RSS Reader project details             | Static |
+| `/projects/aws-site`                      | AWS Static Hosting project details         | Static |
+| `/projects/lawn`                          | LawnSmart App project details              | Static |
+| `/blog`                                   | Blog listing page                          | Static |
+| `/blog/lawn-smart-redesign-claude-design` | Lawn.Smart redesign with Claude Design     | Static |
+| `/blog/aws-services-dashboard-release`    | AWS Dashboard blog post                    | Static |
+| `/blog/lawnsmartapp-release`              | LawnSmart App blog post                    | Static |
+| `/blog/ai-pair-programming-journey`       | AI Development blog post                   | Static |
+| `/resume`                                 | Professional resume                        | Static |
+| `/contact`                                | Contact form                               | Static |
 
-**Total Pages:** 16 pre-rendered HTML pages
+**Total Pages:** 17 pre-rendered HTML pages
 
 ---
 
@@ -538,6 +540,29 @@ IT Executive & Developer | 20+ Years in Technology
 
 ## 🎯 Project History
 
+### April 2026 - Content & Security Updates
+
+**New Blog Post (Apr 29, 2026)**
+
+- ✅ Published "Learning to See Like a Designer: A Cloud Architect's Redesign of Lawn.Smart"
+- ✅ Before/after desktop and mobile comparison images added to post
+- ✅ Home page updated to feature new article
+- ✅ Claude Design linked on first mention (Anthropic announcement page)
+
+**Lawn.Smart v2 Project Update (Apr 29, 2026)**
+
+- ✅ Lawn.Smart moved to first position in featured projects
+- ✅ Project screenshot replaced with v2 UI (1200×722)
+- ✅ Project description updated to reflect v2 redesign and new features
+
+**Security Updates (Apr 29, 2026)**
+
+- ✅ Upgraded Next.js 15.5.12 → 15.5.15 (CVE-2026-23869)
+- ✅ Resolved picomatch ReDoS (CVE-2026-33671)
+- ✅ Resolved flatted and minimatch vulnerabilities via npm audit fix
+
+---
+
 ### November 2025 - Major Enhancements
 
 **Initial Migration (Nov 2, 2025)**
@@ -585,4 +610,4 @@ IT Executive & Developer | 20+ Years in Technology
 
 **Built with Next.js • Styled with Tailwind CSS • Deployed on AWS • Crafted with Claude Code**
 
-_Last Updated: November 2025_
+_Last Updated: April 2026_

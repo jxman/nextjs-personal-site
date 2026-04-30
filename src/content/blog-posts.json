@@ -1,6 +1,25 @@
 {
   "posts": [
     {
+      "slug": "lawn-smart-redesign-claude-design",
+      "title": "Learning to See Like a Designer: A Cloud Architect's Redesign of Lawn.Smart",
+      "excerpt": "How Claude Design helped a cloud architect without formal design training execute a complete UI overhaul of Lawn.Smart — and why design tokens were the most valuable thing learned along the way.",
+      "author": "John Xanthopoulos",
+      "publishedDate": "2026-04-29",
+      "readingTime": 10,
+      "tags": [
+        "AI",
+        "Design",
+        "Claude",
+        "Web Development",
+        "Agentic Workflows",
+        "PWA"
+      ],
+      "featured": true,
+      "thumbnail": "/images/blog/claude-design.png",
+      "category": "Product Development"
+    },
+    {
       "slug": "aws-services-dashboard-release",
       "title": "Building AWS Services Dashboard: A Modular Architecture Journey with AI-Assisted Development",
       "excerpt": "How strategic planning and modular serverless architecture led to a production-ready AWS monitoring platform, built entirely with Claude Code. Learn why design sessions matter more than rushing to code when working with AI assistants.",
@@ -8,7 +27,7 @@
       "publishedDate": "2025-10-24",
       "readingTime": 8,
       "tags": ["AWS", "Serverless", "AI Development", "Architecture"],
-      "featured": true,
+      "featured": false,
       "thumbnail": "/images/blog/aws-dashboard.png",
       "category": "Cloud Architecture"
     },
@@ -53,6 +72,12 @@
     "Product Launch",
     "Developer Tools",
     "Productivity",
-    "Workflow"
+    "Workflow",
+    "AI",
+    "Design",
+    "Claude",
+    "Web Development",
+    "Agentic Workflows",
+    "PWA"
   ]
 }

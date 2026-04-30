@@ -2,7 +2,7 @@
 
 **Project:** Next.js Personal Website (synepho.com)
 **Last Updated:** December 6, 2025
-**Next.js Version:** 15.5.12
+**Next.js Version:** 15.5.15
 
 ## Overview
 
@@ -19,7 +19,7 @@ This document outlines the security monitoring strategy for the Next.js personal
    - All content pre-rendered at build time
 
 2. **Version Control**
-   - Next.js at `15.5.12` (latest stable 15.x)
+   - Next.js at `15.5.15` (latest stable 15.x)
    - Regular security updates via Snyk and Dependabot
    - Controlled upgrade path
 
