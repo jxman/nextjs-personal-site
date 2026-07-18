@@ -8,7 +8,7 @@
     "demo_link": "https://www.lawnsmartapp.com",
     "github_link": "https://github.com/jxman/aws-hosting-lawnsmartapp",
     "status": "Active",
-    "featured": true,
+    "featured": false,
     "tech_stack": [
       "React",
       "TypeScript",
@@ -18,6 +18,26 @@
       "CloudFront"
     ],
     "category": "Web Application"
+  },
+  {
+    "id": 9,
+    "name": "Cloud Status Hub",
+    "image": "/images/cloud-status-hub.png",
+    "text": "Real-time operational status dashboard unifying AWS, Azure, OCI, and GCP health into a single view. Built with React 18, Vite, and TypeScript, with Vercel Functions handling the Azure feed proxy and backend alerting logic.",
+    "description": "Auto-refreshes every 60 seconds and shows active incidents, per-service health, and regional impact across all four major cloud providers. Subscribers can opt in to email alerts (via Resend) when a followed provider reports a new outage, with an admin dashboard gated behind Sign in with Vercel. Backed by Neon Postgres, Vercel BotID for bot protection, and an AWS EventBridge cron to poll status every 5 minutes.",
+    "demo_link": "https://cloudstatus.synepho.com",
+    "github_link": "https://github.com/jxman/csp-status-hub",
+    "status": "Active",
+    "featured": true,
+    "tech_stack": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Vercel Functions",
+      "Neon Postgres",
+      "Tailwind CSS"
+    ],
+    "category": "Cloud Infrastructure"
   },
   {
     "id": 2,
