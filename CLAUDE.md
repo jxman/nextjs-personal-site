@@ -33,10 +33,12 @@ npm run format:check     # Check if files are formatted correctly
 ### Deployment (AWS S3)
 
 ```bash
-npm run deploy:prod      # Deploy to S3 with cache optimization
-npm run invalidate       # Invalidate CloudFront cache (uses CLOUDFRONT_DISTRIBUTION_ID env var)
-npm run deploy:full      # Complete deployment: build + deploy + invalidate
+npm run deploy            # Build, sync to S3, and invalidate CloudFront (prompts for confirmation)
+npm run deploy:dry-run    # Build and show what would sync, without uploading or invalidating
+npm run invalidate        # Invalidate CloudFront cache only (uses CLOUDFRONT_DISTRIBUTION_ID env var)
 ```
+
+Deployment logic lives in `scripts/deploy.sh`; run `./scripts/deploy.sh --help` for all flags (`--skip-build`, `--skip-invalidate`, `--yes`, etc.).
 
 ## Architecture Overview
 

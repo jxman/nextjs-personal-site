@@ -107,7 +107,7 @@ The site was migrated from Gatsby 5 to Next.js 15 in November 2025, and will con
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   Local Dev     │───▶│  Build Process  │───▶│  AWS S3 Sync    │
-│ (npm run dev)   │    │ (npm run build) │    │ (deploy:prod)   │
+│ (npm run dev)   │    │ (npm run build) │    │ (npm run deploy)│
 └─────────────────┘    └─────────────────┘    └────────┬────────┘
                                                         │
                        ┌────────────────────────────────┘
@@ -322,15 +322,17 @@ git commit --no-verify -m "message"
 ### Deployment (AWS S3 + CloudFront)
 
 ```bash
-# Deploy to production
-npm run deploy:prod      # Build + sync to S3 with cache optimization
+# Full deployment: build + sync to S3 + invalidate CloudFront (recommended)
+npm run deploy
 
-# Invalidate CloudFront cache
-npm run invalidate       # Clear CDN cache for immediate updates
+# Preview what would sync without uploading or invalidating
+npm run deploy:dry-run
 
-# Complete deployment workflow
-npm run deploy:full      # Build + Deploy + Invalidate (recommended)
+# Invalidate CloudFront cache only
+npm run invalidate
 ```
+
+`scripts/deploy.sh` also supports `--skip-build`, `--skip-invalidate`, and `--yes` (skip the production confirmation prompt) — run `./scripts/deploy.sh --help` for the full list.
 
 **Deployment Details:**
 
@@ -475,17 +477,8 @@ module.exports = {
 ### Deployment Workflow
 
 ```bash
-# 1. Build the site
-npm run build
-
-# 2. Deploy to S3 with cache optimization
-npm run deploy:prod
-
-# 3. Invalidate CloudFront cache
-npm run invalidate
-
-# Or run all steps together:
-npm run deploy:full
+# Build + sync to S3 + invalidate CloudFront in one step
+npm run deploy
 ```
 
 ### Cache Strategy

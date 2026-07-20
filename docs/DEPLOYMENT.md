@@ -42,12 +42,13 @@ Google Analytics: Integrated with Next.js Script component
 
 ```bash
 # Full deployment (recommended)
-npm run deploy:full
+npm run deploy
 
-# This runs:
-# 1. npm run build       - Builds Next.js app and generates sitemap
-# 2. npm run deploy:prod - Syncs to S3 with proper cache headers
-# 3. npm run invalidate  - Clears CloudFront cache
+# This runs scripts/deploy.sh, which:
+# 1. Builds the Next.js app (generates sitemap via postbuild)
+# 2. Syncs ./out/ to S3 with proper cache headers
+# 3. Invalidates CloudFront
+# It also prompts for confirmation before touching production.
 ```
 
 ### Individual Commands
@@ -56,11 +57,14 @@ npm run deploy:full
 # Build only
 npm run build
 
-# Deploy to S3 only
-npm run deploy:prod
+# Preview a deploy without uploading or invalidating
+npm run deploy:dry-run
 
 # CloudFront cache invalidation only
 npm run invalidate
+
+# Full flag reference
+./scripts/deploy.sh --help
 ```
 
 ## Post-Deployment Verification
@@ -192,7 +196,7 @@ If issues are discovered after deployment:
    ```bash
    cd /Users/johxan/Documents/my-projects/nextjs/nextjs-personal-site
    # Fix issue
-   npm run deploy:full
+   npm run deploy
    ```
 
 ## Support
@@ -209,4 +213,4 @@ For issues or questions:
 **Migration Completed:** November 3, 2025
 **Status:** ✅ Ready for Production Deployment
 **Build:** 16 pages, 0 errors, 0 warnings
-**Next Steps:** Run `npm run deploy:full` when ready to deploy
+**Next Steps:** Run `npm run deploy` when ready to deploy
