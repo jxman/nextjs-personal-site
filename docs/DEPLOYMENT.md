@@ -66,11 +66,13 @@ npm run invalidate
 ## Post-Deployment Verification
 
 ### 1. Check Homepage
+
 - Visit: https://www.synepho.com
 - Verify dark mode toggles with system preferences
 - Check all navigation links work
 
 ### 2. Verify All Pages
+
 - [ ] Homepage (/)
 - [ ] About (/about)
 - [ ] Projects (/projects)
@@ -79,24 +81,29 @@ npm run invalidate
 - [ ] Blog (/blog)
 
 ### 3. Verify Project Detail Pages
+
 - [ ] AWS Health (/projects/aws-health)
 - [ ] AWS Site (/projects/aws-site)
 - [ ] AWS RSS (/projects/aws-rss)
 - [ ] Lawn (/projects/lawn)
 
 ### 4. Verify Blog Posts
+
 - [ ] AWS Services Dashboard (/blog/aws-services-dashboard-release)
 - [ ] LawnSmart App (/blog/lawnsmartapp-release)
 - [ ] AI Pair Programming (/blog/ai-pair-programming-journey)
 
 ### 5. SEO Verification
+
 - [ ] Check sitemap: https://www.synepho.com/sitemap.xml
 - [ ] Check robots.txt: https://www.synepho.com/robots.txt
 - [ ] Verify favicon appears in browser tab
 - [ ] Test social sharing (LinkedIn, Twitter, Facebook)
 - [ ] Verify Google Analytics tracking (check Real-Time in GA4)
+- [ ] Google Search Console verification file (`public/google*.html`) is deployed and reachable at site root (e.g. <https://www.synepho.com/google02c8998aae91734f.html>)
 
 ### 6. Performance Check
+
 - [ ] Run Lighthouse audit (target: 90+ for all categories)
 - [ ] Check First Contentful Paint < 1.5s
 - [ ] Verify images loading properly
@@ -105,6 +112,7 @@ npm run invalidate
 ## Differences from Gatsby Version
 
 ### Improvements
+
 - ✅ Faster build times with Next.js 15
 - ✅ Better TypeScript support throughout
 - ✅ Simplified routing with App Router
@@ -113,6 +121,7 @@ npm run invalidate
 - ✅ Better dark mode support with DaisyUI themes
 
 ### Identical Features
+
 - ✅ All pages and content migrated
 - ✅ Same styling (Tailwind CSS + DaisyUI)
 - ✅ Same functionality (contact form, navigation, etc.)
@@ -123,21 +132,25 @@ npm run invalidate
 ## Troubleshooting
 
 ### Dark Mode Not Working
+
 - Clear browser cache and reload
 - Check system preferences are set to dark/light mode
 - Verify DaisyUI themes are loaded (check browser console)
 
 ### Images Not Loading
+
 - Check S3 bucket permissions
 - Verify CloudFront cache invalidation completed
 - Check browser Network tab for 404 errors
 
 ### Google Analytics Not Tracking
+
 - Verify GA_MEASUREMENT_ID is correct: G-2HLT4VSZHW
 - Check browser console for gtag errors
 - Wait 24-48 hours for data to appear in GA4
 
 ### Sitemap 404 Error
+
 - Ensure sitemap.xml is in the out/ folder before deployment
 - Verify postbuild script runs: `npm run build` should run next-sitemap
 - Check S3 bucket for sitemap.xml file
@@ -145,12 +158,14 @@ npm run invalidate
 ## Environment Variables
 
 ### Production
+
 ```bash
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-2HLT4VSZHW
 SITE_URL=https://www.synepho.com
 ```
 
 ### Development
+
 ```bash
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-2HLT4VSZHW
 SITE_URL=http://localhost:3000
@@ -161,6 +176,7 @@ SITE_URL=http://localhost:3000
 If issues are discovered after deployment:
 
 1. **Immediate Rollback**
+
    ```bash
    # Re-deploy previous Gatsby version
    cd /Users/johxan/Documents/my-projects/gatsby/personal-site-new
@@ -182,6 +198,7 @@ If issues are discovered after deployment:
 ## Support
 
 For issues or questions:
+
 - Check MIGRATION_GUIDE.md for migration details
 - Check COMPONENT_MAPPING.md for component conversions
 - Check CLAUDE.md for development instructions
