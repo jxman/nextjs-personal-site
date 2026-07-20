@@ -107,10 +107,11 @@ function Footer() {
               {[
                 { href: '/about', label: 'About Me', icon: '👤' },
                 { href: '/projects', label: 'Projects', icon: '🚀' },
+                { href: '/tools', label: 'Cloud Tools', icon: '🛠️' },
                 { href: '/blog', label: 'Blog', icon: '📝' },
                 { href: '/resume', label: 'Resume', icon: '📄' },
                 { href: '/contact', label: 'Contact', icon: '✉️' },
-              ].map(link => (
+              ].map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -199,7 +200,7 @@ function Footer() {
                   { name: 'React', icon: '⚛️' },
                   { name: 'Node.js', icon: '🟢' },
                   { name: 'Terraform', icon: '🏗️' },
-                ].map(tech => (
+                ].map((tech) => (
                   <div
                     key={tech.name}
                     className="flex items-center px-2 py-1 bg-base-100 rounded text-xs text-base-content/60 hover:bg-primary/10 hover:text-primary transition-colors duration-200"

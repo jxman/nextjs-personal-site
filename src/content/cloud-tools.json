@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "name": "AWS Health Dashboard",
+    "description": "Official AWS service health and account-specific event dashboard.",
+    "url": "https://health.aws.amazon.com/health/status",
+    "category": "Status & Monitoring"
+  },
+  {
+    "id": 2,
+    "name": "Azure Status",
+    "description": "Microsoft's official status page for Azure services by region.",
+    "url": "https://azure.status.microsoft/",
+    "category": "Status & Monitoring"
+  },
+  {
+    "id": 3,
+    "name": "Google Cloud Status Dashboard",
+    "description": "Official incident history and current status for Google Cloud Platform.",
+    "url": "https://status.cloud.google.com/",
+    "category": "Status & Monitoring"
+  },
+  {
+    "id": 4,
+    "name": "Oracle Cloud Status",
+    "description": "Official OCI service availability and incident status page.",
+    "url": "https://ocistatus.oraclecloud.com/",
+    "category": "Status & Monitoring"
+  },
+  {
+    "id": 5,
+    "name": "StatusGator",
+    "description": "Aggregates hundreds of vendor status pages into one monitored view.",
+    "url": "https://statusgator.com/",
+    "category": "Status & Monitoring"
+  },
+  {
+    "id": 6,
+    "name": "AWS Cost Explorer",
+    "description": "Visualize, understand, and manage AWS cost and usage over time.",
+    "url": "https://aws.amazon.com/aws-cost-management/aws-cost-explorer/",
+    "category": "Cost & FinOps"
+  },
+  {
+    "id": 7,
+    "name": "Infracost",
+    "description": "Shows cloud cost estimates for Terraform in pull requests before you merge.",
+    "url": "https://www.infracost.io/",
+    "category": "Cost & FinOps"
+  },
+  {
+    "id": 8,
+    "name": "Terraform Registry",
+    "description": "Official registry for Terraform providers and reusable modules.",
+    "url": "https://registry.terraform.io/",
+    "category": "Infrastructure as Code"
+  },
+  {
+    "id": 9,
+    "name": "Terragrunt",
+    "description": "Thin wrapper for Terraform that keeps multi-environment configs DRY.",
+    "url": "https://terragrunt.gruntwork.io/",
+    "category": "Infrastructure as Code"
+  },
+  {
+    "id": 10,
+    "name": "AWS Trusted Advisor",
+    "description": "Automated checks for cost, security, fault tolerance, and performance best practices.",
+    "url": "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/",
+    "category": "Security"
+  },
+  {
+    "id": 11,
+    "name": "Snyk",
+    "description": "Scans code, dependencies, containers, and IaC for known vulnerabilities.",
+    "url": "https://snyk.io/",
+    "category": "Security"
+  }
+]

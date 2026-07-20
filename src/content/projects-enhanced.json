@@ -29,6 +29,8 @@
     "github_link": "https://github.com/jxman/csp-status-hub",
     "status": "Active",
     "featured": true,
+    "tool": true,
+    "tagline": "Real-time status dashboard unifying AWS, Azure, OCI, and GCP health in one view.",
     "tech_stack": [
       "React",
       "TypeScript",
@@ -49,6 +51,8 @@
     "github_link": "https://github.com/jxman/aws-services-dashboard-project",
     "status": "Active",
     "featured": true,
+    "tool": true,
+    "tagline": "Real-time monitoring platform for AWS infrastructure across multiple accounts and regions.",
     "tech_stack": [
       "React",
       "TypeScript",
