@@ -75,5 +75,12 @@
     "description": "Scans code, dependencies, containers, and IaC for known vulnerabilities.",
     "url": "https://snyk.io/",
     "category": "Security"
+  },
+  {
+    "id": 12,
+    "name": "AWS Builder Center",
+    "description": "AWS's community hub for builder content, tutorials, and hands-on resources.",
+    "url": "https://builder.aws.com/",
+    "category": "Learning & Community"
   }
 ]

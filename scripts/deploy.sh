@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Deployment script for the Next.js static export (S3 + CloudFront)
+# Opens the deployed site in the default browser when done.
 # Usage: ./scripts/deploy.sh [options]
 #
 # Options:
@@ -170,6 +171,16 @@ confirm_production() {
     fi
 }
 
+open_site() {
+    if [ "$DRY_RUN" = true ]; then
+        return
+    fi
+
+    if command -v open &> /dev/null; then
+        open "$SITE_URL"
+    fi
+}
+
 main() {
     echo "=========================================="
     echo "Synepho.com Deployment"
@@ -182,6 +193,9 @@ main() {
     if [ "$INVALIDATE_ONLY" = true ]; then
         confirm_production
         invalidate_cache
+        echo ""
+        print_success "Invalidation complete: $SITE_URL"
+        open_site
         exit 0
     fi
 
@@ -192,6 +206,7 @@ main() {
 
     echo ""
     print_success "Deployment complete: $SITE_URL"
+    open_site
 }
 
 main
