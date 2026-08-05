@@ -47,6 +47,9 @@ export default function IndexPage() {
 
             <AnimatedSection animation="fadeInLeft" delay={100}>
               <div className="text-xl lg:text-2xl text-base-content/80 mb-6 space-y-1">
+                <p className="text-2xl font-bold text-base-content tracking-wide">
+                  John Xanthopoulos
+                </p>
                 <p className="font-medium">
                   IT Executive by Day • Developer on Weekends
                 </p>

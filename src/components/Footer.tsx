@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import {
   FaGithub,
@@ -235,9 +236,19 @@ function Footer() {
             <div className="flex items-center gap-4">
               <a
                 href="https://synepho.com"
-                className="text-xs text-base-content/60 hover:text-primary transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-70 hover:opacity-100 transition-opacity duration-200"
+                aria-label="Synepho"
               >
-                synepho.com
+                <Image
+                  src="/images/logo/synepho-logo.png"
+                  alt="Synepho"
+                  width={94}
+                  height={20}
+                  className="h-4 w-auto"
+                  unoptimized
+                />
               </a>
               <div
                 className="w-2 h-2 bg-green-500 rounded-full animate-pulse"

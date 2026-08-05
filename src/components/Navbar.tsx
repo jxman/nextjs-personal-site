@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -44,22 +45,19 @@ function Navbar({ title = 'John Xanthopoulos' }: NavbarProps) {
           <div className="flex items-center">
             <Link
               href="/"
-              className="group flex items-center space-x-3 hover:scale-105 transition-transform duration-200"
+              className="group flex items-center hover:scale-105 transition-transform duration-200"
+              aria-label={title}
             >
-              {/* Professional Logo/Icon */}
-              <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-200">
-                <span className="text-base-100 font-bold text-lg">JX</span>
-              </div>
-
-              {/* Brand Text */}
-              <div className="hidden sm:block">
-                <div className="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-200">
-                  {title}
-                </div>
-                <div className="text-xs text-base-content/60 font-medium">
-                  IT Executive & Cloud Architect
-                </div>
-              </div>
+              {/* Synepho Logo */}
+              <Image
+                src="/images/logo/synepho-logo.png"
+                alt="Synepho"
+                width={188}
+                height={40}
+                className="h-8 w-auto"
+                unoptimized
+                priority
+              />
             </Link>
           </div>
 
