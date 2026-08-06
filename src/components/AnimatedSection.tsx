@@ -5,7 +5,13 @@ import React, { useEffect, useRef, useState, ReactNode } from 'react'
 interface AnimatedSectionProps {
   children: ReactNode
   className?: string
-  animation?: 'fadeInUp' | 'fadeInLeft' | 'fadeInRight' | 'fadeIn' | 'scaleIn' | 'slideInUp'
+  animation?:
+    | 'fadeInUp'
+    | 'fadeInLeft'
+    | 'fadeInRight'
+    | 'fadeIn'
+    | 'scaleIn'
+    | 'slideInUp'
   delay?: number
   threshold?: number
 }
@@ -22,6 +28,8 @@ const AnimatedSection = ({
   const elementRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // Intentional hydration-mounted flag: synchronizes render with client presence.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHasLoaded(true)
 
     if (typeof window === 'undefined' || !window.IntersectionObserver) {
