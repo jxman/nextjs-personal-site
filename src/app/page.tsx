@@ -205,7 +205,7 @@ export default function IndexPage() {
               { name: 'React', icon: '⚛️' },
               { name: 'Node.js', icon: '🟢' },
               { name: 'Terraform', icon: '🏗️' },
-              { name: 'Docker', icon: '🐳' },
+              { name: 'Claude Code', icon: '🤖' },
               { name: 'Kubernetes', icon: '⚓' },
             ].map((tech, index) => (
               <AnimatedSection
