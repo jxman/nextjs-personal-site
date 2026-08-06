@@ -2,12 +2,16 @@
 
 This document outlines planned improvements and enhancements for the Next.js portfolio website.
 
-**Last Updated:** April 29, 2026
+**Last Updated:** August 5, 2026
 **Status:** Active Development - Content & Security Updates 📝
 
 ---
 
 ## Current Status
+
+✅ **Recently Completed (August 5, 2026):**
+
+- ✅ Added dark-mode Synepho logo (blue-on-transparent variant) with CSS-only `dark:` swap in Navbar and Footer
 
 ✅ **Recently Completed (April 29, 2026):**
 
@@ -570,6 +574,25 @@ This document outlines planned improvements and enhancements for the Next.js por
 ---
 
 ## Completed Features
+
+### ✅ Dark-Mode Synepho Logo (Completed: Aug 5, 2026)
+
+**Files Modified:**
+
+- `src/components/Navbar.tsx` - Light/dark logo pair via `dark:` variant
+- `src/components/Footer.tsx` - Light/dark logo pair at footer credit size
+
+**Files Created:**
+
+- `public/images/logo/synepho-logo-dark.png` - Transparent blue wordmark for dark backgrounds
+
+**Features:**
+
+- Pure CSS swap (no JS/state) driven by Tailwind's `dark:` variant, which already tracks the OS-level `prefers-color-scheme` media query
+- No layout shift between light/dark logo variants
+- See `docs/DARK_MODE_LOGO_PLAN.md` for the original implementation plan
+
+---
 
 ### ✅ Blog Page Enhancement (Completed: Nov 5, 2025)
 

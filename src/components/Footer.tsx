@@ -246,7 +246,15 @@ function Footer() {
                   alt="Synepho"
                   width={94}
                   height={20}
-                  className="h-4 w-auto"
+                  className="h-4 w-auto dark:hidden"
+                  unoptimized
+                />
+                <Image
+                  src="/images/logo/synepho-logo-dark.png"
+                  alt="Synepho"
+                  width={94}
+                  height={20}
+                  className="h-4 w-auto hidden dark:block"
                   unoptimized
                 />
               </a>

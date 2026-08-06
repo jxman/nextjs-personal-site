@@ -54,7 +54,16 @@ function Navbar({ title = 'John Xanthopoulos' }: NavbarProps) {
                 alt="Synepho"
                 width={188}
                 height={40}
-                className="h-8 w-auto"
+                className="h-8 w-auto dark:hidden"
+                unoptimized
+                priority
+              />
+              <Image
+                src="/images/logo/synepho-logo-dark.png"
+                alt="Synepho"
+                width={188}
+                height={40}
+                className="h-8 w-auto hidden dark:block"
                 unoptimized
                 priority
               />

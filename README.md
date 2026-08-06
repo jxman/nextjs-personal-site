@@ -356,7 +356,7 @@ npm run invalidate
 
 ### User Experience
 
-- 🌓 **Dark Mode** - System preference detection with DaisyUI themes
+- 🌓 **Dark Mode** - System preference detection with DaisyUI themes, including a dedicated dark-mode logo variant
 - 📱 **Fully Responsive** - Mobile-first design with Tailwind breakpoints
 - ♿ **Accessible** - Semantic HTML, ARIA labels, keyboard navigation
 - ✨ **Smooth Animations** - Intersection Observer-based scroll animations
