@@ -9,8 +9,13 @@ This document outlines planned improvements and enhancements for the Next.js por
 
 ## Current Status
 
+⚠️ **Known Issue (August 5, 2026):**
+
+- Next.js 15.5.22 has 2 open Snyk-flagged vulnerabilities (high: CVE-2025-59472, medium: CVE-2026-27980) only fixed in Next.js 16.x. Deferred pending a dedicated major-version upgrade — see [SECURITY_UPDATE_2026-08-05.md](./SECURITY_UPDATE_2026-08-05.md).
+
 ✅ **Recently Completed (August 5, 2026):**
 
+- ✅ Snyk scan remediation: patched `nanoid` (3.3.16 → 3.3.17) and `sharp` (0.34.5 → 0.35.3) via `package.json` overrides, resolving 5 of 7 flagged vulnerabilities
 - ✅ Added dark-mode Synepho logo (blue-on-transparent variant) with CSS-only `dark:` swap in Navbar and Footer
 
 ✅ **Recently Completed (April 29, 2026):**

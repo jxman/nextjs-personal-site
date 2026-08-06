@@ -533,6 +533,16 @@ IT Executive & Developer | 20+ Years in Technology
 
 ## 🎯 Project History
 
+### August 2026 - Security Updates
+
+**Snyk Vulnerability Remediation (Aug 5, 2026)**
+
+- ✅ Resolved `nanoid` infinite loop vulnerability (CVE-2026-67213) via override to 3.3.17
+- ✅ Resolved `sharp` heap overflow and integer overflow vulnerabilities via override to 0.35.3
+- ⚠️ 2 remaining Next.js-level issues require a Next.js 16.x major upgrade (deferred, see [ROADMAP.md](./docs/ROADMAP.md))
+
+---
+
 ### April 2026 - Content & Security Updates
 
 **New Blog Post (Apr 29, 2026)**
