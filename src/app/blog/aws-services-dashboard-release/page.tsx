@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Layout from '@/components/Layout'
 
 export const metadata: Metadata = {
-  title: 'Building AWS Services Dashboard: A Modular Architecture Journey with AI-Assisted Development',
+  title:
+    'Building AWS Services Dashboard: A Modular Architecture Journey with AI-Assisted Development',
   description:
     'How strategic planning and modular serverless architecture led to a production-ready AWS monitoring platform, built entirely with Claude Code',
   alternates: {
@@ -45,8 +46,8 @@ export default function AWSServicesDashboardPost() {
           </div>
 
           <h1 className="text-4xl lg:text-5xl font-bold text-base-content mb-6 leading-tight">
-            Building AWS Services Dashboard: A Modular Architecture Journey
-            with AI-Assisted Development
+            Building AWS Services Dashboard: A Modular Architecture Journey with
+            AI-Assisted Development
           </h1>
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-base-content/70 mb-8">
@@ -62,7 +63,7 @@ export default function AWSServicesDashboardPost() {
                 rel="noopener noreferrer"
                 className="btn btn-outline btn-sm"
               >
-                View Live Demo
+                View Live Site
                 <svg
                   className="w-4 h-4 ml-1"
                   fill="none"
@@ -95,45 +96,46 @@ export default function AWSServicesDashboardPost() {
           prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic"
         >
           <p className="text-xl text-base-content/70 italic mb-8">
-            When engineering teams and cloud architects design solutions
-            across AWS environments, they need real-time visibility into
-            service availability across regions. This is the story of how
-            strategic planning, modular serverless architecture, and
-            AI-assisted development came together to create a production-ready
-            monitoring platform—written 100% with Claude Code.
+            When engineering teams and cloud architects design solutions across
+            AWS environments, they need real-time visibility into service
+            availability across regions. This is the story of how strategic
+            planning, modular serverless architecture, and AI-assisted
+            development came together to create a production-ready monitoring
+            platform—written 100% with Claude Code.
           </p>
 
           <h2>The Challenge: AWS Service Discovery at Scale</h2>
 
           <p>
-            As organizations expand their AWS footprint across multiple
-            accounts and regions, a common challenge emerges: How do you
-            quickly confirm which services are available in specific regions?
-            When designing new solutions or planning migrations, cloud
-            architects and engineers need instant answers to questions like:
+            As organizations expand their AWS footprint across multiple accounts
+            and regions, a common challenge emerges: How do you quickly confirm
+            which services are available in specific regions? When designing new
+            solutions or planning migrations, cloud architects and engineers
+            need instant answers to questions like:
           </p>
 
           <ul>
             <li>
               Is AWS AppSync available in ap-southeast-3 for our new project?
             </li>
+            <li>Which regions support Amazon Bedrock for our AI initiative?</li>
             <li>
-              Which regions support Amazon Bedrock for our AI initiative?
-            </li>
-            <li>
-              What&apos;s our current service distribution across all AWS accounts?
+              What&apos;s our current service distribution across all AWS
+              accounts?
             </li>
             <li>How has our infrastructure footprint changed over time?</li>
           </ul>
 
           <p>
             Traditional approaches involve manually checking AWS documentation
-            or running CLI commands across multiple accounts—time-consuming
-            and error-prone. We needed a real-time, visual solution that could
+            or running CLI commands across multiple accounts—time-consuming and
+            error-prone. We needed a real-time, visual solution that could
             aggregate this data automatically.
           </p>
 
-          <h2>The Solution: Real-Time AWS Service Discovery and Visualization</h2>
+          <h2>
+            The Solution: Real-Time AWS Service Discovery and Visualization
+          </h2>
 
           <p>
             The AWS Services Dashboard provides comprehensive visibility into
@@ -142,8 +144,8 @@ export default function AWSServicesDashboardPost() {
 
           <ul>
             <li>
-              <strong>Real-time service monitoring</strong> across multiple
-              AWS accounts and regions
+              <strong>Real-time service monitoring</strong> across multiple AWS
+              accounts and regions
             </li>
             <li>
               <strong>Regional deployment tracking</strong> with visual
@@ -194,8 +196,7 @@ export default function AWSServicesDashboardPost() {
               <strong>Tailwind CSS</strong> - Utility-first responsive design
             </li>
             <li>
-              <strong>React Router</strong> - Client-side navigation and
-              routing
+              <strong>React Router</strong> - Client-side navigation and routing
             </li>
           </ul>
 
@@ -209,16 +210,15 @@ export default function AWSServicesDashboardPost() {
               <strong>EventBridge</strong> - Scheduled automated data fetching
             </li>
             <li>
-              <strong>S3</strong> - Scalable storage for service data and
-              static assets
+              <strong>S3</strong> - Scalable storage for service data and static
+              assets
             </li>
             <li>
-              <strong>CloudWatch</strong> - Comprehensive monitoring and
-              logging
+              <strong>CloudWatch</strong> - Comprehensive monitoring and logging
             </li>
             <li>
-              <strong>Terraform</strong> - Infrastructure as Code for
-              repeatable deployments
+              <strong>Terraform</strong> - Infrastructure as Code for repeatable
+              deployments
             </li>
             <li>
               <strong>CloudFront CDN</strong> - Global content delivery with
@@ -235,10 +235,10 @@ export default function AWSServicesDashboardPost() {
           <h2>Modular Architecture: The Key to Managing Complexity</h2>
 
           <p>
-            Here&apos;s where the real learning happened. The project is split into
-            four independent repositories, each with a clear separation of
-            responsibilities. This modular approach combined with AWS
-            serverless services creates a scalable, maintainable system:
+            Here&apos;s where the real learning happened. The project is split
+            into four independent repositories, each with a clear separation of
+            responsibilities. This modular approach combined with AWS serverless
+            services creates a scalable, maintainable system:
           </p>
 
           <h3>1. aws-services-site (Frontend Dashboard)</h3>
@@ -251,22 +251,22 @@ export default function AWSServicesDashboardPost() {
           <h3>2. aws-infrastructure-fetcher (Data Collection)</h3>
           <p>
             A Lambda function that runs on a schedule via EventBridge. Its
-            single responsibility: fetch service data from AWS APIs and store
-            it in S3. No UI concerns, no reporting logic.
+            single responsibility: fetch service data from AWS APIs and store it
+            in S3. No UI concerns, no reporting logic.
           </p>
 
           <h3>3. nodejs-aws-reporter (Excel Report Generation)</h3>
           <p>
             An independent Node.js service that reads S3 data and generates
-            formatted Excel reports. Completely isolated from the dashboard
-            and data collection logic.
+            formatted Excel reports. Completely isolated from the dashboard and
+            data collection logic.
           </p>
 
           <h3>4. synepho-s3cf-site (Infrastructure Provisioning)</h3>
           <p>
             Terraform configurations that provision all AWS resources: S3
-            buckets, CloudFront distributions, Lambda functions, IAM roles,
-            and more. Infrastructure concerns separated from application code.
+            buckets, CloudFront distributions, Lambda functions, IAM roles, and
+            more. Infrastructure concerns separated from application code.
           </p>
 
           <h3>Serverless Architecture Benefits</h3>
@@ -300,8 +300,8 @@ export default function AWSServicesDashboardPost() {
           <blockquote>
             <p>
               <strong>Key Insight:</strong> Breaking the project into these
-              distinct modular components wasn&apos;t just good architecture—it was
-              essential for successful AI-assisted development. Each
+              distinct modular components wasn&apos;t just good architecture—it
+              was essential for successful AI-assisted development. Each
               repository became a manageable, focused context that Claude Code
               could understand and work with effectively.
             </p>
@@ -311,10 +311,10 @@ export default function AWSServicesDashboardPost() {
 
           <p>
             Every line of code in this project was written by Claude Code. But
-            here&apos;s the crucial lesson I learned: AI agents are eager to help
-            and quick to write code. Ask &quot;Write me an application to do X&quot; and
-            you&apos;ll get code immediately. However, as projects grow complex,
-            this approach leads to challenges:
+            here&apos;s the crucial lesson I learned: AI agents are eager to
+            help and quick to write code. Ask &quot;Write me an application to
+            do X&quot; and you&apos;ll get code immediately. However, as
+            projects grow complex, this approach leads to challenges:
           </p>
 
           <ul>
@@ -335,8 +335,8 @@ export default function AWSServicesDashboardPost() {
               unrelated features
             </li>
             <li>
-              <strong>Deployment nightmares</strong> - Monolithic codebases
-              are hard to deploy incrementally
+              <strong>Deployment nightmares</strong> - Monolithic codebases are
+              hard to deploy incrementally
             </li>
           </ul>
 
@@ -349,16 +349,16 @@ export default function AWSServicesDashboardPost() {
 
           <ol>
             <li>
-              <strong>Define clear boundaries</strong> - What does each
-              service do? What doesn&apos;t it do?
+              <strong>Define clear boundaries</strong> - What does each service
+              do? What doesn&apos;t it do?
             </li>
             <li>
               <strong>Map data flows</strong> - How does information move
               between services?
             </li>
             <li>
-              <strong>Establish contracts</strong> - What are the API
-              interfaces and data formats?
+              <strong>Establish contracts</strong> - What are the API interfaces
+              and data formats?
             </li>
             <li>
               <strong>Plan infrastructure</strong> - What AWS resources do we
@@ -371,8 +371,8 @@ export default function AWSServicesDashboardPost() {
           </ol>
 
           <p>
-            Only after these design sessions did we start writing code. And
-            the difference was remarkable:
+            Only after these design sessions did we start writing code. And the
+            difference was remarkable:
           </p>
 
           <ul>
@@ -385,12 +385,12 @@ export default function AWSServicesDashboardPost() {
               direction within defined boundaries
             </li>
             <li>
-              <strong>Easier troubleshooting</strong> - Issues were isolated
-              to specific services
+              <strong>Easier troubleshooting</strong> - Issues were isolated to
+              specific services
             </li>
             <li>
-              <strong>Confident changes</strong> - Updates in one repo didn&apos;t
-              risk breaking others
+              <strong>Confident changes</strong> - Updates in one repo
+              didn&apos;t risk breaking others
             </li>
             <li>
               <strong>Independent deployments</strong> - Services could be
@@ -400,10 +400,10 @@ export default function AWSServicesDashboardPost() {
 
           <blockquote>
             <p>
-              <strong>Pro Tip:</strong> When working with AI coding
-              assistants, resist the urge to get code immediately. Spend time
-              on design. The more complex your project, the more critical this
-              upfront investment becomes.
+              <strong>Pro Tip:</strong> When working with AI coding assistants,
+              resist the urge to get code immediately. Spend time on design. The
+              more complex your project, the more critical this upfront
+              investment becomes.
             </p>
           </blockquote>
 
@@ -416,7 +416,8 @@ export default function AWSServicesDashboardPost() {
           </p>
 
           <p>
-            In traditional teams, you&apos;d never start a complex project without:
+            In traditional teams, you&apos;d never start a complex project
+            without:
           </p>
 
           <ul>
@@ -428,9 +429,9 @@ export default function AWSServicesDashboardPost() {
           </ul>
 
           <p>
-            The same principles apply to AI-assisted development. The AI is
-            your pair programmer, not a magic solution that eliminates the
-            need for good software engineering practices.
+            The same principles apply to AI-assisted development. The AI is your
+            pair programmer, not a magic solution that eliminates the need for
+            good software engineering practices.
           </p>
 
           <h2>Benefits for Engineering Teams and Cloud Architects</h2>
@@ -447,8 +448,8 @@ export default function AWSServicesDashboardPost() {
               solutions
             </li>
             <li>
-              Identify regions supporting new AWS services for
-              proof-of-concept work
+              Identify regions supporting new AWS services for proof-of-concept
+              work
             </li>
             <li>
               Visualize geographic distribution to optimize latency and
@@ -469,12 +470,8 @@ export default function AWSServicesDashboardPost() {
             <li>
               Monitor infrastructure evolution as teams deploy new resources
             </li>
-            <li>
-              Identify service sprawl and opportunities for consolidation
-            </li>
-            <li>
-              Track adoption of new AWS services across the organization
-            </li>
+            <li>Identify service sprawl and opportunities for consolidation</li>
+            <li>Track adoption of new AWS services across the organization</li>
           </ul>
 
           <h3>For DevOps and Platform Teams</h3>
@@ -490,8 +487,8 @@ export default function AWSServicesDashboardPost() {
           <h2>Deployment: Infrastructure as Code All the Way</h2>
 
           <p>
-            The entire platform is deployed using Terraform and GitHub
-            Actions, ensuring:
+            The entire platform is deployed using Terraform and GitHub Actions,
+            ensuring:
           </p>
 
           <ul>
@@ -500,16 +497,16 @@ export default function AWSServicesDashboardPost() {
               versioned and reproducible
             </li>
             <li>
-              <strong>Automated pipelines</strong> - Changes flow through
-              CI/CD automatically
+              <strong>Automated pipelines</strong> - Changes flow through CI/CD
+              automatically
             </li>
             <li>
-              <strong>Environment parity</strong> - Dev, staging, and
-              production match exactly
+              <strong>Environment parity</strong> - Dev, staging, and production
+              match exactly
             </li>
             <li>
-              <strong>Disaster recovery</strong> - Complete rebuild from code
-              in minutes
+              <strong>Disaster recovery</strong> - Complete rebuild from code in
+              minutes
             </li>
             <li>
               <strong>Security compliance</strong> - All changes audited and
@@ -520,14 +517,14 @@ export default function AWSServicesDashboardPost() {
           <h2>Key Takeaways for Your AI-Assisted Projects</h2>
 
           <p>
-            If you&apos;re working with AI coding assistants on complex projects,
-            here are my recommendations:
+            If you&apos;re working with AI coding assistants on complex
+            projects, here are my recommendations:
           </p>
 
           <ol>
             <li>
-              <strong>Design before coding</strong> - Spend significant time
-              on architecture and planning
+              <strong>Design before coding</strong> - Spend significant time on
+              architecture and planning
             </li>
             <li>
               <strong>Break it down</strong> - Split complex systems into
@@ -546,8 +543,8 @@ export default function AWSServicesDashboardPost() {
               code quickly doesn&apos;t mean it should
             </li>
             <li>
-              <strong>Maintain context size</strong> - Keep individual
-              codebases manageable for AI comprehension
+              <strong>Maintain context size</strong> - Keep individual codebases
+              manageable for AI comprehension
             </li>
             <li>
               <strong>Apply traditional practices</strong> - Good software
@@ -568,8 +565,7 @@ export default function AWSServicesDashboardPost() {
               <strong>100% AI-written code</strong> - All by Claude Code
             </li>
             <li>
-              <strong>Sub-second load times</strong> - Thanks to CloudFront
-              CDN
+              <strong>Sub-second load times</strong> - Thanks to CloudFront CDN
             </li>
             <li>
               <strong>Real-time data updates</strong> - Automated via
@@ -593,7 +589,7 @@ export default function AWSServicesDashboardPost() {
 
           <ul>
             <li>
-              <strong>Live Demo:</strong>{' '}
+              <strong>Live Site:</strong>{' '}
               <a
                 href="https://aws-services.synepho.com"
                 target="_blank"
@@ -642,9 +638,9 @@ export default function AWSServicesDashboardPost() {
 
           <p>
             Share your thoughts, experiences, and lessons learned. Whether
-            you&apos;re just starting with AI-assisted development or you&apos;re a
-            seasoned practitioner, the community benefits from shared
-            knowledge and experimentation.
+            you&apos;re just starting with AI-assisted development or
+            you&apos;re a seasoned practitioner, the community benefits from
+            shared knowledge and experimentation.
           </p>
 
           <p>
@@ -673,11 +669,14 @@ export default function AWSServicesDashboardPost() {
               Want to Explore More?
             </h3>
             <p className="mb-4">
-              Check out my other AI-assisted projects and read about my
-              journey with Claude Code:
+              Check out my other AI-assisted projects and read about my journey
+              with Claude Code:
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/projects" className="btn btn-outline btn-primary btn-sm">
+              <Link
+                href="/projects"
+                className="btn btn-outline btn-primary btn-sm"
+              >
                 View All Projects
               </Link>
               <Link

@@ -19,7 +19,7 @@ interface Project {
   image: string
   text: string
   description: string
-  demo_link: string
+  link: string
   github_link: string
   status: string
   featured: boolean

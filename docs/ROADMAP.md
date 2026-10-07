@@ -107,7 +107,7 @@ This document outlines planned improvements and enhancements for the Next.js por
   - Archived (ghost badge)
 - ✅ Category labels (Cloud Infrastructure, Web Application, etc.)
 - ✅ Featured project badge system
-- ✅ Live demo and GitHub links
+- ✅ Live site / case study and GitHub links
 - ✅ Responsive grid layout (1/2/3 columns)
 - ✅ Featured projects section (2-column grid)
 - ✅ Hover effects with image zoom

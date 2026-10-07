@@ -45,8 +45,7 @@ export default function LawnSmartAppReleasePost() {
           </div>
 
           <h1 className="text-4xl lg:text-5xl font-bold text-base-content mb-6 leading-tight">
-            From Weekend Lawn Care to Zone-Intelligent App: Releasing
-            Lawn.Smart
+            From Weekend Lawn Care to Zone-Intelligent App: Releasing Lawn.Smart
           </h1>
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-base-content/70 mb-8">
@@ -62,7 +61,7 @@ export default function LawnSmartAppReleasePost() {
                 rel="noopener noreferrer"
                 className="btn btn-primary btn-sm"
               >
-                Try Lawn.Smart
+                View Live Site
                 <svg
                   className="w-4 h-4 ml-1"
                   fill="none"
@@ -113,8 +112,8 @@ export default function LawnSmartAppReleasePost() {
 
           <p>
             Anyone who knows me understands that lawn care isn&apos;t just a
-            weekend chore — it&apos;s a passion project. There&apos;s something deeply
-            satisfying about creating those perfect lawn stripes, timing
+            weekend chore — it&apos;s a passion project. There&apos;s something
+            deeply satisfying about creating those perfect lawn stripes, timing
             fertilizer applications just right, and watching a custom blend of
             Kentucky Bluegrass and Perennial Rye transform into a vibrant
             outdoor living space where family and friends can gather for BBQs
@@ -125,9 +124,9 @@ export default function LawnSmartAppReleasePost() {
             But as an IT executive who spends his days architecting cloud
             solutions and his evenings tinkering with React components, I kept
             noticing a problem: lawn care guidance was either too generic
-            (&quot;fertilize in spring&quot;) or buried in agricultural extension
-            websites that weren&apos;t exactly user-friendly. What if there was a
-            better way?
+            (&quot;fertilize in spring&quot;) or buried in agricultural
+            extension websites that weren&apos;t exactly user-friendly. What if
+            there was a better way?
           </p>
 
           <h2>Enter AI-Powered Development and &quot;Vibe Coding&quot;</h2>
@@ -136,18 +135,19 @@ export default function LawnSmartAppReleasePost() {
             My recent journey into AI-assisted development has been nothing
             short of transformative. After successfully using Claude to build
             production-grade AWS infrastructure and discovering the power of
-            &quot;vibe coding&quot; — that flow state where you&apos;re jamming with an AI
-            pair programmer — I realized I had the perfect opportunity to
-            solve my lawn care problem.
+            &quot;vibe coding&quot; — that flow state where you&apos;re jamming
+            with an AI pair programmer — I realized I had the perfect
+            opportunity to solve my lawn care problem.
           </p>
 
           <blockquote>
             <p>
-              &quot;Vibe coding&quot; is what happens when you find that perfect rhythm
-              with an AI assistant. You&apos;re not just asking it to write code;
-              you&apos;re collaborating, iterating, and building something
-              together. It&apos;s like having the most patient, knowledgeable
-              coding partner who never gets tired of your questions.
+              &quot;Vibe coding&quot; is what happens when you find that perfect
+              rhythm with an AI assistant. You&apos;re not just asking it to
+              write code; you&apos;re collaborating, iterating, and building
+              something together. It&apos;s like having the most patient,
+              knowledgeable coding partner who never gets tired of your
+              questions.
             </p>
           </blockquote>
 
@@ -172,19 +172,20 @@ export default function LawnSmartAppReleasePost() {
               functionality, notifications, mobile optimization
             </li>
             <li>
-              <strong>Performance Optimization:</strong> Fast loading,
-              efficient caching, responsive design
+              <strong>Performance Optimization:</strong> Fast loading, efficient
+              caching, responsive design
             </li>
           </ul>
 
           <h2>Building Something Actually Useful</h2>
 
           <p>
-            What started as &quot;I wish I had a better way to track my lawn care
-            tasks&quot; evolved into something much bigger. Working with Claude, we
-            identified that the real problem wasn&apos;t just task management — it
-            was the lack of location-specific, scientifically-backed guidance
-            that regular homeowners could actually use.
+            What started as &quot;I wish I had a better way to track my lawn
+            care tasks&quot; evolved into something much bigger. Working with
+            Claude, we identified that the real problem wasn&apos;t just task
+            management — it was the lack of location-specific,
+            scientifically-backed guidance that regular homeowners could
+            actually use.
           </p>
 
           <h3>The Core Features That Emerged</h3>
@@ -239,8 +240,8 @@ export default function LawnSmartAppReleasePost() {
               concurrent features
             </li>
             <li>
-              <strong>Tailwind CSS 3.x:</strong> Utility-first CSS with a
-              custom design system
+              <strong>Tailwind CSS 3.x:</strong> Utility-first CSS with a custom
+              design system
             </li>
             <li>
               <strong>Progressive Web App:</strong> Install-to-home-screen
@@ -255,19 +256,19 @@ export default function LawnSmartAppReleasePost() {
           <h3>The Design Philosophy</h3>
 
           <p>
-            Working with Claude, we developed what I call &quot;glassmorphism with
-            purpose&quot; — a modern UI that uses backdrop blur effects and
+            Working with Claude, we developed what I call &quot;glassmorphism
+            with purpose&quot; — a modern UI that uses backdrop blur effects and
             translucent surfaces not just because they look cool, but because
-            they create visual hierarchy that helps users focus on what
-            matters most for their lawn at any given time.
+            they create visual hierarchy that helps users focus on what matters
+            most for their lawn at any given time.
           </p>
 
           <h2>The AI Development Experience</h2>
 
           <p>
             What made this project special was the collaborative nature of
-            AI-assisted development. Claude wasn&apos;t just writing code; it was
-            helping me think through user experience challenges, suggesting
+            AI-assisted development. Claude wasn&apos;t just writing code; it
+            was helping me think through user experience challenges, suggesting
             performance optimizations I hadn&apos;t considered, and even helping
             structure the complex data relationships between USDA zones,
             seasonal timing, and regional variations.
@@ -285,8 +286,8 @@ export default function LawnSmartAppReleasePost() {
             </p>
             <p>
               <strong>Claude:</strong> &quot;How about a modal that auto-detects
-              their zone but lets them verify and adjust? We could group
-              states by similar growing conditions...&quot;
+              their zone but lets them verify and adjust? We could group states
+              by similar growing conditions...&quot;
             </p>
           </blockquote>
 
@@ -295,31 +296,32 @@ export default function LawnSmartAppReleasePost() {
           </p>
           <blockquote>
             <p>
-              <strong>Claude:</strong> &quot;Since we&apos;re dealing with monthly data,
-              we could implement lazy loading for non-current months and use
-              React.memo for expensive calculations...&quot;
+              <strong>Claude:</strong> &quot;Since we&apos;re dealing with
+              monthly data, we could implement lazy loading for non-current
+              months and use React.memo for expensive calculations...&quot;
             </p>
             <p>
-              <strong>Me:</strong> &quot;I hadn&apos;t thought about that — show me how
-              that would work!&quot;
+              <strong>Me:</strong> &quot;I hadn&apos;t thought about that — show
+              me how that would work!&quot;
             </p>
           </blockquote>
 
           <h2>Real-World Impact: Beyond Just Another App</h2>
 
           <p>
-            Lawn.Smart isn&apos;t just a technical achievement; it&apos;s solving a real
-            problem I experience every weekend. The app provides something
-            that didn&apos;t exist before: comprehensive, zone-specific lawn care
-            guidance that&apos;s actually accessible to regular homeowners.
+            Lawn.Smart isn&apos;t just a technical achievement; it&apos;s
+            solving a real problem I experience every weekend. The app provides
+            something that didn&apos;t exist before: comprehensive,
+            zone-specific lawn care guidance that&apos;s actually accessible to
+            regular homeowners.
           </p>
 
           <h3>What Makes It Different</h3>
 
           <ul>
             <li>
-              <strong>Scientifically Grounded:</strong> Based on USDA
-              hardiness data and agricultural best practices
+              <strong>Scientifically Grounded:</strong> Based on USDA hardiness
+              data and agricultural best practices
             </li>
             <li>
               <strong>Regionally Accurate:</strong> A Massachusetts lawn needs
@@ -338,8 +340,8 @@ export default function LawnSmartAppReleasePost() {
           <h2>The Data Challenge: Making Science Accessible</h2>
 
           <p>
-            One of the most interesting technical challenges was structuring
-            the vast amount of lawn care data in a way that could be both
+            One of the most interesting technical challenges was structuring the
+            vast amount of lawn care data in a way that could be both
             scientifically accurate and user-friendly. We ended up with a
             hierarchical system that starts with base lawn care practices and
             then applies zone-specific and state-specific modifications.
@@ -349,8 +351,8 @@ export default function LawnSmartAppReleasePost() {
             For example, the app knows that grub prevention timing in
             Massachusetts (zone 6a) happens in late June, while the same
             treatment in Georgia (zone 8a) should happen in early May. These
-            aren&apos;t arbitrary dates — they&apos;re based on soil temperature data
-            and pest lifecycle research.
+            aren&apos;t arbitrary dates — they&apos;re based on soil temperature
+            data and pest lifecycle research.
           </p>
 
           <h2>Deployment and Going Live</h2>
@@ -392,8 +394,8 @@ export default function LawnSmartAppReleasePost() {
               documentation with AI-powered lawn health analysis
             </li>
             <li>
-              <strong>Community Features:</strong> Share progress and tips
-              with other lawn enthusiasts in your zone
+              <strong>Community Features:</strong> Share progress and tips with
+              other lawn enthusiasts in your zone
             </li>
             <li>
               <strong>Equipment Management:</strong> Maintenance schedules for
@@ -405,18 +407,18 @@ export default function LawnSmartAppReleasePost() {
 
           <p>
             Lawn.Smart represents something bigger than just a lawn care app —
-            it&apos;s proof that AI-assisted development can help solo developers
-            create sophisticated, useful applications that would have required
-            entire teams just a few years ago.
+            it&apos;s proof that AI-assisted development can help solo
+            developers create sophisticated, useful applications that would have
+            required entire teams just a few years ago.
           </p>
 
           <p>
-            The &quot;vibe coding&quot; experience of building this with Claude wasn&apos;t
-            just about efficiency; it was genuinely creative and
-            collaborative. The AI helped me think through problems I wouldn&apos;t
-            have considered, suggested optimizations that improved the user
-            experience, and even helped structure this very blog post you&apos;re
-            reading.
+            The &quot;vibe coding&quot; experience of building this with Claude
+            wasn&apos;t just about efficiency; it was genuinely creative and
+            collaborative. The AI helped me think through problems I
+            wouldn&apos;t have considered, suggested optimizations that improved
+            the user experience, and even helped structure this very blog post
+            you&apos;re reading.
           </p>
 
           <h2>Try It Yourself</h2>
@@ -430,10 +432,10 @@ export default function LawnSmartAppReleasePost() {
             >
               lawnsmartapp.com
             </a>{' '}
-            and give Lawn.Smart a try. Whether you&apos;re dealing with cool-season
-            grasses in Minnesota or warm-season varieties in Arizona, the app
-            will provide zone-specific guidance tailored to your local growing
-            conditions.
+            and give Lawn.Smart a try. Whether you&apos;re dealing with
+            cool-season grasses in Minnesota or warm-season varieties in
+            Arizona, the app will provide zone-specific guidance tailored to
+            your local growing conditions.
           </p>
 
           <p>
@@ -447,18 +449,17 @@ export default function LawnSmartAppReleasePost() {
 
           <p>
             At the end of the day, Lawn.Smart grew out of my genuine love for
-            creating beautiful outdoor spaces and my fascination with how AI
-            can amplify human creativity and problem-solving. Every feature in
-            the app reflects real challenges I&apos;ve faced while working on my
-            own lawn, and every line of code was written with the goal of
-            helping other lawn enthusiasts achieve that perfect weekend BBQ
-            backdrop.
+            creating beautiful outdoor spaces and my fascination with how AI can
+            amplify human creativity and problem-solving. Every feature in the
+            app reflects real challenges I&apos;ve faced while working on my own
+            lawn, and every line of code was written with the goal of helping
+            other lawn enthusiasts achieve that perfect weekend BBQ backdrop.
           </p>
 
           <p>
-            Whether you&apos;re just starting your lawn care journey or you&apos;re a
-            seasoned weekend warrior like me, I hope Lawn.Smart helps you
-            create the outdoor space of your dreams. Happy mowing!
+            Whether you&apos;re just starting your lawn care journey or
+            you&apos;re a seasoned weekend warrior like me, I hope Lawn.Smart
+            helps you create the outdoor space of your dreams. Happy mowing!
           </p>
 
           <div className="bg-primary/5 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
@@ -500,7 +501,7 @@ export default function LawnSmartAppReleasePost() {
                 rel="noopener noreferrer"
                 className="btn btn-primary btn-sm"
               >
-                Try Lawn.Smart
+                View Live Site
               </a>
             </div>
           </div>

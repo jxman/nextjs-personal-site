@@ -18,7 +18,7 @@ interface OwnTool {
   id: number
   name: string
   tagline: string
-  demo_link: string
+  link: string
   tool?: boolean
 }
 
@@ -65,7 +65,7 @@ export default function Tools() {
                   <ToolCard
                     name={tool.name}
                     description={tool.tagline}
-                    url={tool.demo_link}
+                    url={tool.link}
                     badge="Built by Me"
                   />
                 </AnimatedSection>
