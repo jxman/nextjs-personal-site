@@ -1,6 +1,25 @@
 {
   "posts": [
     {
+      "slug": "cloud-status-hub-ai-insight",
+      "title": "Beyond the Outage Notification: Building Cloud Status Hub with AI Insight",
+      "excerpt": "Why I built a single view of AWS, Azure, GCP, and OCI health — and how AI-generated technical and executive briefs turn a simple outage alert into real-time guidance on impact, recovery, and resiliency.",
+      "author": "John Xanthopoulos",
+      "publishedDate": "2026-10-07",
+      "readingTime": 7,
+      "tags": [
+        "Multi-Cloud",
+        "AI",
+        "Claude",
+        "AWS",
+        "Resiliency",
+        "Product Launch"
+      ],
+      "featured": true,
+      "thumbnail": "/images/blog/cloud-status-hub.png",
+      "category": "Cloud Architecture"
+    },
+    {
       "slug": "lawn-smart-redesign-claude-design",
       "title": "Learning to See Like a Designer: A Cloud Architect's Redesign of Lawn.Smart",
       "excerpt": "How Claude Design helped a cloud architect without formal design training execute a complete UI overhaul of Lawn.Smart — and why design tokens were the most valuable thing learned along the way.",
@@ -15,7 +34,7 @@
         "Agentic Workflows",
         "PWA"
       ],
-      "featured": true,
+      "featured": false,
       "thumbnail": "/images/blog/claude-design.png",
       "category": "Product Development"
     },
@@ -78,6 +97,8 @@
     "Claude",
     "Web Development",
     "Agentic Workflows",
-    "PWA"
+    "PWA",
+    "Multi-Cloud",
+    "Resiliency"
   ]
 }

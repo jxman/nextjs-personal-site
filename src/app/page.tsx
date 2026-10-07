@@ -243,37 +243,37 @@ export default function IndexPage() {
                 <div className="card-body">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="badge badge-primary">New</div>
-                    <div className="badge badge-outline">Design</div>
-                    <div className="badge badge-accent">Claude</div>
+                    <div className="badge badge-outline">Multi-Cloud</div>
+                    <div className="badge badge-accent">AI</div>
                   </div>
 
                   <h3 className="card-title text-2xl mb-4">
                     <Link
-                      href="/blog/lawn-smart-redesign-claude-design"
+                      href="/blog/cloud-status-hub-ai-insight"
                       className="hover:text-primary transition-colors"
                     >
-                      Learning to See Like a Designer: A Cloud Architect&apos;s
-                      Redesign of Lawn.Smart
+                      Beyond the Outage Notification: Building Cloud Status Hub
+                      with AI Insight
                     </Link>
                   </h3>
 
                   <p className="text-base-content/70 mb-6 leading-relaxed">
-                    How Claude Design helped a cloud architect without formal
-                    design training execute a complete UI overhaul of Lawn.Smart
-                    — and why design tokens were the most valuable thing learned
-                    along the way.
+                    Why I built a single view of AWS, Azure, GCP, and OCI health
+                    — and how AI-generated technical and executive briefs turn a
+                    simple outage alert into real-time guidance on impact,
+                    recovery, and resiliency.
                   </p>
 
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <div className="flex items-center gap-4 text-sm text-base-content/60">
-                      <span>Published: April 29, 2026</span>
+                      <span>Published: October 7, 2026</span>
                       <span className="hidden sm:inline">•</span>
-                      <span>10 min read</span>
+                      <span>7 min read</span>
                     </div>
 
                     <div className="flex gap-3">
                       <Link
-                        href="/blog/lawn-smart-redesign-claude-design"
+                        href="/blog/cloud-status-hub-ai-insight"
                         className="btn btn-primary hover:scale-105 transition-transform duration-200"
                       >
                         Read More

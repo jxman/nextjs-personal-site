@@ -195,6 +195,7 @@ nextjs-personal-site/
 │   │   ├── blog/               # Blog section
 │   │   │   ├── page.tsx        # Blog listing
 │   │   │   ├── [slug]/         # Dynamic blog routes
+│   │   │   ├── cloud-status-hub-ai-insight/
 │   │   │   ├── lawn-smart-redesign-claude-design/
 │   │   │   ├── ai-pair-programming-journey/
 │   │   │   ├── aws-services-dashboard-release/
@@ -392,6 +393,7 @@ npm run invalidate
 | `/projects/aws-site`                      | AWS Static Hosting project details         | Static |
 | `/projects/lawn`                          | LawnSmart App project details              | Static |
 | `/blog`                                   | Blog listing page                          | Static |
+| `/blog/cloud-status-hub-ai-insight`       | Cloud Status Hub with AI Insight           | Static |
 | `/blog/lawn-smart-redesign-claude-design` | Lawn.Smart redesign with Claude Design     | Static |
 | `/blog/aws-services-dashboard-release`    | AWS Dashboard blog post                    | Static |
 | `/blog/lawnsmartapp-release`              | LawnSmart App blog post                    | Static |

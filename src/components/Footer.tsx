@@ -46,6 +46,26 @@ function Footer() {
               </h4>
               <div className="space-y-2">
                 <Link
+                  href="/blog/cloud-status-hub-ai-insight"
+                  className="flex items-center text-sm text-base-content/70 hover:text-primary transition-colors duration-200 group"
+                >
+                  <span className="mr-2">📡</span>
+                  Cloud Status Hub - Multi-Cloud Status + AI Insight
+                  <svg
+                    className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </Link>
+                <Link
                   href="/blog/aws-services-dashboard-release"
                   className="flex items-center text-sm text-base-content/70 hover:text-primary transition-colors duration-200 group"
                 >
