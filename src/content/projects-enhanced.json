@@ -84,15 +84,21 @@
   },
   {
     "id": 4,
-    "name": "Tesla Dashboard",
-    "image": "/images/tesla-app.png",
-    "text": "A comprehensive React-based dashboard designed for Tesla vehicle browsers, providing location-based weather, traffic conditions, news updates, and nearby points of interest.",
-    "description": "Features real-time weather with detailed forecasts, live news feeds, traffic conditions via Waze integration, and GPS location detection. Built with React 18 and Tailwind CSS with a Tesla-themed dark UI optimized for in-vehicle use.",
+    "name": "Tesla Drive Companion",
+    "image": "/images/tesla-drive-companion.png",
+    "text": "A touch-optimized companion app for the Tesla in-car browser, bringing live weather, traffic, news, and nearby places together in a single tabbed interface.",
+    "description": "Features current conditions with a driving-conditions summary and estimated highway range impact, a 12-hour temperature trend, daily and hourly forecasts, live Waze traffic, categorized news, and OpenStreetMap-powered nearby places. Built with React 18, Vite, and Tailwind CSS with a dark, Tesla-inspired UI and large touch targets for in-vehicle use.",
     "link": "https://teslaweather.netlify.app/",
     "github_link": "https://github.com/jxman/tesla-app",
     "status": "Active",
     "featured": false,
-    "tech_stack": ["React", "Tailwind CSS", "Weather API", "Netlify"],
+    "tech_stack": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "OpenWeather API",
+      "Netlify"
+    ],
     "category": "Web Application"
   },
   {
