@@ -1,30 +1,27 @@
-# About Me
+# Hi, I'm John
 
-## Personal Life
+I'm a technology leader who still loves to build. For more than 20 years I've led the teams and platforms behind cloud-centric systems, and in my spare time I'm usually shipping something of my own.
 
-Greetings! I'm John, a devoted husband to my wonderful wife Michelle and a proud "Girl Dad" to my daughter Mia. When I'm not spending quality time with family and friends, you'll find me outdoors tending to my lawn or at my CrossFit box, dedicatedly perfecting my deadlifts.
+## What I Do
 
-## Professional Journey
+I lead a global team of talented platform engineers across cloud, DevOps, and architecture, helping drive cloud and AI enablement across the organization. Our platforms host over 3,000 investor relations sites, including 63% of the Fortune 500, and deliver more than 16,000 webcasts a year.
 
-With over two decades in IT leadership, I have a genuine passion for building high-performing systems, teams, and processes. Currently, I serve as an IT Executive at a leading Cloud Communications company, where I guide a global team of talented directors and engineers.
+What I care about most is building high-performing systems, teams, and processes: designing for reliability, keeping cloud spend honest, and growing engineers into leaders.
 
-### What Drives Me
+## What I'm Building
 
-Beyond my executive role, I'm a "techie at heart" who finds joy in:
+Outside of work, I'm a techie at heart. I build and ship my own apps on AWS — from Terraform and Lambda on the back end to React on the front end — increasingly with AI-assisted tools like Claude Code. A few recent ones:
 
-- **Hands-on Development**: Building applications and experimenting with new frameworks
-- **Continuous Learning**: Staying current with emerging technologies and methodologies
-- **Team Building**: Developing people and fostering collaborative, high-performance cultures
-- **Innovation**: Finding creative solutions to complex technical and business challenges
+- **[Cloud Status Hub](https://cloudstatus.synepho.com)** — multi-cloud service status with AI-generated insights
+- **[Lawn.Smart](https://www.lawnsmartapp.com)** — a USDA zone-aware lawn care app
+- **[AWS Services Dashboard](https://aws-services.synepho.com)** — monitoring AWS service and region availability
 
-## Philosophy
+I write about what I learn along the way on the [blog](/blog/).
 
-Embracing change and fostering a love for learning are core values that guide both my personal and professional life. Whether stepping into a CrossFit gym for the first time or diving deep into the latest React framework, I believe in staying focused on the goal while relishing the journey.
+## Away From the Keyboard
 
-## About SYNEPHO
+I'm a devoted husband to my wife Michelle and a proud girl dad to our daughter Mia. When I'm not with family and friends, you'll find me outside tending my lawn or at my CrossFit box chasing a new deadlift PR. Whether it's a first CrossFit class or a new framework, I believe in embracing change, staying focused on the goal, and enjoying the journey.
 
-Curious about my domain name? **SYNEPHO** is a phonetic rendition of the Greek word for Cloud, "σύννεφο," reflecting my deep connection with cloud computing technologies and my commitment to helping organizations leverage the power of the cloud.
+## Why "SYNEPHO"?
 
----
-
-_Ready to connect? Feel free to reach out through [LinkedIn](https://www.linkedin.com/in/johnx/) or the [contact form](/contact/) on this site._
+**SYNEPHO** (pronounced _SEE-neh-fo_) is a phonetic spelling of σύννεφο, the Greek word for cloud — a nod to the technology I've built my career around.
