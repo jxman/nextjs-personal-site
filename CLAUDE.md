@@ -37,12 +37,12 @@ Husky wires two git hooks; both run automatically on every commit (`prepare: hus
 **`.husky/pre-commit`** (in order):
 
 1. Blocks the commit if any staged file still has unresolved `<<<<<<<`/`=======`/`>>>>>>>` merge-conflict markers
-2. `gitleaks protect --staged --redact` — scans staged changes for secrets (AWS keys, tokens, etc.). Requires `gitleaks` installed via `brew install gitleaks` (no trustworthy npm package exists for it); the hook fails closed with an install hint if the binary is missing
+2. `ggshield secret scan pre-commit` — scans staged changes for secrets (AWS keys, tokens, etc.) via GitGuardian. Requires `ggshield` installed via `brew install ggshield` and a one-time `ggshield auth login` (no trustworthy npm package exists for it); the hook fails closed with an install hint if the binary is missing
 3. `npx lint-staged` — runs `eslint --fix` + `prettier --write` on staged `*.{js,jsx,ts,tsx}`, and `prettier --write` on staged `*.{json,md,css}`
 
 **`.husky/commit-msg`**: `commitlint` (`commitlint.config.js` extends `@commitlint/config-conventional`) enforces Conventional Commits formatting (`type(scope): subject`) on the commit message.
 
-To verify the hooks after touching them: stage a file with a `debugger;` statement (blocked by lint), a file with conflict markers (blocked), a file with an `AKIA...`-shaped fake key (blocked by gitleaks), and try `git commit -m "not conventional"` (blocked by commitlint) — then confirm a clean, conventional commit succeeds.
+To verify the hooks after touching them: stage a file with a `debugger;` statement (blocked by lint), a file with conflict markers (blocked), a file with an `AKIA...`-shaped fake key (blocked by ggshield), and try `git commit -m "not conventional"` (blocked by commitlint) — then confirm a clean, conventional commit succeeds.
 
 ### Deployment (AWS S3)
 
