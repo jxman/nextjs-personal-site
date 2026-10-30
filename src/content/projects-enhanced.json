@@ -102,6 +102,26 @@
     "category": "Web Application"
   },
   {
+    "id": 10,
+    "name": "Brew Updates - Homebrew Update Assistant",
+    "image": "/images/brew-updates/dashboard.png",
+    "text": "A locally run macOS tool that keeps Homebrew updated, backed up, health-checked and scanned for vulnerabilities. A scheduled Bash script does the work every night, and a native SwiftUI menu bar and window app shows the results and lets you act on them.",
+    "description": "A launchd LaunchAgent runs the script daily: brew update, upgrade outdated formulae and casks (respecting pins and exclusions), and cleanup, with a Brewfile backup before every run. Each run saves a brew doctor report, Grype and brew vulns (OSV.dev) security scans, and a JSON summary. The Swift 6 app adds Dashboard, Installed, Runs, Security, Doctor and Backups screens for pinning, uninstalling, restoring and scheduling.",
+    "link": "/projects/brew-updates",
+    "github_link": "https://github.com/jxman/homebrew-update-assistant",
+    "status": "Active",
+    "featured": false,
+    "tech_stack": [
+      "Swift 6",
+      "SwiftUI",
+      "Bash",
+      "Homebrew",
+      "launchd",
+      "Grype"
+    ],
+    "category": "Desktop Application"
+  },
+  {
     "id": 5,
     "name": "AWS Health Notifications",
     "image": "/images/aws-architecture-official-icons.svg",
