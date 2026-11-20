@@ -19,7 +19,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "marked": "^16.4.2",
+    "marked": "^18.2.1",
     "next": "16.4.6",
     "next-sitemap": "^4.2.3",
     "react": "19.2.8",
