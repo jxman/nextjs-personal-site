@@ -74,17 +74,14 @@ updates:
     # assignees:
     #   - "jxman"
 
-    # Only allow security updates for pinned dependencies
-    # This prevents Dependabot from trying to upgrade Next.js beyond 15.0.5
     versioning-strategy: "increase-if-necessary"
 
-    # Ignore specific dependencies (if needed)
+    # Ignore major version updates (handled manually). Minor/patch updates must
+    # stay allowed: ignore rules also block security updates, and Next.js ships
+    # security fixes in minor releases.
     ignore:
-      # Ignore major version updates for Next.js (we control this manually)
       - dependency-name: "next"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
-
-      # Ignore major version updates for React (stable on 18.x)
+        update-types: ["version-update:semver-major"]
       - dependency-name: "react"
         update-types: ["version-update:semver-major"]
       - dependency-name: "react-dom"
@@ -109,8 +106,14 @@ updates:
       time: "09:00"
       timezone: "America/New_York"
 
+    # One PR for all action updates instead of one per action
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
     commit-message:
-      prefix: "chore(ci)"
+      prefix: "ci"
 
     labels:
       - "ci"
