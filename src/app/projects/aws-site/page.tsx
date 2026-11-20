@@ -90,15 +90,14 @@ export default function AWSSite() {
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
                       Traffic is automatically routed to the secondary West
-                      region should the primary East region fail for any
-                      reason.
+                      region should the primary East region fail for any reason.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
-                      DNS and TLS/SSL certificates are automatically managed
-                      by AWS Route53 and ACM.
+                      DNS and TLS/SSL certificates are automatically managed by
+                      AWS Route53 and ACM.
                     </span>
                   </li>
                 </ul>

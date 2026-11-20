@@ -72,7 +72,9 @@ export default function ResumeClient({ html }: ResumeClientProps) {
                   />
                 </svg>
               )}
-              <span className="hidden sm:inline">{isProcessing ? 'Opening...' : 'Print'}</span>
+              <span className="hidden sm:inline">
+                {isProcessing ? 'Opening...' : 'Print'}
+              </span>
             </button>
             <button
               onClick={handleDownload}
@@ -95,7 +97,9 @@ export default function ResumeClient({ html }: ResumeClientProps) {
                   />
                 </svg>
               )}
-              <span className="hidden sm:inline">{isProcessing ? 'Opening...' : 'Download PDF'}</span>
+              <span className="hidden sm:inline">
+                {isProcessing ? 'Opening...' : 'Download PDF'}
+              </span>
             </button>
           </div>
         </div>

@@ -17,6 +17,7 @@ Your Next.js migration project is fully set up and ready for development!
 ## 📋 Files Created
 
 ### Configuration Files ✅
+
 - ✅ `package.json` - Dependencies and scripts
 - ✅ `next.config.js` - Next.js config (static export for S3)
 - ✅ `tsconfig.json` - TypeScript configuration
@@ -29,6 +30,7 @@ Your Next.js migration project is fully set up and ready for development!
 - ✅ `.env.local` - Local development environment
 
 ### Documentation Files ✅
+
 - ✅ `README.md` - Project overview and status
 - ✅ `MIGRATION_GUIDE.md` - Complete migration roadmap (16KB)
 - ✅ `COMPONENT_MAPPING.md` - Component conversion guide (12KB)
@@ -37,11 +39,13 @@ Your Next.js migration project is fully set up and ready for development!
 - ✅ `PROJECT_SUMMARY.md` - This file
 
 ### Source Code ✅
+
 - ✅ `src/app/layout.tsx` - Root layout with metadata
 - ✅ `src/app/page.tsx` - Homepage placeholder
 - ✅ `src/app/globals.css` - Global styles (Tailwind)
 
 ### Folder Structure ✅
+
 ```
 nextjs-personal-site/
 ├── src/
@@ -72,6 +76,7 @@ nextjs-personal-site/
 ## 🎯 Current Status
 
 ### Phase 1: Setup ✅ **COMPLETE**
+
 - [x] Next.js 15 project initialized
 - [x] TypeScript configured
 - [x] Tailwind CSS + DaisyUI configured
@@ -80,7 +85,9 @@ nextjs-personal-site/
 - [x] Development environment ready
 
 ### Phase 2: Component Migration ⏳ **NEXT**
+
 Ready to migrate 6 components from Gatsby:
+
 1. Footer.js → Footer.tsx
 2. Navbar.js → Navbar.tsx
 3. Layout.js → Layout.tsx
@@ -143,11 +150,13 @@ All guides are comprehensive and ready to use:
 ### For Your Next Claude Code Session:
 
 1. **Open new Claude Code session in this folder:**
+
    ```bash
    cd /Users/johxan/Documents/my-projects/nextjs-personal-site
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
@@ -164,16 +173,16 @@ All guides are comprehensive and ready to use:
 
 With Claude Code assistance:
 
-| Phase | Tasks | Estimated Time |
-|-------|-------|----------------|
-| ✅ Phase 1 | Setup | **Complete** |
-| Phase 2 | Component Migration (6 components) | 2.5-3.5 hours |
-| Phase 3 | Page Migration (10+ pages) | 6-8 hours |
-| Phase 4 | Content & Assets | 3-4 hours |
-| Phase 5 | SEO & Metadata | 2-3 hours |
-| Phase 6 | Features & Testing | 3-4 hours |
-| Phase 7 | Build & Deploy | 2-3 hours |
-| Phase 8 | Testing & Optimization | 3-4 hours |
+| Phase      | Tasks                              | Estimated Time |
+| ---------- | ---------------------------------- | -------------- |
+| ✅ Phase 1 | Setup                              | **Complete**   |
+| Phase 2    | Component Migration (6 components) | 2.5-3.5 hours  |
+| Phase 3    | Page Migration (10+ pages)         | 6-8 hours      |
+| Phase 4    | Content & Assets                   | 3-4 hours      |
+| Phase 5    | SEO & Metadata                     | 2-3 hours      |
+| Phase 6    | Features & Testing                 | 3-4 hours      |
+| Phase 7    | Build & Deploy                     | 2-3 hours      |
+| Phase 8    | Testing & Optimization             | 3-4 hours      |
 
 **Total: 3-4 days of focused work with Claude Code**
 
@@ -182,6 +191,7 @@ With Claude Code assistance:
 ## 🎓 What Claude Code Will Handle
 
 **High Automation (80%+):**
+
 - Component TypeScript conversion
 - Page structure migration
 - Import statement updates
@@ -189,12 +199,14 @@ With Claude Code assistance:
 - Content file organization
 
 **Medium Automation (60-70%):**
+
 - Image optimization
 - Dynamic routing setup
 - Form handling
 - Error boundary setup
 
 **Low Automation (requires review):**
+
 - Visual design verification
 - UX testing
 - Performance optimization decisions
@@ -225,12 +237,14 @@ npm run deploy:full  # Build + deploy + invalidate
 All necessary packages are already in package.json:
 
 **Core:**
+
 - next (15.0.3)
 - react (18.3.1)
 - react-dom (18.3.1)
 - typescript (5.6.3)
 
 **Styling:**
+
 - tailwindcss (3.4.16)
 - daisyui (4.12.20)
 - @tailwindcss/typography (0.5.15)
@@ -238,6 +252,7 @@ All necessary packages are already in package.json:
 - autoprefixer (10.4.20)
 
 **Tools:**
+
 - react-icons (5.4.0)
 - eslint (8.57.1)
 - prettier (3.4.2)
@@ -287,6 +302,7 @@ All necessary packages are already in package.json:
 ## 🎯 Success Definition
 
 Migration is complete when:
+
 - ✅ All components migrated to TypeScript
 - ✅ All pages working correctly
 - ✅ All content and images transferred
@@ -303,6 +319,7 @@ Migration is complete when:
 Everything is set up perfectly for your next Claude Code session. The project structure is complete, documentation is comprehensive, and the migration path is clear.
 
 **When you're ready to start:**
+
 1. Close this Claude Code session
 2. Open a new session in `/Users/johxan/Documents/my-projects/nextjs-personal-site`
 3. Run `npm install`

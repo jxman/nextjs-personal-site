@@ -54,9 +54,7 @@ export default function BlogCard({
           {/* Badges */}
           <div className="flex flex-wrap gap-2 mb-4">
             {featured && <div className="badge badge-primary">Featured</div>}
-            {category && (
-              <div className="badge badge-outline">{category}</div>
-            )}
+            {category && <div className="badge badge-outline">{category}</div>}
             {tags.slice(0, 2).map((tag) => (
               <div key={tag} className="badge badge-ghost">
                 {tag}

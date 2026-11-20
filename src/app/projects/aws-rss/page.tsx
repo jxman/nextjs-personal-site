@@ -68,8 +68,8 @@ export default function AWSRSS() {
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
                       Node.js application running on AWS Lambda with DynamoDB
-                      backend using the Serverless Framework for deployment
-                      and management.
+                      backend using the Serverless Framework for deployment and
+                      management.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -83,32 +83,30 @@ export default function AWSRSS() {
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
-                      Real-time alert system sends notifications to
-                      pre-defined webhooks when vendor issues are detected or
-                      resolved.
+                      Real-time alert system sends notifications to pre-defined
+                      webhooks when vendor issues are detected or resolved.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
                       DynamoDB table manages alert state tracking to prevent
-                      duplicate notifications and ensure proper alert
-                      lifecycle management.
+                      duplicate notifications and ensure proper alert lifecycle
+                      management.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
-                      Scheduled execution using CloudWatch Events for
-                      continuous monitoring with configurable check intervals.
+                      Scheduled execution using CloudWatch Events for continuous
+                      monitoring with configurable check intervals.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
                       React-based web frontend (in development) for
-                      administrative control and real-time status
-                      visualization.
+                      administrative control and real-time status visualization.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">

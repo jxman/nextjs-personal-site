@@ -115,6 +115,7 @@ nextjs-personal-site/
 ## Migration Phases
 
 ### Phase 1: Setup ✅ COMPLETE
+
 - [x] Create Next.js project structure
 - [x] Install dependencies (Next.js 15, React 18, TypeScript)
 - [x] Configure Tailwind CSS + DaisyUI
@@ -123,6 +124,7 @@ nextjs-personal-site/
 - [x] Create migration documentation
 
 ### Phase 2: Component Migration (Estimated: 4-6 hours)
+
 - [ ] Migrate Layout.tsx (App Router layout)
 - [ ] Migrate Navbar.tsx (convert Link components)
 - [ ] Migrate Footer.tsx (minimal changes)
@@ -132,6 +134,7 @@ nextjs-personal-site/
 - [ ] Remove Seo.js (use Next.js metadata API)
 
 ### Phase 3: Page Migration (Estimated: 6-8 hours)
+
 - [ ] Homepage (index.js → app/page.tsx)
 - [ ] About page (aboutme.js → app/about/page.tsx)
 - [ ] Projects index (projects.js → app/projects/page.tsx)
@@ -145,6 +148,7 @@ nextjs-personal-site/
 - [ ] Blog pages (blog/ → app/blog/)
 
 ### Phase 4: Content & Data (Estimated: 3-4 hours)
+
 - [ ] Copy projects.json to src/content/
 - [ ] Copy markdown files to src/content/
 - [ ] Copy images to public/images/
@@ -153,6 +157,7 @@ nextjs-personal-site/
 - [ ] Convert GraphQL queries to direct imports
 
 ### Phase 5: SEO & Metadata (Estimated: 2-3 hours)
+
 - [ ] Configure root layout metadata
 - [ ] Add page-specific metadata
 - [ ] Generate sitemap.xml (using next-sitemap)
@@ -162,6 +167,7 @@ nextjs-personal-site/
 - [ ] Test social media sharing
 
 ### Phase 6: Features & Functionality (Estimated: 3-4 hours)
+
 - [ ] Implement Google Analytics (gtag.js)
 - [ ] Test contact form functionality
 - [ ] Verify all internal links
@@ -170,6 +176,7 @@ nextjs-personal-site/
 - [ ] Test browser compatibility
 
 ### Phase 7: Build & Deploy (Estimated: 2-3 hours)
+
 - [ ] Run production build (`next build`)
 - [ ] Verify static export works
 - [ ] Test locally with `npx serve out`
@@ -179,6 +186,7 @@ nextjs-personal-site/
 - [ ] Update DNS if needed
 
 ### Phase 8: Testing & Optimization (Estimated: 3-4 hours)
+
 - [ ] Lighthouse performance audit
 - [ ] SEO audit
 - [ ] Accessibility audit (WCAG compliance)
@@ -193,10 +201,11 @@ nextjs-personal-site/
 ### 1. Image Optimization
 
 **Gatsby (before):**
-```jsx
-import { StaticImage } from "gatsby-plugin-image"
 
-<StaticImage
+```jsx
+import { StaticImage } from 'gatsby-plugin-image'
+
+;<StaticImage
   src="../images/profile.jpg"
   alt="Profile"
   width={300}
@@ -205,11 +214,12 @@ import { StaticImage } from "gatsby-plugin-image"
 ```
 
 **Next.js (after):**
+
 ```tsx
 import Image from 'next/image'
 import profileImage from '@/public/images/profile.jpg'
 
-<Image
+;<Image
   src={profileImage}
   alt="Profile"
   width={300}
@@ -221,32 +231,36 @@ import profileImage from '@/public/images/profile.jpg'
 ### 2. Internal Links
 
 **Gatsby (before):**
-```jsx
-import { Link } from "gatsby"
 
-<Link to="/about">About</Link>
+```jsx
+import { Link } from 'gatsby'
+
+;<Link to="/about">About</Link>
 ```
 
 **Next.js (after):**
+
 ```tsx
 import Link from 'next/link'
 
-<Link href="/about">About</Link>
+;<Link href="/about">About</Link>
 ```
 
 ### 3. SEO Metadata
 
 **Gatsby (before):**
-```jsx
-import { Helmet } from "react-helmet"
 
-<Helmet>
+```jsx
+import { Helmet } from 'react-helmet'
+
+;<Helmet>
   <title>Page Title</title>
   <meta name="description" content="Description" />
 </Helmet>
 ```
 
 **Next.js (after):**
+
 ```tsx
 // In app/page-name/page.tsx
 import type { Metadata } from 'next'
@@ -264,8 +278,9 @@ export const metadata: Metadata = {
 ### 4. Data Fetching
 
 **Gatsby (before):**
+
 ```jsx
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from 'gatsby'
 
 const data = useStaticQuery(graphql`
   query {
@@ -281,6 +296,7 @@ const data = useStaticQuery(graphql`
 ```
 
 **Next.js (after):**
+
 ```tsx
 // In Server Component (default in App Router)
 import projectsData from '@/content/projects.json'
@@ -292,6 +308,7 @@ const projects = projectsData
 ### 5. Client-Side Components
 
 **Gatsby (before):**
+
 ```jsx
 // Automatically handles both server and client
 import React, { useState } from 'react'
@@ -303,6 +320,7 @@ export default function Component() {
 ```
 
 **Next.js (after):**
+
 ```tsx
 'use client' // Add this directive at the top
 
@@ -317,12 +335,14 @@ export default function Component() {
 ### 6. Environment Variables
 
 **Gatsby (before):**
+
 ```bash
 GATSBY_SITE_URL=https://synepho.com
 GATSBY_GOOGLE_ANALYTICS_ID=G-2HLT4VSZHW
 ```
 
 **Next.js (after):**
+
 ```bash
 NEXT_PUBLIC_SITE_URL=https://synepho.com
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-2HLT4VSZHW
@@ -333,16 +353,19 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-2HLT4VSZHW
 ## Component Migration Checklist
 
 ### High Priority Components (Must migrate first)
+
 - [ ] **Layout.tsx** - Main layout wrapper (affects all pages)
 - [ ] **Navbar.tsx** - Navigation (used on every page)
 - [ ] **Footer.tsx** - Footer (used on every page)
 
 ### Medium Priority Components (Core functionality)
+
 - [ ] **AnimatedSection.tsx** - Animations (used throughout site)
 - [ ] **ScrollToTop.tsx** - UX feature (nice to have)
 - [ ] **ClientOnly.tsx** - May not be needed in Next.js
 
 ### Low Priority (Can migrate last)
+
 - [ ] Seo.js - Replace with Next.js metadata API (don't migrate directly)
 
 ---
@@ -350,17 +373,20 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-2HLT4VSZHW
 ## Page Migration Priority
 
 ### Phase 1 (Core Pages)
+
 1. Homepage (`/`) - Most important
 2. About (`/about`) - High traffic
 3. Projects index (`/projects`) - Portfolio showcase
 
 ### Phase 2 (Project Detail Pages)
+
 4. AWS Health project
 5. AWS Multi-region site
 6. AWS RSS checker
 7. Lawn project
 
 ### Phase 3 (Supporting Pages)
+
 8. Resume (`/resume`)
 9. Contact (`/contact`)
 10. Blog posts (`/blog/*`)
@@ -394,6 +420,7 @@ npm install -D eslint eslint-config-next prettier
 ## Environment Configuration
 
 ### Development (.env.local)
+
 ```bash
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-2HLT4VSZHW
@@ -401,6 +428,7 @@ NODE_ENV=development
 ```
 
 ### Production (.env.production)
+
 ```bash
 NEXT_PUBLIC_SITE_URL=https://www.synepho.com
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-2HLT4VSZHW
@@ -414,6 +442,7 @@ CLOUDFRONT_DISTRIBUTION_ID=E2UW9JLSX34HRT
 ## Build & Deployment
 
 ### Local Development
+
 ```bash
 npm run dev          # Start development server (http://localhost:3000)
 npm run build        # Production build
@@ -421,11 +450,13 @@ npm run start        # Start production server locally
 ```
 
 ### Static Export (for S3)
+
 ```bash
 npm run build        # Builds to .next/ and exports to out/
 ```
 
 ### Deploy to S3
+
 ```bash
 # Using existing deployment scripts (updated for Next.js)
 npm run deploy:prod  # Deploy to S3 with optimized caching
@@ -438,6 +469,7 @@ npm run deploy:full  # Build + deploy + invalidate
 ## Testing Checklist
 
 ### Functionality Testing
+
 - [ ] All pages load correctly
 - [ ] Navigation works (internal links)
 - [ ] External links open in new tabs
@@ -447,6 +479,7 @@ npm run deploy:full  # Build + deploy + invalidate
 - [ ] Mobile menu opens/closes
 
 ### SEO Testing
+
 - [ ] All pages have proper meta tags
 - [ ] Open Graph images display correctly
 - [ ] Twitter Cards work
@@ -455,6 +488,7 @@ npm run deploy:full  # Build + deploy + invalidate
 - [ ] Structured data validates (schema.org)
 
 ### Performance Testing
+
 - [ ] Lighthouse score >90 (Performance)
 - [ ] Lighthouse score >95 (SEO)
 - [ ] Lighthouse score >90 (Accessibility)
@@ -463,6 +497,7 @@ npm run deploy:full  # Build + deploy + invalidate
 - [ ] Time to Interactive < 3.0s
 
 ### Browser Testing
+
 - [ ] Chrome (latest)
 - [ ] Firefox (latest)
 - [ ] Safari (macOS)
@@ -470,6 +505,7 @@ npm run deploy:full  # Build + deploy + invalidate
 - [ ] Edge (latest)
 
 ### Device Testing
+
 - [ ] Desktop (1920x1080)
 - [ ] Laptop (1366x768)
 - [ ] Tablet (iPad)
@@ -488,6 +524,7 @@ If issues arise during migration:
 4. **Backup strategy** - Keep old S3 bucket contents for 30 days
 
 ### Quick Rollback Commands
+
 ```bash
 # Redeploy Gatsby site if needed
 cd /Users/johxan/Documents/my-projects/gatsby/personal-site-new
@@ -527,6 +564,7 @@ The migration is complete when:
 - **Phase 8:** Testing - 3-4 hours
 
 **Realistic Timeline:**
+
 - **With Claude Code:** 3-4 days (Claude handles 75-80% of work)
 - **Solo Development:** 5-7 days
 - **Part-time (evenings/weekends):** 2-3 weeks

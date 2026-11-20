@@ -6,10 +6,7 @@ export default function StructuredData() {
     alternateName: 'John X',
     url: 'https://www.synepho.com',
     image: 'https://www.synepho.com/social-image.png',
-    sameAs: [
-      'https://www.linkedin.com/in/johnx/',
-      'https://github.com/jxman',
-    ],
+    sameAs: ['https://www.linkedin.com/in/johnx/', 'https://github.com/jxman'],
     jobTitle: 'IT Executive',
     description:
       'IT Executive by day, developer on weekends. Expertise in cloud architecture, software development, and technology leadership.',

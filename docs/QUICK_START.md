@@ -9,6 +9,7 @@ When you open a new Claude Code session in the `nextjs-personal-site` folder, st
 ## 📋 Current Status
 
 ✅ **Phase 1: Setup - COMPLETE**
+
 - Next.js 15 project initialized
 - TypeScript configured
 - Tailwind CSS + DaisyUI installed
@@ -22,6 +23,7 @@ When you open a new Claude Code session in the `nextjs-personal-site` folder, st
 ## 🚀 First Steps
 
 ### 1. Verify Setup
+
 ```bash
 # Check that you're in the right directory
 pwd
@@ -35,7 +37,9 @@ npm run dev
 ```
 
 ### 2. Read Migration Documents
+
 Before starting migration, read:
+
 1. **CLAUDE.md** - Instructions for Claude Code (you!)
 2. **MIGRATION_GUIDE.md** - Complete migration plan
 3. **COMPONENT_MAPPING.md** - Component conversion guide
@@ -47,6 +51,7 @@ Before starting migration, read:
 ### Start with Component Migration
 
 **Migration Order:**
+
 1. ✅ Footer component (simplest, ~15 min)
 2. ✅ Navbar component (~20 min)
 3. ✅ Layout component (~30 min)
@@ -61,6 +66,7 @@ Before starting migration, read:
 ## 📂 Key File Locations
 
 ### Source Files (Gatsby - READ ONLY)
+
 ```
 /Users/johxan/Documents/my-projects/gatsby/personal-site-new/src/
 ├── components/        # Read components from here
@@ -70,6 +76,7 @@ Before starting migration, read:
 ```
 
 ### Target Files (Next.js - WRITE HERE)
+
 ```
 /Users/johxan/Documents/my-projects/nextjs-personal-site/src/
 ├── components/       # Write migrated components here
@@ -122,6 +129,7 @@ to Footer.tsx in the Next.js project following the component mapping guide."
 ## 🎯 Success Criteria
 
 Component migration is done when:
+
 - [x] All 6 components migrated to TypeScript
 - [x] All components compile without errors
 - [x] `npm run build` succeeds
@@ -132,13 +140,13 @@ Component migration is done when:
 
 ## 📚 Important Documents
 
-| Document | Purpose |
-|----------|---------|
-| **CLAUDE.md** | Instructions for you (Claude Code) |
-| **MIGRATION_GUIDE.md** | Complete migration roadmap |
-| **COMPONENT_MAPPING.md** | Component conversion patterns |
-| **README.md** | Project overview and progress tracking |
-| **QUICK_START.md** | This file - quick reference |
+| Document                 | Purpose                                |
+| ------------------------ | -------------------------------------- |
+| **CLAUDE.md**            | Instructions for you (Claude Code)     |
+| **MIGRATION_GUIDE.md**   | Complete migration roadmap             |
+| **COMPONENT_MAPPING.md** | Component conversion patterns          |
+| **README.md**            | Project overview and progress tracking |
+| **QUICK_START.md**       | This file - quick reference            |
 
 ---
 
@@ -198,8 +206,9 @@ Update README.md after each component:
 
 ```markdown
 ### ⏳ Phase 2: Component Migration (In Progress)
-- [x] Footer component          ← Mark complete
-- [ ] Navbar component          ← Next task
+
+- [x] Footer component ← Mark complete
+- [ ] Navbar component ← Next task
 - [ ] Layout component
 - [ ] AnimatedSection component
 - [ ] ScrollToTop component
@@ -221,12 +230,14 @@ Update README.md after each component:
 **Good luck with the migration!** 🚀
 
 You're well-prepared with:
+
 - ✅ Complete project structure
 - ✅ All configuration files
 - ✅ Comprehensive documentation
 - ✅ Clear migration plan
 
 **Estimated Time to Complete:**
+
 - Components: 2.5-3.5 hours
 - Pages: 6-8 hours
 - Content: 3-4 hours

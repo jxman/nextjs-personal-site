@@ -97,10 +97,10 @@ export default function AIPairProgrammingPost() {
           <p className="text-xl text-base-content/70 italic mb-8">
             Ever wonder how a holiday coding challenge could lead to
             revolutionizing your work processes and even launching your first
-            app? That&apos;s exactly what happened to me, and I&apos;m excited to share
-            how my exploration of AI assistants evolved from solving puzzles
-            to building production-ready cloud infrastructure and practical
-            applications that solve real-world problems.
+            app? That&apos;s exactly what happened to me, and I&apos;m excited
+            to share how my exploration of AI assistants evolved from solving
+            puzzles to building production-ready cloud infrastructure and
+            practical applications that solve real-world problems.
           </p>
 
           <h2>The Holiday Challenge That Started It All</h2>
@@ -108,31 +108,31 @@ export default function AIPairProgrammingPost() {
           <p>
             It all began with Advent of Code, a series of daily programming
             challenges that pop up every December. While my colleagues were
-            grinding through the problems the traditional way, I decided to
-            take a different approach. Why not use this as an opportunity to
-            evaluate various Large Language Models (LLMs) and coding
-            assistants? It was the perfect testing ground — contained problems
-            with clear success criteria, but enough complexity to really push
-            these AI tools to their limits.
+            grinding through the problems the traditional way, I decided to take
+            a different approach. Why not use this as an opportunity to evaluate
+            various Large Language Models (LLMs) and coding assistants? It was
+            the perfect testing ground — contained problems with clear success
+            criteria, but enough complexity to really push these AI tools to
+            their limits.
           </p>
 
           <h2>From Puzzle Solving to Practical Applications</h2>
 
           <p>
-            As I worked through the Advent of Code challenges with different
-            AI assistants, something interesting happened. I started seeing
-            patterns in how these tools could help beyond just solving
-            puzzles. The way they approached problems, suggested
-            optimizations, and explained their thinking got me wondering:
-            &quot;Could this help with my actual work as a Cloud Engineer?&quot;
+            As I worked through the Advent of Code challenges with different AI
+            assistants, something interesting happened. I started seeing
+            patterns in how these tools could help beyond just solving puzzles.
+            The way they approached problems, suggested optimizations, and
+            explained their thinking got me wondering: &quot;Could this help
+            with my actual work as a Cloud Engineer?&quot;
           </p>
 
           <p>
-            That&apos;s when it hit me — I had this nagging issue with AWS Health
-            alerts that needed solving. You know, those JSON notifications
-            that look like they were written by robots, for robots? What if I
-            could apply what I learned from my AI coding challenge experiments
-            to a real-world problem?
+            That&apos;s when it hit me — I had this nagging issue with AWS
+            Health alerts that needed solving. You know, those JSON
+            notifications that look like they were written by robots, for
+            robots? What if I could apply what I learned from my AI coding
+            challenge experiments to a real-world problem?
           </p>
 
           <h2>Meet My AI Pair Programmer</h2>
@@ -148,19 +148,21 @@ export default function AIPairProgrammingPost() {
           <h3>The Project&apos;s Evolution</h3>
 
           <p>
-            What started as &quot;I just want better-looking notifications&quot; quickly
-            turned into:
+            What started as &quot;I just want better-looking notifications&quot;
+            quickly turned into:
           </p>
 
           <ul>
-            <li>&quot;Hey, why not manage this properly with Terraform?&quot;</li>
             <li>
-              &quot;Well, if we&apos;re using Terraform, we should have a proper CI/CD
-              pipeline…&quot;
+              &quot;Hey, why not manage this properly with Terraform?&quot;
             </li>
             <li>
-              &quot;And if we&apos;re doing CI/CD, we might as well do it right with
-              GitHub Actions…&quot;
+              &quot;Well, if we&apos;re using Terraform, we should have a proper
+              CI/CD pipeline…&quot;
+            </li>
+            <li>
+              &quot;And if we&apos;re doing CI/CD, we might as well do it right
+              with GitHub Actions…&quot;
             </li>
           </ul>
 
@@ -210,8 +212,7 @@ export default function AIPairProgrammingPost() {
           </ul>
 
           <p>
-            Want to check it out yourself? The whole project is available at
-            my
+            Want to check it out yourself? The whole project is available at my
             <a
               href="https://github.com/jxman"
               target="_blank"
@@ -224,22 +225,21 @@ export default function AIPairProgrammingPost() {
           </p>
 
           <h2>
-            Working with an AI Partner: The Good, The Better, and The
-            Surprising
+            Working with an AI Partner: The Good, The Better, and The Surprising
           </h2>
 
           <h3>The Good</h3>
 
           <p>
             Claude turned out to be like that really detail-oriented colleague
-            who never gets tired. Every time I hit a wall with an error
-            message, it was like:
+            who never gets tired. Every time I hit a wall with an error message,
+            it was like:
           </p>
 
           <blockquote>
             <p>
-              <strong>Me:</strong> &quot;Help, GitHub Actions is complaining about
-              something…&quot;
+              <strong>Me:</strong> &quot;Help, GitHub Actions is complaining
+              about something…&quot;
             </p>
             <p>
               <strong>Claude:</strong> &quot;Ah, let me help you fix that and
@@ -256,17 +256,22 @@ export default function AIPairProgrammingPost() {
           </p>
 
           <ul>
-            <li>&quot;Hey, shouldn&apos;t we write a proper README for this?&quot;</li>
-            <li>&quot;How about a better commit message than &apos;fixed stuff&apos;?&quot;</li>
+            <li>
+              &quot;Hey, shouldn&apos;t we write a proper README for this?&quot;
+            </li>
+            <li>
+              &quot;How about a better commit message than &apos;fixed
+              stuff&apos;?&quot;
+            </li>
           </ul>
 
           <h3>The Surprising</h3>
 
           <p>
             Every time we got warnings about deprecated features or needed
-            updates, Claude was on it faster than I could Google the issue.
-            When GitHub warned us about artifact version deprecation or Ubuntu
-            runner updates, solutions were just a prompt away.
+            updates, Claude was on it faster than I could Google the issue. When
+            GitHub warned us about artifact version deprecation or Ubuntu runner
+            updates, solutions were just a prompt away.
           </p>
 
           <h2>What I Actually Built</h2>
@@ -279,8 +284,8 @@ export default function AIPairProgrammingPost() {
               Formats notifications so they don&apos;t look like computer vomit
             </li>
             <li>
-              Uses Terraform for infrastructure management (because clicking
-              in consoles is so 2010)
+              Uses Terraform for infrastructure management (because clicking in
+              consoles is so 2010)
             </li>
             <li>
               Runs everything through GitHub Actions with proper checks and
@@ -291,9 +296,9 @@ export default function AIPairProgrammingPost() {
           <h2>From Lawn Care to AI: The Unexpected Connection</h2>
 
           <p>
-            But the AI journey didn&apos;t stop with AWS infrastructure. In a twist
-            that perfectly combines two of my passions — maintaining my lawn
-            and exploring how AI can transform our daily work — I recently
+            But the AI journey didn&apos;t stop with AWS infrastructure. In a
+            twist that perfectly combines two of my passions — maintaining my
+            lawn and exploring how AI can transform our daily work — I recently
             launched my first app:{' '}
             <a
               href="https://www.lawnsmartapp.com"
@@ -306,22 +311,21 @@ export default function AIPairProgrammingPost() {
           </p>
 
           <p>
-            What started as a weekend project to better manage my own lawn
-            care has evolved into a comprehensive Progressive Web App that
-            provides USDA zone-specific recommendations, intelligent task
-            scheduling, and personalized guidance. The most exciting part? I
-            built the latest features over just a few nights since Claude Code
-            was released on the Pro plan — pure vibe programming with AI
-            assistance.
+            What started as a weekend project to better manage my own lawn care
+            has evolved into a comprehensive Progressive Web App that provides
+            USDA zone-specific recommendations, intelligent task scheduling, and
+            personalized guidance. The most exciting part? I built the latest
+            features over just a few nights since Claude Code was released on
+            the Pro plan — pure vibe programming with AI assistance.
           </p>
 
           <h3>The Speed Revolution</h3>
 
           <p>
             This is where things get really interesting. The technology is
-            evolving at breakneck speed. What took weeks before now takes
-            days, sometimes hours. The development velocity with AI assistance
-            is truly remarkable, and it&apos;s changing not just how we build
+            evolving at breakneck speed. What took weeks before now takes days,
+            sometimes hours. The development velocity with AI assistance is
+            truly remarkable, and it&apos;s changing not just how we build
             software, but how we think about what&apos;s possible in the time we
             have available.
           </p>
@@ -336,8 +340,8 @@ export default function AIPairProgrammingPost() {
               anytime soon
             </li>
             <li>
-              <strong>BUT…</strong> it&apos;s an incredibly powerful tool when used
-              right
+              <strong>BUT…</strong> it&apos;s an incredibly powerful tool when
+              used right
             </li>
             <li>
               Always review the code (seriously, don&apos;t just copy-paste
@@ -352,16 +356,18 @@ export default function AIPairProgrammingPost() {
           <h3>The Professional Reality: Your Job Will Change</h3>
 
           <p>
-            But here&apos;s the key insight from this entire journey: AI isn&apos;t here
-            to replace us — it&apos;s here to amplify our capabilities and
-            transform how we work. Your job <strong>WILL</strong> change with
-            AI. The question isn&apos;t whether, but how quickly you&apos;ll adapt and
-            leverage these tools to enhance your productivity, creativity, and
-            problem-solving abilities.
+            But here&apos;s the key insight from this entire journey: AI
+            isn&apos;t here to replace us — it&apos;s here to amplify our
+            capabilities and transform how we work. Your job{' '}
+            <strong>WILL</strong> change with AI. The question isn&apos;t
+            whether, but how quickly you&apos;ll adapt and leverage these tools
+            to enhance your productivity, creativity, and problem-solving
+            abilities.
           </p>
 
           <p>
-            If you&apos;re ready to start your own AI journey, here&apos;s my advice:
+            If you&apos;re ready to start your own AI journey, here&apos;s my
+            advice:
           </p>
 
           <ul>
@@ -381,8 +387,8 @@ export default function AIPairProgrammingPost() {
           <h2>What&apos;s Next?</h2>
 
           <p>
-            Claude suggested some pretty interesting improvements I might
-            tackle next:
+            Claude suggested some pretty interesting improvements I might tackle
+            next:
           </p>
 
           <ul>
@@ -413,14 +419,14 @@ export default function AIPairProgrammingPost() {
             >
               GitHub repository
             </a>
-            , where I&apos;ve documented everything from the initial problem to the
-            final solution.
+            , where I&apos;ve documented everything from the initial problem to
+            the final solution.
           </p>
 
           <p>
-            <strong>Remember:</strong> AI is like a really knowledgeable
-            intern — great at helping out and suggesting ideas, but you still
-            need to be the one making the final calls!
+            <strong>Remember:</strong> AI is like a really knowledgeable intern
+            — great at helping out and suggesting ideas, but you still need to
+            be the one making the final calls!
           </p>
 
           <h2>A Meta Twist</h2>
@@ -428,26 +434,24 @@ export default function AIPairProgrammingPost() {
           <p>
             Here&apos;s a fun fact to wrap things up: This entire article was
             crafted with the help of Claude, the same AI assistant that helped
-            build the project it describes. I provided the context,
-            experiences, and direction, while Claude helped structure and
-            articulate the story. It&apos;s a perfect example of how AI can help
-            with both technical and creative tasks when used as a
-            collaborative tool.
+            build the project it describes. I provided the context, experiences,
+            and direction, while Claude helped structure and articulate the
+            story. It&apos;s a perfect example of how AI can help with both
+            technical and creative tasks when used as a collaborative tool.
           </p>
 
           <p>
-            Got questions or want to share your own experiences with
-            AI-assisted infrastructure work? Feel free to reach out! Let&apos;s
-            explore this brave new world of AI-assisted cloud engineering
-            together.
+            Got questions or want to share your own experiences with AI-assisted
+            infrastructure work? Feel free to reach out! Let&apos;s explore this
+            brave new world of AI-assisted cloud engineering together.
           </p>
 
           <div className="bg-primary/5 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
             <p className="italic text-base-content/70 mb-0">
               <strong>Note:</strong> This article represents a real journey in
-              AI-assisted development, where even its own creation
-              demonstrates the potential of human-AI collaboration in
-              technical writing and documentation.
+              AI-assisted development, where even its own creation demonstrates
+              the potential of human-AI collaboration in technical writing and
+              documentation.
             </p>
           </div>
         </div>

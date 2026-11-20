@@ -6,24 +6,26 @@ This document provides detailed migration instructions for each component from G
 
 ## Component Overview
 
-| Gatsby Component | Next.js Component | Priority | Complexity | Estimated Time |
-|------------------|-------------------|----------|------------|----------------|
-| Layout.js | src/components/Layout.tsx | High | Medium | 30-45 min |
-| Navbar.js | src/components/Navbar.tsx | High | Low | 20-30 min |
-| Footer.js | src/components/Footer.tsx | High | Low | 15-20 min |
-| AnimatedSection.js | src/components/AnimatedSection.tsx | Medium | Medium | 30-40 min |
-| ScrollToTop.js | src/components/ScrollToTop.tsx | Medium | Low | 20-30 min |
-| ClientOnly.js | src/components/ClientOnly.tsx | Low | Low | 15-20 min |
-| Seo.js | ❌ Remove (use metadata API) | N/A | N/A | N/A |
+| Gatsby Component   | Next.js Component                  | Priority | Complexity | Estimated Time |
+| ------------------ | ---------------------------------- | -------- | ---------- | -------------- |
+| Layout.js          | src/components/Layout.tsx          | High     | Medium     | 30-45 min      |
+| Navbar.js          | src/components/Navbar.tsx          | High     | Low        | 20-30 min      |
+| Footer.js          | src/components/Footer.tsx          | High     | Low        | 15-20 min      |
+| AnimatedSection.js | src/components/AnimatedSection.tsx | Medium   | Medium     | 30-40 min      |
+| ScrollToTop.js     | src/components/ScrollToTop.tsx     | Medium   | Low        | 20-30 min      |
+| ClientOnly.js      | src/components/ClientOnly.tsx      | Low      | Low        | 15-20 min      |
+| Seo.js             | ❌ Remove (use metadata API)       | N/A      | N/A        | N/A            |
 
 ---
 
 ## 1. Layout Component
 
 ### Source
+
 `gatsby/personal-site-new/src/components/Layout.js`
 
 ### Target
+
 `nextjs-personal-site/src/components/Layout.tsx`
 
 ### Migration Steps
@@ -46,10 +48,11 @@ This document provides detailed migration instructions for each component from G
 ### Code Example
 
 **Before (Gatsby):**
+
 ```jsx
-import React from "react"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
+import React from 'react'
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 export default function Layout({ children }) {
   return (
@@ -63,6 +66,7 @@ export default function Layout({ children }) {
 ```
 
 **After (Next.js):**
+
 ```tsx
 import Navbar from './Navbar'
 import Footer from './Footer'
@@ -83,6 +87,7 @@ export default function Layout({ children }: LayoutProps) {
 ```
 
 ### Notes
+
 - Layout component may not be needed in Next.js App Router
 - Consider using `app/layout.tsx` instead for root layout
 - Keep Layout component only if needed for shared UI across pages
@@ -92,25 +97,29 @@ export default function Layout({ children }: LayoutProps) {
 ## 2. Navbar Component
 
 ### Source
+
 `gatsby/personal-site-new/src/components/Navbar.js`
 
 ### Target
+
 `nextjs-personal-site/src/components/Navbar.tsx`
 
 ### Migration Steps
 
 1. **Convert Link components**
+
    ```jsx
    // Before
-   import { Link } from "gatsby"
-   <Link to="/about">About</Link>
+   import { Link } from 'gatsby'
+   ;<Link to="/about">About</Link>
 
    // After
    import Link from 'next/link'
-   <Link href="/about">About</Link>
+   ;<Link href="/about">About</Link>
    ```
 
 2. **Add 'use client' directive** (if using useState for mobile menu)
+
    ```tsx
    'use client'
 
@@ -118,6 +127,7 @@ export default function Layout({ children }: LayoutProps) {
    ```
 
 3. **Update image imports** (if using logo image)
+
    ```tsx
    // If using static image
    import Image from 'next/image'
@@ -132,6 +142,7 @@ export default function Layout({ children }: LayoutProps) {
    ```
 
 ### Key Changes
+
 - `Link to` → `Link href`
 - Mobile menu state likely needs 'use client'
 - Logo images use `next/image`
@@ -141,9 +152,11 @@ export default function Layout({ children }: LayoutProps) {
 ## 3. Footer Component
 
 ### Source
+
 `gatsby/personal-site-new/src/components/Footer.js`
 
 ### Target
+
 `nextjs-personal-site/src/components/Footer.tsx`
 
 ### Migration Steps
@@ -162,15 +175,20 @@ export default function Layout({ children }: LayoutProps) {
 ### Code Example
 
 **Before (Gatsby):**
+
 ```jsx
-import React from "react"
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
+import React from 'react'
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="social-links">
-        <a href="https://github.com/jxman" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/jxman"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaGithub />
         </a>
         {/* More links */}
@@ -181,6 +199,7 @@ export default function Footer() {
 ```
 
 **After (Next.js):**
+
 ```tsx
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
@@ -188,7 +207,11 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="social-links">
-        <a href="https://github.com/jxman" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/jxman"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaGithub />
         </a>
         {/* More links */}
@@ -199,6 +222,7 @@ export default function Footer() {
 ```
 
 ### Notes
+
 - Minimal changes needed
 - Likely can stay as Server Component
 - Social icons from `react-icons` work identically
@@ -208,15 +232,18 @@ export default function Footer() {
 ## 4. AnimatedSection Component
 
 ### Source
+
 `gatsby/personal-site-new/src/components/AnimatedSection.js`
 
 ### Target
+
 `nextjs-personal-site/src/components/AnimatedSection.tsx`
 
 ### Migration Steps
 
 1. **Add 'use client' directive** (REQUIRED)
    - Uses `useEffect` and `useRef` for Intersection Observer
+
    ```tsx
    'use client'
 
@@ -224,6 +251,7 @@ export default function Footer() {
    ```
 
 2. **Convert to TypeScript**
+
    ```tsx
    interface AnimatedSectionProps {
      children: React.ReactNode
@@ -239,10 +267,11 @@ export default function Footer() {
 ### Code Example
 
 **Before (Gatsby):**
-```jsx
-import React, { useEffect, useRef, useState } from "react"
 
-export default function AnimatedSection({ children, className = "" }) {
+```jsx
+import React, { useEffect, useRef, useState } from 'react'
+
+export default function AnimatedSection({ children, className = '' }) {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
 
@@ -266,7 +295,7 @@ export default function AnimatedSection({ children, className = "" }) {
   return (
     <div
       ref={sectionRef}
-      className={`${className} ${isVisible ? "animate-fade-in" : "opacity-0"}`}
+      className={`${className} ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
     >
       {children}
     </div>
@@ -275,6 +304,7 @@ export default function AnimatedSection({ children, className = "" }) {
 ```
 
 **After (Next.js):**
+
 ```tsx
 'use client'
 
@@ -287,7 +317,7 @@ interface AnimatedSectionProps {
 
 export default function AnimatedSection({
   children,
-  className = ''
+  className = '',
 }: AnimatedSectionProps) {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -321,6 +351,7 @@ export default function AnimatedSection({
 ```
 
 ### Notes
+
 - **MUST use 'use client'** - uses hooks and browser API
 - Add TypeScript type for ref: `useRef<HTMLDivElement>(null)`
 - Logic remains identical
@@ -330,15 +361,18 @@ export default function AnimatedSection({
 ## 5. ScrollToTop Component
 
 ### Source
+
 `gatsby/personal-site-new/src/components/ScrollToTop.js`
 
 ### Target
+
 `nextjs-personal-site/src/components/ScrollToTop.tsx`
 
 ### Migration Steps
 
 1. **Add 'use client' directive** (REQUIRED)
    - Uses `useState`, `useEffect`, and click handlers
+
    ```tsx
    'use client'
    ```
@@ -352,6 +386,7 @@ export default function AnimatedSection({
    - Event listeners work identically
 
 ### Key Changes
+
 - Add `'use client'`
 - Convert to TypeScript
 - Logic remains the same
@@ -361,9 +396,11 @@ export default function AnimatedSection({
 ## 6. ClientOnly Component
 
 ### Source
+
 `gatsby/personal-site-new/src/components/ClientOnly.js`
 
 ### Target
+
 `nextjs-personal-site/src/components/ClientOnly.tsx`
 
 ### Migration Steps
@@ -373,6 +410,7 @@ export default function AnimatedSection({
    - May not need this component
 
 2. **If keeping, add 'use client'**
+
    ```tsx
    'use client'
 
@@ -403,6 +441,7 @@ export default function AnimatedSection({
    ```
 
 ### Notes
+
 - May not be needed in Next.js
 - App Router handles SSR better than Gatsby
 - Keep only if specific hydration issues occur
@@ -412,9 +451,11 @@ export default function AnimatedSection({
 ## 7. SEO Component (Do NOT Migrate)
 
 ### Source
+
 `gatsby/personal-site-new/src/components/Seo.js`
 
 ### Target
+
 ❌ **Do not migrate** - Use Next.js Metadata API instead
 
 ### Replacement Strategy
@@ -422,6 +463,7 @@ export default function AnimatedSection({
 Instead of a component, use Next.js metadata in each page:
 
 **In each page file:**
+
 ```tsx
 import type { Metadata } from 'next'
 
@@ -459,6 +501,7 @@ export default function Page() {
 ```
 
 ### Benefits of Metadata API
+
 - Type-safe with TypeScript
 - No extra component needed
 - Better performance (no runtime overhead)
@@ -486,12 +529,14 @@ Migrate components in this order:
 ### Pattern 1: Client Component Detection
 
 **Add 'use client' if component:**
+
 - Uses `useState`, `useEffect`, `useRef`
 - Has event handlers (onClick, onChange, etc.)
 - Uses browser APIs (window, document, IntersectionObserver)
 - Uses third-party libraries that need browser context
 
 **Keep as Server Component if:**
+
 - Only renders JSX
 - No state or effects
 - No interactivity
@@ -511,7 +556,7 @@ interface ComponentProps {
 export default function Component({
   title,
   description,
-  children
+  children,
 }: ComponentProps) {
   // Component logic
 }
@@ -555,15 +600,19 @@ After migrating each component:
 ## Common Issues & Solutions
 
 ### Issue 1: "useState is not defined"
+
 **Solution:** Add `'use client'` directive at top of file
 
 ### Issue 2: Hydration mismatch
+
 **Solution:** Use `ClientOnly` component or check for `typeof window !== 'undefined'`
 
 ### Issue 3: Image optimization errors
+
 **Solution:** Add `unoptimized: true` to next.config.js for S3 static export
 
 ### Issue 4: Link href warnings
+
 **Solution:** Ensure all `<Link>` components use `href` prop, not `to`
 
 ---

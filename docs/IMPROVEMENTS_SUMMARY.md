@@ -46,18 +46,21 @@ GitHub Stars:     55k → 125k              (2.3x more popular)
 ## ✅ What's Better
 
 ### Build Performance
+
 - **94% faster builds** (60s → 3.7s)
 - No GraphQL overhead
 - Faster CI/CD pipelines
 - Quick iteration cycles
 
 ### Security
+
 - **Zero vulnerabilities** vs 1+ in Gatsby
 - Active security updates
 - Smaller attack surface
 - No risky overrides needed
 
 ### Developer Experience
+
 - **90% less configuration**
 - No GraphQL complexity
 - Better TypeScript support
@@ -65,12 +68,14 @@ GitHub Stars:     55k → 125k              (2.3x more popular)
 - 87% faster dev server
 
 ### Output Efficiency
+
 - **74% smaller builds**
 - Faster deploys
 - Lower storage costs
 - Better CDN efficiency
 
 ### Future-Proofing
+
 - Active development (monthly releases)
 - Commercial backing (Vercel)
 - Growing community

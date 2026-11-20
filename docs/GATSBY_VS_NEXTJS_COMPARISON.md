@@ -12,17 +12,18 @@ Migration from **Gatsby 5** to **Next.js 15** resulted in significant improvemen
 
 ### Build Performance
 
-| Metric | Gatsby 5 | Next.js 15 | Improvement |
-|--------|----------|------------|-------------|
-| **Clean Build Time** | 60.1 seconds | 3.7 seconds | **94% faster** ⚡ |
-| **Incremental Build** | ~15-20 seconds | ~1-2 seconds | **90% faster** |
-| **GraphQL Query Extraction** | 15.1 seconds | N/A (eliminated) | **100% faster** |
-| **Bootstrap Time** | 28.2 seconds | N/A (eliminated) | **100% faster** |
-| **HTML Rendering** | 6.0 seconds | <1 second | **83% faster** |
+| Metric                       | Gatsby 5       | Next.js 15       | Improvement       |
+| ---------------------------- | -------------- | ---------------- | ----------------- |
+| **Clean Build Time**         | 60.1 seconds   | 3.7 seconds      | **94% faster** ⚡ |
+| **Incremental Build**        | ~15-20 seconds | ~1-2 seconds     | **90% faster**    |
+| **GraphQL Query Extraction** | 15.1 seconds   | N/A (eliminated) | **100% faster**   |
+| **Bootstrap Time**           | 28.2 seconds   | N/A (eliminated) | **100% faster**   |
+| **HTML Rendering**           | 6.0 seconds    | <1 second        | **83% faster**    |
 
 **Build Breakdown:**
 
 **Gatsby 5:**
+
 ```
 Bootstrap:          28.2 seconds (47%)
 Query Extraction:   15.1 seconds (25%)
@@ -34,6 +35,7 @@ TOTAL:              60.1 seconds
 ```
 
 **Next.js 15:**
+
 ```
 Compilation:         2.5 seconds (68%)
 Static Generation:   0.8 seconds (22%)
@@ -44,6 +46,7 @@ TOTAL:               3.7 seconds
 ```
 
 **Why Next.js is Faster:**
+
 - ✅ No GraphQL layer overhead
 - ✅ No bootstrap/schema building phase
 - ✅ Optimized Rust compiler (SWC instead of Babel)
@@ -54,23 +57,25 @@ TOTAL:               3.7 seconds
 
 ### Runtime Performance
 
-| Metric | Gatsby 5 | Next.js 15 | Winner |
-|--------|----------|------------|--------|
-| **Bundle Size (Shared JS)** | ~120 kB | 102 kB | Next.js (-15%) |
-| **First Load JS** | 115-125 kB | 103-114 kB | Next.js (-10%) |
-| **Image Optimization** | gatsby-plugin-image | next/image | Comparable |
-| **Code Splitting** | Automatic | Automatic | Equal |
-| **Static Generation** | Yes (SSG) | Yes (SSG) | Equal |
+| Metric                      | Gatsby 5            | Next.js 15 | Winner         |
+| --------------------------- | ------------------- | ---------- | -------------- |
+| **Bundle Size (Shared JS)** | ~120 kB             | 102 kB     | Next.js (-15%) |
+| **First Load JS**           | 115-125 kB          | 103-114 kB | Next.js (-10%) |
+| **Image Optimization**      | gatsby-plugin-image | next/image | Comparable     |
+| **Code Splitting**          | Automatic           | Automatic  | Equal          |
+| **Static Generation**       | Yes (SSG)           | Yes (SSG)  | Equal          |
 
 **Bundle Analysis:**
 
 **Gatsby 5:**
+
 - GraphQL runtime included in bundle
 - Multiple plugin overhead
 - React Helmet runtime
 - Larger overall footprint
 
 **Next.js 15:**
+
 - No GraphQL runtime needed
 - Leaner core framework
 - Built-in metadata API (no Helmet)
@@ -80,13 +85,14 @@ TOTAL:               3.7 seconds
 
 ### Output Size Comparison
 
-| Metric | Gatsby 5 | Next.js 15 | Improvement |
-|--------|----------|------------|-------------|
-| **Build Output** | 106 MB | 27 MB | **74% smaller** 📦 |
-| **node_modules** | 683 MB | 510 MB | **25% smaller** |
-| **Total Dependencies** | 28 packages | 21 packages | **25% fewer** |
+| Metric                 | Gatsby 5    | Next.js 15  | Improvement        |
+| ---------------------- | ----------- | ----------- | ------------------ |
+| **Build Output**       | 106 MB      | 27 MB       | **74% smaller** 📦 |
+| **node_modules**       | 683 MB      | 510 MB      | **25% smaller**    |
+| **Total Dependencies** | 28 packages | 21 packages | **25% fewer**      |
 
 **Why Next.js Output is Smaller:**
+
 - ✅ No GraphQL data layer files
 - ✅ More efficient static asset handling
 - ✅ Better tree-shaking
@@ -98,10 +104,10 @@ TOTAL:               3.7 seconds
 
 ### Vulnerability Assessment
 
-| Framework | Critical | High | Moderate | Low | Total |
-|-----------|----------|------|----------|-----|-------|
-| **Gatsby 5** | 0 | 0 | 1+ | 0+ | 1+ |
-| **Next.js 15** | 0 | 0 | 0 | 0 | **0** ✅ |
+| Framework      | Critical | High | Moderate | Low | Total    |
+| -------------- | -------- | ---- | -------- | --- | -------- |
+| **Gatsby 5**   | 0        | 0    | 1+       | 0+  | 1+       |
+| **Next.js 15** | 0        | 0    | 0        | 0   | **0** ✅ |
 
 **Gatsby Security Issues Found:**
 
@@ -143,6 +149,7 @@ found 0 vulnerabilities ✅
 4. **Dependency Security Overrides**
 
    **Gatsby Required 3 Security Overrides:**
+
    ```json
    "overrides": {
      "cookie": "^0.7.0",        // CVE fix
@@ -152,6 +159,7 @@ found 0 vulnerabilities ✅
    ```
 
    **Next.js Required 0 Overrides:**
+
    ```json
    // No overrides needed ✅
    ```
@@ -162,36 +170,41 @@ found 0 vulnerabilities ✅
 
 ### Framework Support Status
 
-| Aspect | Gatsby | Next.js | Winner |
-|--------|--------|---------|--------|
-| **Last Major Release** | May 2023 | October 2024 | Next.js |
-| **Release Cadence** | Quarterly | Monthly | Next.js |
-| **Active Contributors** | ~100-200 | ~1000+ | Next.js |
-| **GitHub Stars** | 55k | 125k | Next.js |
-| **Weekly Downloads** | ~400k | ~6M | Next.js (15x) |
-| **Commercial Backing** | Limited | Vercel (Strong) | Next.js |
-| **Documentation Quality** | Good | Excellent | Next.js |
+| Aspect                    | Gatsby    | Next.js         | Winner        |
+| ------------------------- | --------- | --------------- | ------------- |
+| **Last Major Release**    | May 2023  | October 2024    | Next.js       |
+| **Release Cadence**       | Quarterly | Monthly         | Next.js       |
+| **Active Contributors**   | ~100-200  | ~1000+          | Next.js       |
+| **GitHub Stars**          | 55k       | 125k            | Next.js       |
+| **Weekly Downloads**      | ~400k     | ~6M             | Next.js (15x) |
+| **Commercial Backing**    | Limited   | Vercel (Strong) | Next.js       |
+| **Documentation Quality** | Good      | Excellent       | Next.js       |
 
 ### Developer Experience
 
-| Feature | Gatsby | Next.js | Winner |
-|---------|--------|---------|--------|
-| **Learning Curve** | Steep (GraphQL) | Moderate | Next.js |
-| **TypeScript Support** | Plugin Required | Built-in | Next.js |
-| **Dev Server Startup** | 15-20s | 2-3s | Next.js (87% faster) |
-| **Hot Reload Speed** | 2-5s | <1s | Next.js (80% faster) |
-| **Error Messages** | Complex | Clear | Next.js |
-| **Debugging** | Difficult | Easy | Next.js |
+| Feature                | Gatsby          | Next.js  | Winner               |
+| ---------------------- | --------------- | -------- | -------------------- |
+| **Learning Curve**     | Steep (GraphQL) | Moderate | Next.js              |
+| **TypeScript Support** | Plugin Required | Built-in | Next.js              |
+| **Dev Server Startup** | 15-20s          | 2-3s     | Next.js (87% faster) |
+| **Hot Reload Speed**   | 2-5s            | <1s      | Next.js (80% faster) |
+| **Error Messages**     | Complex         | Clear    | Next.js              |
+| **Debugging**          | Difficult       | Easy     | Next.js              |
 
 ### Code Complexity Comparison
 
 **Gatsby Complexity:**
+
 ```javascript
 // GraphQL queries required everywhere
 export const query = graphql`
   query {
     allMarkdownRemark {
-      nodes { frontmatter { title } }
+      nodes {
+        frontmatter {
+          title
+        }
+      }
     }
   }
 `
@@ -213,6 +226,7 @@ plugins: [
 ```
 
 **Next.js Simplicity:**
+
 ```javascript
 // Direct file imports - no GraphQL
 import projectsData from '@/content/projects.json'
@@ -229,6 +243,7 @@ dependencies: {
 ```
 
 **Lines of Configuration:**
+
 - Gatsby: ~150 lines (gatsby-config.js)
 - Next.js: ~15 lines (next.config.js)
 - **90% less configuration** ✅
@@ -240,6 +255,7 @@ dependencies: {
 ### Gatsby Dependencies (28 total)
 
 **Core Framework:**
+
 - gatsby (555 MB with all sub-dependencies)
 - gatsby-plugin-image
 - gatsby-plugin-sharp
@@ -249,6 +265,7 @@ dependencies: {
 - gatsby-transformer-json
 
 **Plugins Required for Basic Features:**
+
 - gatsby-plugin-react-helmet (SEO)
 - gatsby-plugin-manifest (PWA)
 - gatsby-plugin-sitemap (SEO)
@@ -257,6 +274,7 @@ dependencies: {
 - gatsby-plugin-postcss (Styling)
 
 **Support Libraries:**
+
 - react-helmet
 - @headlessui/react
 - prop-types
@@ -264,31 +282,35 @@ dependencies: {
 ### Next.js Dependencies (21 total)
 
 **Core Framework:**
+
 - next (all-in-one solution)
 - react
 - react-dom
 
 **Minimal Additional:**
+
 - gray-matter (markdown parsing)
 - marked (markdown rendering)
 - next-sitemap (sitemap automation)
 
 **Shared:**
+
 - react-icons
 - tailwindcss
 - daisyui
 
 ### Key Differences
 
-| Feature | Gatsby | Next.js |
-|---------|--------|---------|
-| **SEO Meta Tags** | react-helmet plugin | Built-in Metadata API |
-| **Image Optimization** | 3 separate plugins | Built-in next/image |
-| **Sitemap Generation** | Plugin | next-sitemap package |
-| **Routing** | File-based + gatsby-node | File-based (simpler) |
-| **Data Fetching** | GraphQL (complex) | Direct imports (simple) |
+| Feature                | Gatsby                   | Next.js                 |
+| ---------------------- | ------------------------ | ----------------------- |
+| **SEO Meta Tags**      | react-helmet plugin      | Built-in Metadata API   |
+| **Image Optimization** | 3 separate plugins       | Built-in next/image     |
+| **Sitemap Generation** | Plugin                   | next-sitemap package    |
+| **Routing**            | File-based + gatsby-node | File-based (simpler)    |
+| **Data Fetching**      | GraphQL (complex)        | Direct imports (simple) |
 
 **Dependency Risk:**
+
 - Gatsby: 7 additional plugins for basic features
 - Next.js: 2 optional packages for enhanced features
 - **71% fewer external dependencies** ✅
@@ -298,18 +320,21 @@ dependencies: {
 ## Migration Benefits Summary
 
 ### 1. **Build Performance** ⚡
+
 - **94% faster builds** (60s → 3.7s)
 - Faster development iterations
 - Faster CI/CD pipelines
 - Lower AWS CodeBuild costs
 
 ### 2. **Security** 🔒
+
 - **0 vulnerabilities** vs 1+ in Gatsby
 - No security override patches needed
 - Smaller attack surface (25% fewer deps)
 - Active security monitoring by Vercel
 
 ### 3. **Maintainability** 🛠️
+
 - **90% less configuration**
 - No GraphQL complexity
 - Better TypeScript support
@@ -317,12 +342,14 @@ dependencies: {
 - Easier to onboard new developers
 
 ### 4. **Output Efficiency** 📦
+
 - **74% smaller build output** (106 MB → 27 MB)
 - Faster S3 sync times
 - Lower CloudFront storage costs
 - Better CDN cache efficiency
 
 ### 5. **Developer Experience** 👨‍💻
+
 - **87% faster dev server startup**
 - Sub-second hot reloads
 - Simpler mental model
@@ -330,6 +357,7 @@ dependencies: {
 - Larger community support
 
 ### 6. **Future-Proofing** 🚀
+
 - Active development (monthly releases)
 - Commercial backing (Vercel)
 - React 18+ features support
@@ -343,6 +371,7 @@ dependencies: {
 ### Development Time Savings
 
 **Build Time Savings:**
+
 ```
 Builds per day: 20
 Time saved per build: 56.4 seconds
@@ -352,6 +381,7 @@ Developer cost savings: ~$6,000/year at $80/hr
 ```
 
 **Development Velocity:**
+
 ```
 Dev server startup: 13s faster
 Hot reload: 3s faster per change
@@ -366,6 +396,7 @@ Developer cost savings: ~$3,500/year at $80/hr
 ### Infrastructure Cost Savings
 
 **AWS S3 Storage:**
+
 ```
 Build output reduction: 79 MB
 Monthly builds: 30
@@ -374,6 +405,7 @@ Cost savings: ~$0.06/month (minimal but cumulative)
 ```
 
 **CloudFront Transfer:**
+
 ```
 Smaller bundles: -15% JS size
 Lower egress costs: ~5-10% reduction
@@ -381,6 +413,7 @@ Estimated savings: $5-20/month depending on traffic
 ```
 
 **CI/CD Pipeline:**
+
 ```
 Faster builds: 56s saved per build
 Lower compute time on GitHub Actions/AWS CodeBuild
@@ -423,18 +456,19 @@ Estimated savings: ~$10-30/month
 
 ### Code Quality Improvements
 
-| Metric | Gatsby | Next.js | Improvement |
-|--------|--------|---------|-------------|
-| **Configuration LOC** | 150 | 15 | -90% |
-| **Plugin Dependencies** | 13 | 2 | -85% |
-| **Query Files** | 15 GraphQL | 0 | -100% |
-| **Build Scripts** | Complex | Simple | Simplified |
-| **TypeScript Errors** | Occasional | 0 | Better |
-| **Linting Warnings** | Some | 0 | Cleaner |
+| Metric                  | Gatsby     | Next.js | Improvement |
+| ----------------------- | ---------- | ------- | ----------- |
+| **Configuration LOC**   | 150        | 15      | -90%        |
+| **Plugin Dependencies** | 13         | 2       | -85%        |
+| **Query Files**         | 15 GraphQL | 0       | -100%       |
+| **Build Scripts**       | Complex    | Simple  | Simplified  |
+| **TypeScript Errors**   | Occasional | 0       | Better      |
+| **Linting Warnings**    | Some       | 0       | Cleaner     |
 
 ### Codebase Health
 
 **Gatsby Pain Points Eliminated:**
+
 - ✅ No more GraphQL query debugging
 - ✅ No more gatsby-node.js complexity
 - ✅ No more plugin configuration conflicts
@@ -442,6 +476,7 @@ Estimated savings: ~$10-30/month
 - ✅ No more build cache corruption
 
 **Next.js Advantages Gained:**
+
 - ✅ Type-safe routing
 - ✅ Built-in TypeScript support
 - ✅ Simpler data fetching
@@ -452,19 +487,20 @@ Estimated savings: ~$10-30/month
 
 ## SEO Comparison
 
-| Feature | Gatsby | Next.js | Status |
-|---------|--------|---------|--------|
-| **Meta Tags** | react-helmet | Metadata API | Improved |
-| **Sitemap** | Plugin | next-sitemap | Improved |
-| **robots.txt** | Plugin | next-sitemap | Improved |
-| **Open Graph** | Manual | Metadata API | Improved |
-| **Twitter Cards** | Manual | Metadata API | Improved |
-| **Structured Data** | Manual | Manual | Equal |
-| **Google Analytics** | Plugin | Script component | Improved |
+| Feature              | Gatsby       | Next.js          | Status   |
+| -------------------- | ------------ | ---------------- | -------- |
+| **Meta Tags**        | react-helmet | Metadata API     | Improved |
+| **Sitemap**          | Plugin       | next-sitemap     | Improved |
+| **robots.txt**       | Plugin       | next-sitemap     | Improved |
+| **Open Graph**       | Manual       | Metadata API     | Improved |
+| **Twitter Cards**    | Manual       | Metadata API     | Improved |
+| **Structured Data**  | Manual       | Manual           | Equal    |
+| **Google Analytics** | Plugin       | Script component | Improved |
 
 **SEO Implementation Comparison:**
 
 **Gatsby (Complex):**
+
 ```javascript
 // Separate component required
 <Seo title="Page" description="Desc" />
@@ -477,12 +513,13 @@ Estimated savings: ~$10-30/month
 ```
 
 **Next.js (Simple):**
+
 ```javascript
 // Built-in metadata export
 export const metadata = {
   title: 'Page',
   description: 'Desc',
-  openGraph: { /* auto-generated */ }
+  openGraph: {/* auto-generated */},
 }
 
 // Automatic sitemap in postbuild
@@ -495,6 +532,7 @@ export const metadata = {
 ### Framework Viability (5-Year Projection)
 
 **Gatsby:**
+
 - ⚠️ Funding concerns (Netlify acquisition didn't boost development)
 - ⚠️ Declining npm downloads (-30% YoY)
 - ⚠️ Slower release cycle
@@ -502,6 +540,7 @@ export const metadata = {
 - ⚠️ Community migration to Next.js/Astro
 
 **Next.js:**
+
 - ✅ Strong commercial backing (Vercel $2.5B valuation)
 - ✅ Growing adoption (+40% YoY)
 - ✅ Monthly releases with new features
@@ -511,6 +550,7 @@ export const metadata = {
 ### Technology Alignment
 
 **Next.js Advantages:**
+
 - ✅ Official React team recommendations
 - ✅ React Server Components support
 - ✅ Modern web platform features
@@ -519,6 +559,7 @@ export const metadata = {
 - ✅ Middleware capabilities
 
 **Gatsby Limitations:**
+
 - ⚠️ GraphQL layer adds complexity
 - ⚠️ Slower to adopt new React features
 - ⚠️ Limited server-side capabilities
@@ -532,6 +573,7 @@ export const metadata = {
 ### ✅ **Strongly Recommend Next.js 15**
 
 **Critical Improvements:**
+
 1. **94% faster builds** - Massive productivity gain
 2. **0 security vulnerabilities** - Better security posture
 3. **74% smaller output** - Infrastructure efficiency
@@ -539,6 +581,7 @@ export const metadata = {
 5. **Active development** - Future-proof investment
 
 **Business Impact:**
+
 - **~$9,500/year** developer productivity savings
 - **Better security compliance** - Zero vulnerabilities
 - **Lower infrastructure costs** - Smaller builds, faster deploys
@@ -546,6 +589,7 @@ export const metadata = {
 - **Future-proof** - Aligned with React ecosystem direction
 
 **Risk Mitigation:**
+
 - Zero functionality lost in migration
 - All features preserved exactly
 - Backward-compatible deployment process
@@ -601,11 +645,13 @@ TOTAL:                          3.700s
 ### Dependency Tree Depth
 
 **Gatsby:**
+
 - Average depth: 8-10 levels
 - Max depth: 15 levels
 - Circular dependencies: 3-5 warnings
 
 **Next.js:**
+
 - Average depth: 4-6 levels
 - Max depth: 8 levels
 - Circular dependencies: 0 warnings

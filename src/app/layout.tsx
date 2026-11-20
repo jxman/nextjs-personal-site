@@ -17,7 +17,9 @@ export const metadata: Metadata = {
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    apple: [{ url: '/apple-touch-icon.png', sizes: '144x144', type: 'image/png' }],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '144x144', type: 'image/png' },
+    ],
   },
   manifest: '/manifest.json',
   alternates: {

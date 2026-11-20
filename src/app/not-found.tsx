@@ -202,7 +202,9 @@ export default function NotFound() {
           {/* Help Text */}
           <div className="mt-12 p-6 bg-base-200 rounded-lg">
             <p className="text-sm text-base-content/60">
-              <strong>Still can&apos;t find what you&apos;re looking for?</strong>
+              <strong>
+                Still can&apos;t find what you&apos;re looking for?
+              </strong>
               <br />
               Try searching from the home page or{' '}
               <Link href="/contact" className="text-primary hover:underline">

@@ -16,7 +16,7 @@ export default function ContactClient() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }))
@@ -67,12 +67,8 @@ export default function ContactClient() {
                   <FaLinkedin className="text-xl" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-base-content">
-                    LinkedIn
-                  </h3>
-                  <p className="text-base-content/70">
-                    Best way to reach me
-                  </p>
+                  <h3 className="font-semibold text-base-content">LinkedIn</h3>
+                  <p className="text-base-content/70">Best way to reach me</p>
                   <a
                     href="https://www.linkedin.com/in/johnx/"
                     target="_blank"
@@ -89,12 +85,8 @@ export default function ContactClient() {
                   <FaGithub className="text-xl" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-base-content">
-                    GitHub
-                  </h3>
-                  <p className="text-base-content/70">
-                    Check out my projects
-                  </p>
+                  <h3 className="font-semibold text-base-content">GitHub</h3>
+                  <p className="text-base-content/70">Check out my projects</p>
                   <a
                     href="https://github.com/jxman"
                     target="_blank"
@@ -129,9 +121,9 @@ export default function ContactClient() {
                 Professional Inquiries
               </h4>
               <p className="text-base-content/70 text-sm">
-                For business opportunities, speaking engagements, or
-                technology consulting, please reach out via LinkedIn with a
-                detailed message.
+                For business opportunities, speaking engagements, or technology
+                consulting, please reach out via LinkedIn with a detailed
+                message.
               </p>
             </div>
           </div>
@@ -217,8 +209,8 @@ export default function ContactClient() {
             <div className="mt-6 p-4 bg-warning/10 border-l-4 border-warning rounded-r-lg">
               <p className="text-sm text-base-content/70">
                 <strong>Note:</strong> This contact form is currently under
-                development. For immediate responses, please connect with me
-                on LinkedIn.
+                development. For immediate responses, please connect with me on
+                LinkedIn.
               </p>
             </div>
           </div>

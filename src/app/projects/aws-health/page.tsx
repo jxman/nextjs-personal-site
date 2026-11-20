@@ -69,9 +69,9 @@ export default function AWSHealth() {
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
-                      All AWS resources are managed and configured with Terraform
-                      code and fully automated. (See my GitHub repo for more
-                      details)
+                      All AWS resources are managed and configured with
+                      Terraform code and fully automated. (See my GitHub repo
+                      for more details)
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -94,28 +94,30 @@ export default function AWSHealth() {
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
                       Multi-environment deployment supports both development and
-                      production environments with separate infrastructure stacks.
+                      production environments with separate infrastructure
+                      stacks.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
                       SNS topic distributes formatted notifications to multiple
-                      endpoints including email, SMS, and other subscriber types.
+                      endpoints including email, SMS, and other subscriber
+                      types.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
-                      Comprehensive monitoring and logging through CloudWatch with
-                      proper IAM roles and security policies.
+                      Comprehensive monitoring and logging through CloudWatch
+                      with proper IAM roles and security policies.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1 flex-shrink-0">•</span>
                     <span>
-                      Built using AWS SDK v3 with Node.js 20.x runtime for optimal
-                      performance and modern JavaScript features.
+                      Built using AWS SDK v3 with Node.js 20.x runtime for
+                      optimal performance and modern JavaScript features.
                     </span>
                   </li>
                 </ul>
