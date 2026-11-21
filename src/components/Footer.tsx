@@ -128,7 +128,7 @@ function Footer() {
               {[
                 { href: '/about', label: 'About Me', icon: '👤' },
                 { href: '/projects', label: 'Projects', icon: '🚀' },
-                { href: '/tools', label: 'Cloud Tools', icon: '🛠️' },
+                { href: '/apps', label: 'Apps', icon: '📱' },
                 { href: '/blog', label: 'Blog', icon: '📝' },
                 { href: '/resume', label: 'Resume', icon: '📄' },
                 { href: '/contact', label: 'Contact', icon: '✉️' },

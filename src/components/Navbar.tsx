@@ -91,21 +91,16 @@ function Navbar({ title = 'John Xanthopoulos' }: NavbarProps) {
               Projects
             </Link>
             <Link
-              href="/tools"
-              className={`${linkStyle} ${isActive('/tools') ? activeLinkStyle : ''}`}
+              href="/apps"
+              className={`${linkStyle} ${isActive('/apps') ? activeLinkStyle : ''}`}
             >
-              Tools
+              Apps
             </Link>
             <Link
               href="/blog"
               className={`${linkStyle} ${isActive('/blog') ? activeLinkStyle : ''}`}
             >
-              <span className="flex items-center">
-                Blog
-                <span className="ml-1 px-1.5 py-0.5 text-xs bg-primary/10 text-primary rounded-full font-medium">
-                  New
-                </span>
-              </span>
+              Blog
             </Link>
             <Link
               href="/resume"
@@ -261,8 +256,8 @@ function Navbar({ title = 'John Xanthopoulos' }: NavbarProps) {
               </div>
             </Link>
             <Link
-              href="/tools"
-              className={`${mobileStyle} ${isActive('/tools') ? 'text-primary bg-primary/10 font-semibold' : ''}`}
+              href="/apps"
+              className={`${mobileStyle} ${isActive('/apps') ? 'text-primary bg-primary/10 font-semibold' : ''}`}
               onClick={() => setIsOpen(false)}
             >
               <div className="flex items-center">
@@ -276,10 +271,10 @@ function Navbar({ title = 'John Xanthopoulos' }: NavbarProps) {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
                   />
                 </svg>
-                Tools
+                Apps
               </div>
             </Link>
             <Link
@@ -302,9 +297,6 @@ function Navbar({ title = 'John Xanthopoulos' }: NavbarProps) {
                   />
                 </svg>
                 Blog
-                <span className="ml-auto px-2 py-0.5 text-xs bg-primary/10 text-primary rounded-full">
-                  New
-                </span>
               </div>
             </Link>
             <Link

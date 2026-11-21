@@ -20,6 +20,7 @@ interface Project {
   text: string
   description: string
   link: string
+  app_link?: string
   github_link: string
   status: string
   featured: boolean

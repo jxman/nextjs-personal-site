@@ -1,259 +1,400 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import { FaArrowLeft, FaArrowRight, FaGithub } from 'react-icons/fa'
 import Layout from '@/components/Layout'
 import AnimatedSection from '@/components/AnimatedSection'
 
+const description =
+  'How I built Brew Updates: a Bash engine, a launchd schedule and a Swift 6 menu bar app that share one file-based contract, plus notarized distribution, Sparkle updates and a Homebrew cask.'
+
 export const metadata: Metadata = {
-  title: 'Brew Updates - Homebrew Update Assistant for macOS',
-  description:
-    "John Xanthopoulos' locally run macOS tool that keeps Homebrew updated, backed up, health-checked and scanned for vulnerabilities, with a native SwiftUI app for viewing results and acting on them.",
+  title: 'Brew Updates Case Study - How I Built It',
+  description,
   alternates: {
     canonical: '/projects/brew-updates',
   },
   openGraph: {
-    title: 'Brew Updates - Homebrew Update Assistant for macOS',
-    description:
-      'A scheduled Bash script plus a native SwiftUI menu bar app that keeps Homebrew updated, backed up and scanned for vulnerabilities.',
+    title: 'Brew Updates Case Study - How I Built It',
+    description,
+    url: 'https://www.synepho.com/projects/brew-updates',
     images: ['https://www.synepho.com/images/brew-updates/dashboard.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brew Updates - Homebrew Update Assistant for macOS',
+    title: 'Brew Updates Case Study - How I Built It',
+    description,
     images: ['https://www.synepho.com/images/brew-updates/dashboard.png'],
   },
 }
 
-const screens = [
+const triggers = [
+  { name: 'LaunchAgent', detail: 'Your schedule, via launchd' },
+  { name: 'Brew Updates app', detail: 'Update All, Dry Run, Upgrade' },
+  { name: 'Terminal', detail: 'Run by hand' },
+]
+
+const localState = [
+  { name: '~/.brew_logs', detail: 'Logs, reports, *.summary.json, run lock' },
+  { name: '~/.brew_backups', detail: 'Brewfile before every run' },
+  { name: '~/.brew_update_config', detail: 'Settings + LaunchAgent plist' },
+]
+
+const externalTools = [
+  { name: 'Homebrew', detail: 'brew CLI + GitHub' },
+  { name: 'Grype', detail: 'Cellar vulnerability scan' },
+  { name: 'brew vulns', detail: 'OSV.dev lookups' },
+]
+
+const pipeline = [
+  'Acquire the run lock (exit 5 if another run holds it)',
+  'Load and validate config and environment variables',
+  'Pre-flight: brew, git, at least 1 GB free disk, network',
+  'Brewfile backup, rotated to the configured count',
+  'brew update, retried with exponential backoff',
+  'Find outdated packages, dropping pinned, excluded and self-updating casks',
+  'brew vulns on the outdated formulae (advisory only)',
+  'Upgrade formulae, then casks',
+  'brew doctor report and deprecated/disabled check',
+  'Grype scan, then brew vulns scan',
+  'brew cleanup + autoremove, prune old logs',
+  'Notification, then the EXIT trap writes *.summary.json and releases the lock',
+]
+
+const decisions = [
   {
-    name: 'Dashboard',
-    image: '/images/brew-updates/dashboard.png',
-    text: 'Last run, schedule, outdated count, Grype and brew vulns counts side by side, open doctor issues, and system and app versions.',
+    title: 'One engine, two triggers',
+    text: 'The Bash script is the only thing that upgrades packages. The launchd schedule and the app both just launch it, so a run started from the app gets exactly the same backup, lock, logs and summary as a 3 AM scheduled run. There is no second code path to drift out of sync.',
   },
   {
-    name: 'Installed',
-    image: '/images/brew-updates/installed.png',
-    text: 'Formulae and casks with their dependencies. Pin, exclude, upgrade selected, or uninstall with dependency warnings.',
+    title: 'Files as the contract',
+    text: "The script writes its results to ~/.brew_logs and the app reads them. No daemon, no database, no IPC: the app can be closed, crash or be replaced by an update and scheduled runs don't care. It also makes every run inspectable with a text editor.",
   },
   {
-    name: 'Runs',
-    image: '/images/brew-updates/runs.png',
-    text: "Every run's summary and log, plus live output with a Stop button for runs started from the app.",
+    title: 'Fail safe, not silent',
+    text: 'Commands run as arrays with no eval, and every config value and package name is checked against a regex. An atomic mkdir run lock prevents overlapping runs, and an EXIT trap writes a summary even on errors or Ctrl-C. The script never calls sudo itself.',
   },
   {
-    name: 'Security',
-    image: '/images/brew-updates/security.png',
-    text: 'Findings from Grype and brew vulns with a severity filter, a per-scanner trend chart, and on-demand Scan Now.',
+    title: 'Two scanners on purpose',
+    text: 'Grype scans the files in the Cellar; brew vulns looks formulae up in OSV.dev. They catch different things and disagree in useful ways, so the app shows them side by side with a trend chart rather than merging them into one number.',
   },
   {
-    name: 'Doctor',
-    image: '/images/brew-updates/doctor.png',
-    text: 'Each brew doctor warning explained with copyable fixes, plus deprecated or disabled packages with suggested replacements.',
+    title: 'Bash 3.2, deliberately',
+    text: "launchd runs macOS's built-in /bin/bash, which is 3.2. The script avoids associative arrays and mapfile so the scheduled run never depends on a newer shell from Homebrew, the very thing it is upgrading.",
   },
   {
-    name: 'Backups',
-    image: '/images/brew-updates/backups.png',
-    text: 'Compare a Brewfile backup with what is installed or the previous backup, and restore missing taps, formulae and casks.',
+    title: 'Graceful degradation',
+    text: "A failed doctor run, scan or notification is logged but doesn't stop the run. Missing optional tools (Grype, jq) are reported as unavailable rather than failing, and each kind of failure has its own exit code.",
   },
 ]
 
-const highlights = [
-  'Unattended updates: a LaunchAgent runs the script on your schedule (daily, weekly or monthly) to update Homebrew, upgrade outdated formulae and casks (respecting pins and exclusions), and clean up.',
-  'Safety net: a Brewfile backup is taken before every run, runs never overlap thanks to a run lock, and network calls retry with backoff.',
-  'Health and security reports: every run saves a brew doctor report, a Grype vulnerability scan of the Cellar, a brew vulns (OSV.dev) scan, and a list of deprecated or disabled packages.',
-  'Machine-readable results: each run writes a JSON summary and sends a macOS notification that links straight back to that run in the app.',
-  'Housekeeping visibility: the app surfaces leftover packages nothing needs any more, packages Homebrew is retiring, and packages with security issues worth upgrading, replacing or removing.',
-  'Simple to install and keep current: a notarized download (or a one-line Homebrew cask install) sets everything up on first launch, and the app updates itself with signed Sparkle releases.',
-  'The app never upgrades packages itself. Update All, Dry Run and Upgrade Selected all launch the same deployed script, so every run gets the same backup, lock, logs and summary as a scheduled run.',
+const distribution = [
+  {
+    title: 'Signed and notarized',
+    text: 'Developer ID signing with the hardened runtime and an Apple-notarized DMG, so the only prompt a user sees is the standard one-time "downloaded from the internet" check.',
+  },
+  {
+    title: 'Self-updating with Sparkle',
+    text: 'The app checks an appcast on GitHub Releases once a day. An update installs only if its EdDSA signature matches the key built into the app and it is signed by the same Developer ID team. Each app version carries its own script, installed at launch.',
+  },
+  {
+    title: 'Homebrew cask',
+    text: 'A cask in my own tap (jxman/homebrew-tap) offers a one-line install. It is marked auto_updates, so brew upgrade leaves updates to Sparkle instead of fighting it.',
+  },
+  {
+    title: 'First-launch setup',
+    text: 'On first launch the app installs the script into Application Support and registers the LaunchAgent, replacing what used to be a manual setup.sh step.',
+  },
 ]
 
-const techStack = [
-  'Swift 6',
-  'SwiftUI',
-  'Swift Charts',
-  'Bash',
-  'Homebrew',
-  'launchd',
-  'Grype',
-  'OSV.dev',
-  'Sparkle',
-  'XcodeGen',
-  'ShellCheck',
-  'SwiftLint',
-  'GitHub Actions',
+const quality = [
+  'ShellCheck on the script',
+  'SwiftLint --strict on the app',
+  'Swift Testing unit tests for models and services',
+  'pre-commit with ggshield secret scanning and Conventional Commits',
+  'GitHub Actions on macos-latest',
+  'XcodeGen project.yml as the source of truth (no checked-in .xcodeproj)',
 ]
 
-export default function BrewUpdates() {
+const stack = [
+  ['Script', 'Bash (macOS /bin/bash 3.2 compatible)'],
+  ['Scheduling', 'launchd LaunchAgent'],
+  ['Security scanning', 'Grype + brew vulns (OSV.dev), jq'],
+  ['App', 'Swift 6, SwiftUI, Swift Charts, macOS 15+'],
+  ['App project', 'XcodeGen'],
+  ['App updates', 'Sparkle 2, EdDSA-signed appcast on GitHub Releases'],
+  [
+    'Distribution',
+    'Developer ID, hardened runtime, notarized DMG, Homebrew cask',
+  ],
+  ['Quality', 'ShellCheck, SwiftLint, pre-commit, ggshield, GitHub Actions'],
+]
+
+const constraints = [
+  'Apple silicon only for the app; the script itself runs on Intel too.',
+  'Casks that update themselves are skipped, so the app shows their own version instead.',
+  'Scanner false positives happen: Grype misreads some Homebrew version strings (anchore/grype#3865), handled with targeted ignore rules.',
+  'No bottle provenance check by default: brew verify downloads the bottle and needs the GitHub CLI, so it stays a manual step.',
+]
+
+function DiagramColumn({
+  title,
+  items,
+}: {
+  title: string
+  items: { name: string; detail: string }[]
+}) {
+  return (
+    <div className="bg-base-200 rounded-xl p-4">
+      <h4 className="text-xs uppercase tracking-wider text-base-content/60 font-semibold mb-3">
+        {title}
+      </h4>
+      <ul className="space-y-2">
+        {items.map((item) => (
+          <li
+            key={item.name}
+            className="bg-base-100 rounded-lg px-3 py-2 border border-base-300"
+          >
+            <div className="font-mono text-sm font-semibold">{item.name}</div>
+            <div className="text-xs text-base-content/60">{item.detail}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export default function BrewUpdatesCaseStudy() {
   return (
     <Layout>
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        {/* Back button */}
+      <div className="max-w-5xl mx-auto px-4 py-8">
         <div className="mb-6">
-          <Link href="/projects" className="btn btn-outline btn-sm sm:btn-md">
-            <svg
-              className="w-4 h-4 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            Back to Projects
+          <Link href="/projects" className="btn btn-ghost btn-sm">
+            <FaArrowLeft className="w-3 h-3" /> Back to Projects
           </Link>
         </div>
 
-        <AnimatedSection animation="fadeInUp">
-          <div className="card bg-base-100 shadow-xl">
-            <div className="card-body">
-              {/* Header */}
-              <div className="flex flex-col items-center text-center mb-6">
-                <Image
-                  src="/images/brew-updates/logo.png"
-                  alt="Brew Updates app icon: a beer mug with a green upgrade arrow"
-                  width={96}
-                  height={96}
-                  unoptimized
-                />
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-4 mb-3">
-                  Brew Updates
-                </h1>
-                <p className="text-base sm:text-lg text-base-content/70 max-w-3xl">
-                  A Mac app that keeps Homebrew and everything you installed
-                  with it updated, backed up, health-checked and scanned for
-                  vulnerabilities, on a schedule, and shows you what changed. It
-                  runs entirely on your Mac, so instead of a live site here is a
-                  tour of the app.
-                </p>
-                <div className="flex flex-wrap justify-center gap-2 mt-4">
-                  <div className="badge badge-outline">Desktop Application</div>
-                  <div className="badge badge-outline">macOS 15+</div>
-                  <div className="badge badge-outline">Apple silicon</div>
-                  <div className="badge badge-success badge-outline">
-                    Active
-                  </div>
-                </div>
-              </div>
-
-              {/* App tour */}
-              <figure className="mb-10 flex flex-col">
-                <Image
-                  className="w-full h-auto rounded-2xl shadow-2xl"
-                  src="/images/brew-updates/app-tour.gif"
-                  alt="Animated tour of the Brew Updates app: Dashboard, Installed, Runs, Security, Doctor and Backups"
-                  width={1000}
-                  height={577}
-                  unoptimized
-                />
-                <figcaption className="text-sm text-base-content/60 text-center mt-3">
-                  A quick tour cycling through every screen of the app
-                </figcaption>
-              </figure>
-
-              {/* What it does */}
-              <div className="space-y-6 mb-12">
-                <h2 className="text-xl sm:text-2xl font-bold text-center">
-                  What It Does
-                </h2>
-                <ul className="space-y-4 text-sm sm:text-base lg:text-lg max-w-4xl mx-auto">
-                  {highlights.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span className="text-primary mt-1 flex-shrink-0">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Screenshots */}
-              <div className="mb-12">
-                <h2 className="text-xl sm:text-2xl font-bold text-center mb-2">
-                  Screens
-                </h2>
-                <p className="text-sm text-base-content/60 text-center mb-6">
-                  Click any screenshot to view it full size
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {screens.map((screen) => (
-                    <figure
-                      key={screen.name}
-                      className="bg-base-200 rounded-2xl overflow-hidden shadow-lg flex flex-col items-stretch"
-                    >
-                      <a
-                        href={screen.image}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        <Image
-                          className="w-full h-auto hover:opacity-90 transition-opacity"
-                          src={screen.image}
-                          alt={`Brew Updates ${screen.name} screen`}
-                          width={1600}
-                          height={923}
-                          unoptimized
-                        />
-                      </a>
-                      <figcaption className="p-4">
-                        <h3 className="font-semibold text-lg mb-1">
-                          {screen.name}
-                        </h3>
-                        <p className="text-sm text-base-content/70">
-                          {screen.text}
-                        </p>
-                      </figcaption>
-                    </figure>
-                  ))}
-                </div>
-              </div>
-
-              {/* Tech stack */}
-              <div className="text-center mb-8">
-                <h2 className="text-xl sm:text-2xl font-bold mb-4">
-                  Tech Stack
-                </h2>
-                <div className="flex flex-wrap justify-center gap-2">
-                  {techStack.map((tech) => (
-                    <span key={tech} className="badge badge-ghost">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Download and GitHub */}
-              <div className="flex flex-wrap justify-center gap-3">
-                <a
-                  href="https://github.com/jxman/brew-updates/releases/latest"
-                  className="btn btn-primary"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                >
-                  Download the App
-                </a>
-                <a
-                  href="https://github.com/jxman/brew-updates"
-                  className="btn btn-outline"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                  </svg>
-                  View Source and Install Guide on GitHub
-                </a>
-              </div>
-            </div>
+        {/* Header */}
+        <AnimatedSection
+          animation="fadeInUp"
+          className="text-center mb-12 flex flex-col items-center"
+        >
+          <Image
+            src="/images/brew-updates/logo.png"
+            alt="Brew Updates app icon"
+            width={80}
+            height={80}
+            unoptimized
+          />
+          <p className="text-sm uppercase tracking-wider text-primary font-semibold mt-4">
+            Case Study
+          </p>
+          <h1 className="text-3xl sm:text-4xl font-bold mt-1 mb-4">
+            Building Brew Updates
+          </h1>
+          <p className="text-lg text-base-content/70 max-w-3xl">
+            I wanted Homebrew to look after itself: update on a schedule, back
+            up first, check its own health and tell me about vulnerabilities,
+            without me remembering to run anything. It started as a Bash script
+            and grew into a signed, self-updating Mac app. Here&apos;s how the
+            pieces fit together and the decisions behind them.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
+            <Link href="/apps/brew-updates" className="btn btn-primary">
+              See the app <FaArrowRight className="w-3 h-3" />
+            </Link>
+            <a
+              href="https://github.com/jxman/brew-updates"
+              className="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub className="w-4 h-4" /> Source on GitHub
+            </a>
           </div>
         </AnimatedSection>
+
+        {/* Architecture */}
+        <section className="mb-16" aria-labelledby="architecture-heading">
+          <h2 id="architecture-heading" className="text-2xl font-bold mb-3">
+            Architecture
+          </h2>
+          <p className="text-base-content/70 mb-6 leading-relaxed">
+            The script is the engine. The LaunchAgent and the app are its
+            triggers, and a folder of files in your home directory is the
+            contract between them: the script writes run files, the app reads
+            them.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1.2fr_auto_1fr] gap-3 items-center">
+            <DiagramColumn title="Triggers" items={triggers} />
+            <FaArrowRight className="hidden md:block mx-auto text-base-content/40" />
+            <div className="bg-primary/10 border-2 border-primary/40 rounded-xl p-5 text-center">
+              <h4 className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                Engine
+              </h4>
+              <div className="font-mono font-bold">brew-updates.sh</div>
+              <p className="text-xs text-base-content/70 mt-2">
+                update · upgrade · backup · doctor · deprecations · Grype + brew
+                vulns · cleanup
+              </p>
+            </div>
+            <FaArrowRight className="hidden md:block mx-auto text-base-content/40" />
+            <div className="space-y-3">
+              <DiagramColumn title="Writes local state" items={localState} />
+              <DiagramColumn
+                title="Calls external tools"
+                items={externalTools}
+              />
+            </div>
+          </div>
+          <p className="text-sm text-base-content/60 mt-4">
+            The app reads runs and edits config from the same files, and makes
+            only the direct brew changes you ask for (pin, uninstall, restore).
+          </p>
+        </section>
+
+        {/* Pipeline */}
+        <section className="mb-16" aria-labelledby="pipeline-heading">
+          <h2 id="pipeline-heading" className="text-2xl font-bold mb-3">
+            What a run does
+          </h2>
+          <p className="text-base-content/70 mb-6 leading-relaxed">
+            Every run, scheduled or not, goes through the same pipeline. The
+            EXIT trap runs on errors and interrupts too, so every run that got
+            the lock leaves a summary and releases the lock.
+          </p>
+          <ol className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+            {pipeline.map((step, index) => (
+              <li key={step} className="flex gap-3 items-start">
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-base-200 text-sm font-semibold flex items-center justify-center">
+                  {index + 1}
+                </span>
+                <span className="text-sm pt-1">{step}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        {/* Decisions */}
+        <section className="mb-16" aria-labelledby="decisions-heading">
+          <h2 id="decisions-heading" className="text-2xl font-bold mb-6">
+            Key design decisions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {decisions.map((decision) => (
+              <div
+                key={decision.title}
+                className="card bg-base-100 border border-base-200 shadow-sm"
+              >
+                <div className="card-body p-5">
+                  <h3 className="font-semibold text-lg">{decision.title}</h3>
+                  <p className="text-sm text-base-content/70 leading-relaxed">
+                    {decision.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Runs screenshot */}
+        <figure className="mb-16">
+          <Image
+            className="w-full h-auto rounded-2xl shadow-xl border border-base-200"
+            src="/images/brew-updates/runs.png"
+            alt="Brew Updates Runs screen listing each run's summary and log"
+            width={1600}
+            height={923}
+            unoptimized
+          />
+          <figcaption className="text-sm text-base-content/60 text-center mt-3">
+            The Runs screen is a view over the script&apos;s summary and log
+            files
+          </figcaption>
+        </figure>
+
+        {/* Distribution */}
+        <section className="mb-16" aria-labelledby="distribution-heading">
+          <h2 id="distribution-heading" className="text-2xl font-bold mb-3">
+            From script to shipped Mac app
+          </h2>
+          <p className="text-base-content/70 mb-6 leading-relaxed">
+            Turning a personal script into something anyone can install meant
+            handling Apple&apos;s signing requirements and keeping installs up
+            to date without an App Store.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {distribution.map((item) => (
+              <div key={item.title} className="bg-base-200 rounded-xl p-5">
+                <h3 className="font-semibold mb-1">{item.title}</h3>
+                <p className="text-sm text-base-content/70 leading-relaxed">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Quality + stack */}
+        <section
+          className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-10"
+          aria-label="Quality and tech stack"
+        >
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Quality gates</h2>
+            <ul className="space-y-2">
+              {quality.map((item) => (
+                <li key={item} className="flex gap-3 items-start">
+                  <span className="text-primary mt-0.5">✓</span>
+                  <span className="text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Tech stack</h2>
+            <div className="overflow-x-auto">
+              <table className="table table-sm">
+                <tbody>
+                  {stack.map(([layer, tech]) => (
+                    <tr key={layer}>
+                      <th className="font-semibold whitespace-nowrap align-top">
+                        {layer}
+                      </th>
+                      <td className="text-base-content/70">{tech}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Constraints */}
+        <section className="mb-16" aria-labelledby="constraints-heading">
+          <h2 id="constraints-heading" className="text-2xl font-bold mb-4">
+            Known constraints
+          </h2>
+          <ul className="space-y-2">
+            {constraints.map((item) => (
+              <li key={item} className="flex gap-3 items-start">
+                <span className="text-base-content/40 mt-0.5">•</span>
+                <span className="text-sm text-base-content/80">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* CTA */}
+        <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center">
+          <h2 className="text-2xl font-bold mb-2">Try Brew Updates</h2>
+          <p className="text-base-content/70 mb-5">
+            Free for Apple silicon Macs running macOS 15 or later.
+          </p>
+          <Link href="/apps/brew-updates" className="btn btn-primary">
+            Features and Quick Start <FaArrowRight className="w-3 h-3" />
+          </Link>
+        </div>
       </div>
     </Layout>
   )

@@ -3,7 +3,7 @@ module.exports = {
   siteUrl: process.env.SITE_URL || 'https://www.synepho.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
-  exclude: ['/server-sitemap.xml'],
+  exclude: ['/server-sitemap.xml', '/tools', '/tools/'],
   robotsTxtOptions: {
     policies: [
       {
@@ -25,7 +25,11 @@ module.exports = {
     }
 
     // Key pages - high priority
-    if (['/about/', '/projects/', '/resume/', '/contact/'].includes(path)) {
+    if (
+      ['/about/', '/projects/', '/apps/', '/resume/', '/contact/'].includes(
+        path
+      )
+    ) {
       return {
         loc: path,
         changefreq: 'monthly',
@@ -39,6 +43,16 @@ module.exports = {
       return {
         loc: path,
         changefreq: 'weekly',
+        priority: 0.7,
+        lastmod: new Date().toISOString(),
+      }
+    }
+
+    // App pages - medium-high priority
+    if (path.startsWith('/apps/')) {
+      return {
+        loc: path,
+        changefreq: 'monthly',
         priority: 0.7,
         lastmod: new Date().toISOString(),
       }

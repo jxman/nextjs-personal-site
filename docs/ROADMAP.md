@@ -13,6 +13,14 @@ This document outlines planned improvements and enhancements for the Next.js por
 
 - Next.js 15.5.22 has 2 open Snyk-flagged vulnerabilities (high: CVE-2025-59472, medium: CVE-2026-27980) only fixed in Next.js 16.x. Deferred pending a dedicated major-version upgrade — see [SECURITY_UPDATE_2026-08-05.md](./SECURITY_UPDATE_2026-08-05.md).
 
+✅ **Recently Completed (November 21, 2026):**
+
+- ✅ Replaced the Tools page with an **Apps** page (`/apps`): one marketing page per app (`/apps/[slug]`) with features, a Quick Start, screens, FAQ and `SoftwareApplication` structured data, driven by `src/content/apps.json`
+- ✅ Apps: Brew Updates, Cloud Status Hub, AWS Services Dashboard, Lawn.Smart and Tesla Drive Companion; dropped the third-party Helpful Links
+- ✅ `/tools` now redirects to `/apps` (meta refresh, noindex); nav and footer renamed to Apps
+- ✅ `/projects/brew-updates` rewritten as a "how I built it" case study; project cards link to their app page
+- ✅ Brew Updates is the lead featured project; dark mode project screenshots replaced with light mode
+
 ✅ **Recently Completed (August 5, 2026):**
 
 - ✅ Snyk scan remediation: patched `nanoid` (3.3.16 → 3.3.17) and `sharp` (0.34.5 → 0.35.3) via `package.json` overrides, resolving 5 of 7 flagged vulnerabilities

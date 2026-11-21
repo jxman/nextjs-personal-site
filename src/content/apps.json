@@ -1,0 +1,479 @@
+[
+  {
+    "slug": "brew-updates",
+    "name": "Brew Updates",
+    "tagline": "Keep Homebrew updated, backed up and scanned for vulnerabilities, on autopilot.",
+    "summary": "A Mac app that keeps Homebrew and everything you installed with it updated, backed up, health-checked and scanned for vulnerabilities on a schedule, then shows you exactly what changed. Set it up once and forget about brew upgrade.",
+    "icon": "/images/brew-updates/logo.png",
+    "platforms": ["macOS"],
+    "category": "Developer Tool",
+    "schemaCategory": "DeveloperApplication",
+    "operatingSystem": "macOS 15 or later (Apple silicon)",
+    "requirements": "Apple silicon Mac · macOS 15 Sequoia or later · Homebrew",
+    "primaryCta": {
+      "label": "Download for Mac",
+      "href": "https://github.com/jxman/brew-updates/releases/latest"
+    },
+    "secondaryCta": {
+      "label": "View on GitHub",
+      "href": "https://github.com/jxman/brew-updates"
+    },
+    "hero": {
+      "src": "/images/brew-updates/dashboard.png",
+      "alt": "Brew Updates dashboard showing the last run, schedule, available updates, security findings and doctor status",
+      "width": 1600,
+      "height": 923
+    },
+    "tour": {
+      "src": "/images/brew-updates/app-tour.gif",
+      "alt": "Animated tour of the Brew Updates app: Dashboard, Installed, Runs, Security, Doctor and Backups",
+      "width": 1000,
+      "height": 577
+    },
+    "features": [
+      {
+        "title": "Unattended updates",
+        "text": "Runs brew update, upgrades outdated formulae and casks, and cleans up on your schedule: daily, weekly or monthly. Pinned and excluded packages are left alone."
+      },
+      {
+        "title": "A backup before every run",
+        "text": "Each run saves a Brewfile first. Compare any backup with what's installed and restore missing taps, formulae and casks in a click."
+      },
+      {
+        "title": "Security scanning built in",
+        "text": "Every run scans with Grype and brew vulns (OSV.dev), with a severity filter and a trend chart so you can see whether things are getting better."
+      },
+      {
+        "title": "Health checks explained",
+        "text": "brew doctor warnings come with plain-English explanations and copyable fixes, plus a list of deprecated packages and suggested replacements."
+      },
+      {
+        "title": "Know what to clean up",
+        "text": "See packages nothing needs any more, packages Homebrew is retiring, and packages with security issues worth upgrading, replacing or removing."
+      },
+      {
+        "title": "Menu bar at a glance",
+        "text": "The menu bar icon shows how many updates are waiting. One notification per run, and clicking it opens that run's details."
+      }
+    ],
+    "quickStart": [
+      {
+        "title": "Install",
+        "text": "Install with Homebrew, or download the notarized DMG from the latest release and drag Brew Updates to Applications.",
+        "code": "brew install --cask jxman/tap/brew-updates"
+      },
+      {
+        "title": "Open it",
+        "text": "Open Brew Updates from Applications. macOS asks once about opening an app from the internet: click Open."
+      },
+      {
+        "title": "Choose when it runs",
+        "text": "Pick Daily, Weekly or Monthly and a time, leave notifications on, and click Install grype for the deeper security scan. Then click Set Up."
+      },
+      {
+        "title": "Let it run",
+        "text": "Updates now run on schedule even when the app is closed. The app also keeps itself up to date and asks before installing a new version."
+      }
+    ],
+    "screens": [
+      {
+        "name": "Dashboard",
+        "text": "Last run, schedule, available updates, security counts, doctor status and system versions.",
+        "image": {
+          "src": "/images/brew-updates/dashboard.png",
+          "alt": "Brew Updates Dashboard screen",
+          "width": 1600,
+          "height": 923
+        }
+      },
+      {
+        "name": "Installed",
+        "text": "Formulae and casks with their dependencies. Pin, exclude, upgrade selected, or uninstall safely.",
+        "image": {
+          "src": "/images/brew-updates/installed.png",
+          "alt": "Brew Updates Installed screen",
+          "width": 1600,
+          "height": 923
+        }
+      },
+      {
+        "name": "Runs",
+        "text": "Every run's summary and log, plus live output for runs started from the app.",
+        "image": {
+          "src": "/images/brew-updates/runs.png",
+          "alt": "Brew Updates Runs screen",
+          "width": 1600,
+          "height": 923
+        }
+      },
+      {
+        "name": "Security",
+        "text": "Grype and brew vulns findings with a severity filter, trend chart and on-demand Scan Now.",
+        "image": {
+          "src": "/images/brew-updates/security.png",
+          "alt": "Brew Updates Security screen",
+          "width": 1600,
+          "height": 923
+        }
+      },
+      {
+        "name": "Doctor",
+        "text": "Each brew doctor warning explained, with copyable fixes and replacement suggestions.",
+        "image": {
+          "src": "/images/brew-updates/doctor.png",
+          "alt": "Brew Updates Doctor screen",
+          "width": 1600,
+          "height": 923
+        }
+      },
+      {
+        "name": "Backups",
+        "text": "Compare Brewfile backups and restore missing taps, formulae and casks.",
+        "image": {
+          "src": "/images/brew-updates/backups.png",
+          "alt": "Brew Updates Backups screen",
+          "width": 1600,
+          "height": 923
+        }
+      }
+    ],
+    "faq": [
+      {
+        "question": "Is it safe to install?",
+        "answer": "Yes. The app is signed with an Apple Developer ID and notarized by Apple, and its updates are signed too, so only official releases are installed. All of the source code is on GitHub."
+      },
+      {
+        "question": "Does it send my data anywhere?",
+        "answer": "No. There's no account and no analytics. It only talks to Homebrew, the vulnerability databases and GitHub (for its own updates)."
+      },
+      {
+        "question": "Does the app need to stay open?",
+        "answer": "No. Scheduled updates run even when the app is closed. The app is there to show results and let you act on them."
+      },
+      {
+        "question": "Does it update my other apps?",
+        "answer": "Apps you installed with Homebrew (brew install --cask), yes, except apps that update themselves. App Store apps and apps you installed yourself aren't touched."
+      }
+    ],
+    "caseStudy": "/projects/brew-updates",
+    "github": "https://github.com/jxman/brew-updates",
+    "techStack": ["Swift 6", "SwiftUI", "Bash", "launchd", "Grype", "Sparkle"]
+  },
+  {
+    "slug": "cloud-status-hub",
+    "name": "Cloud Status Hub",
+    "tagline": "AWS, Azure, OCI and GCP health in one live view, with outage alerts and AI briefs.",
+    "summary": "Stop checking four status pages. Cloud Status Hub pulls AWS, Azure, Oracle Cloud and Google Cloud health into one dashboard that refreshes every minute, emails you when a provider you follow has an incident, and explains each incident in plain language.",
+    "icon": "/images/apps/cloud-status-hub.png",
+    "platforms": ["Web"],
+    "category": "Cloud Monitoring",
+    "schemaCategory": "BusinessApplication",
+    "operatingSystem": "Web browser",
+    "requirements": "Any modern browser · No sign-up needed",
+    "primaryCta": {
+      "label": "Open Cloud Status Hub",
+      "href": "https://cloudstatus.synepho.com"
+    },
+    "secondaryCta": {
+      "label": "View on GitHub",
+      "href": "https://github.com/jxman/csp-status-hub"
+    },
+    "hero": {
+      "src": "/images/cloud-status-hub.png",
+      "alt": "Cloud Status Hub showing AWS, Azure, OCI and GCP status cards and active incidents",
+      "width": 1280,
+      "height": 800
+    },
+    "features": [
+      {
+        "title": "Four clouds, one view",
+        "text": "Current status of AWS, Azure, OCI and GCP side by side, refreshed every 60 seconds, with links to each official status page."
+      },
+      {
+        "title": "Region and service detail",
+        "text": "Expand a provider to see exactly which regions and services are affected, not just a red or green light."
+      },
+      {
+        "title": "Email alerts",
+        "text": "Follow the providers you care about and get an email when they report a new incident, and again when it's resolved."
+      },
+      {
+        "title": "AI Insight briefs",
+        "text": "Each incident gets an AI-written technical brief and executive brief, viewable on the dashboard and downloadable as a PDF."
+      },
+      {
+        "title": "90 days of history",
+        "text": "Resolved incidents stay available for 90 days, so you can look back at what happened and when."
+      },
+      {
+        "title": "Per-provider pages",
+        "text": "Bookmark /aws, /azure, /gcp or /oci to go straight to the provider you work with most."
+      }
+    ],
+    "quickStart": [
+      {
+        "title": "Open the dashboard",
+        "text": "No account or install needed. Leave it open in a tab; it refreshes itself every minute.",
+        "code": "https://cloudstatus.synepho.com"
+      },
+      {
+        "title": "Focus on your provider",
+        "text": "Use the filter bar at the top, or bookmark a provider page such as cloudstatus.synepho.com/aws."
+      },
+      {
+        "title": "Dig into an incident",
+        "text": "Expand a provider card to see affected regions, then open an incident for its AI brief and a link to the official notice."
+      },
+      {
+        "title": "Get alerts",
+        "text": "Click Get alerts, choose your providers and enter your email. Confirm from the email you receive and you're subscribed."
+      }
+    ],
+    "relatedPost": {
+      "label": "Read: Building Cloud Status Hub with AI Insight",
+      "href": "/blog/cloud-status-hub-ai-insight"
+    },
+    "github": "https://github.com/jxman/csp-status-hub",
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Vercel Functions",
+      "Neon Postgres",
+      "AWS Bedrock",
+      "Resend"
+    ]
+  },
+  {
+    "slug": "aws-services-dashboard",
+    "name": "AWS Services Dashboard",
+    "tagline": "See which AWS services run in which regions, updated daily from AWS itself.",
+    "summary": "Planning a deployment in a new region? AWS Services Dashboard shows every AWS service across every AWS region, refreshed daily from AWS's own metadata, with searchable region and service pages, a full coverage matrix and one-click Excel and CSV exports.",
+    "icon": "/images/apps/aws-services-dashboard.png",
+    "platforms": ["Web"],
+    "category": "Cloud Infrastructure",
+    "schemaCategory": "BusinessApplication",
+    "operatingSystem": "Web browser",
+    "requirements": "Any modern browser · No sign-up needed",
+    "primaryCta": {
+      "label": "Open AWS Services Dashboard",
+      "href": "https://aws-services.synepho.com"
+    },
+    "secondaryCta": {
+      "label": "View on GitHub",
+      "href": "https://github.com/jxman/aws-services-site"
+    },
+    "hero": {
+      "src": "/images/aws-services-dashboard.png",
+      "alt": "AWS Services Dashboard showing region, service and mapping counts",
+      "width": 2400,
+      "height": 1296
+    },
+    "features": [
+      {
+        "title": "Every region, every service",
+        "text": "Availability for 400+ AWS services across all AWS regions, so you can check before you design."
+      },
+      {
+        "title": "Updated daily from AWS",
+        "text": "Data comes from AWS Systems Manager Parameter Store, AWS's own source of service metadata, and refreshes every day at 2:00 AM UTC."
+      },
+      {
+        "title": "Region and service pages",
+        "text": "Every region and every service has its own page listing what is and isn't available, ready to bookmark or share."
+      },
+      {
+        "title": "Coverage matrix",
+        "text": "A full service-by-region grid with filters, so gaps in a region you're considering stand out immediately."
+      },
+      {
+        "title": "Multi-term search",
+        "text": "Search for several things at once: \"lambda, s3\" finds both services, \"us-, ap-\" finds every US and Asia Pacific region."
+      },
+      {
+        "title": "Excel and CSV reports",
+        "text": "The Report Center exports a formatted Excel workbook or quick CSVs of regions, services and coverage."
+      }
+    ],
+    "quickStart": [
+      {
+        "title": "Open the dashboard",
+        "text": "No sign-up needed. The home page shows region, service and coverage totals with the last update time.",
+        "code": "https://aws-services.synepho.com"
+      },
+      {
+        "title": "Check a region",
+        "text": "Go to Regions and search, for example \"us-, eu-\", then open a region to see which services it has and which it's missing."
+      },
+      {
+        "title": "Check a service",
+        "text": "Go to Services and search for what you need, such as \"bedrock, lambda\", to see every region that supports it."
+      },
+      {
+        "title": "Export a report",
+        "text": "Open the Report Center to download the Excel workbook or a CSV for your architecture review or planning doc."
+      }
+    ],
+    "relatedPost": {
+      "label": "Read: Building AWS Services Dashboard",
+      "href": "/blog/aws-services-dashboard-release"
+    },
+    "github": "https://github.com/jxman/aws-services-site",
+    "techStack": [
+      "React",
+      "Vite",
+      "TanStack Query",
+      "AWS Lambda",
+      "CloudFront",
+      "Terraform"
+    ]
+  },
+  {
+    "slug": "lawn-smart",
+    "name": "Lawn.Smart",
+    "tagline": "A month-by-month lawn care plan tuned to your USDA hardiness zone.",
+    "summary": "Know exactly what your lawn needs this month. Lawn.Smart builds a lawn care plan for your state and USDA hardiness zone, prioritizes the tasks that can't wait, tracks what you've done year over year, and installs on your phone like a native app.",
+    "icon": "/images/apps/lawn-smart.png",
+    "platforms": ["Web", "iOS", "Android"],
+    "category": "Home & Garden",
+    "schemaCategory": "LifestyleApplication",
+    "operatingSystem": "Web browser, iOS, Android",
+    "requirements": "Any modern browser · Installs to your home screen · Free",
+    "primaryCta": {
+      "label": "Open Lawn.Smart",
+      "href": "https://www.lawnsmartapp.com"
+    },
+    "secondaryCta": {
+      "label": "View on GitHub",
+      "href": "https://github.com/jxman/aws-hosting-lawnsmartapp"
+    },
+    "hero": {
+      "src": "/images/lawn-smart-app.png",
+      "alt": "Lawn.Smart dashboard with this month's prioritized lawn care tasks and product picks",
+      "width": 1200,
+      "height": 722
+    },
+    "features": [
+      {
+        "title": "Tuned to your zone",
+        "text": "Covers all 50 states and USDA hardiness zones 3a to 11b, so timing is right for where you actually live."
+      },
+      {
+        "title": "Priorities that matter",
+        "text": "Tasks are ranked Critical, High, Medium or Low, and time-sensitive work like pre-emergent is surfaced first."
+      },
+      {
+        "title": "Calendar and history",
+        "text": "See the whole month at a glance, then track what you completed year over year with streaks and a monthly notes journal."
+      },
+      {
+        "title": "Product picks",
+        "text": "Recommendations matched to this month's tasks, so you know what to buy before you head to the store."
+      },
+      {
+        "title": "Built for your phone",
+        "text": "A dedicated mobile layout puts your most important task up front, with a full three-column view on desktop."
+      },
+      {
+        "title": "Install it, use it offline",
+        "text": "Add it to your home screen like a native app. It works offline and can remind you about seasonal tasks."
+      }
+    ],
+    "quickStart": [
+      {
+        "title": "Open Lawn.Smart",
+        "text": "Free, with no account needed.",
+        "code": "https://www.lawnsmartapp.com"
+      },
+      {
+        "title": "Set your location",
+        "text": "Enter your zip code, or choose your state, and click Get Started. Your USDA zone and season are set for you."
+      },
+      {
+        "title": "Work this month's plan",
+        "text": "Start with the Critical task at the top and check tasks off as you go. Use Calendar to look ahead and History to see your progress."
+      },
+      {
+        "title": "Add it to your home screen",
+        "text": "On iPhone, tap Share then Add to Home Screen in Safari. On Android, tap Install app in Chrome. Settings has step-by-step guides."
+      }
+    ],
+    "relatedPost": {
+      "label": "Read: Releasing Lawn.Smart",
+      "href": "/blog/lawnsmartapp-release"
+    },
+    "github": "https://github.com/jxman/aws-hosting-lawnsmartapp",
+    "techStack": ["React", "Tailwind CSS", "PWA", "AWS S3", "CloudFront"]
+  },
+  {
+    "slug": "tesla-drive-companion",
+    "name": "Tesla Drive Companion",
+    "tagline": "Weather, traffic, news and EV chargers in one touch-friendly page for your Tesla's browser.",
+    "summary": "A homepage made for the Tesla in-car browser. It brings the weather, live drive times to your saved places, the news and nearby chargers into one big, touch-friendly screen that follows your car's day and night display.",
+    "platforms": ["Web", "Tesla browser"],
+    "category": "Automotive",
+    "schemaCategory": "TravelApplication",
+    "operatingSystem": "Web browser (Tesla in-car browser)",
+    "requirements": "Tesla in-car browser, or any desktop or mobile browser",
+    "primaryCta": {
+      "label": "Open Tesla Drive Companion",
+      "href": "https://teslaweather.netlify.app/"
+    },
+    "secondaryCta": {
+      "label": "View on GitHub",
+      "href": "https://github.com/jxman/tesla-app"
+    },
+    "hero": {
+      "src": "/images/tesla-drive-companion.png",
+      "alt": "Tesla Drive Companion weather tab with current conditions, driving insight and 5-day forecast",
+      "width": 1280,
+      "height": 800
+    },
+    "features": [
+      {
+        "title": "Weather for driving",
+        "text": "Current conditions, a 12-hour trend and 5-day forecast, plus a driving insight that estimates cold-weather range loss."
+      },
+      {
+        "title": "Live drive times",
+        "text": "Save up to four places like Home and Work to see live drive and arrival times, plus traffic incidents near you."
+      },
+      {
+        "title": "EV chargers nearby",
+        "text": "Find the nearest chargers with plug types, speed and stalls, Tesla-compatible first, along with food and other stops."
+      },
+      {
+        "title": "News at a glance",
+        "text": "Headlines in six categories from free-to-read sources, sized for reading in the car."
+      },
+      {
+        "title": "Made for the touchscreen",
+        "text": "Large touch targets and fonts sized for the Tesla screen, with light and dark modes that follow the car's display."
+      },
+      {
+        "title": "Private by design",
+        "text": "No account. Your saved places and last location stay in your car's browser."
+      }
+    ],
+    "quickStart": [
+      {
+        "title": "Open it in your Tesla",
+        "text": "Open the browser on your Tesla's screen and go to the site. Bookmark it so it's one tap away.",
+        "code": "https://teslaweather.netlify.app"
+      },
+      {
+        "title": "Set your location",
+        "text": "Allow location when asked, or tap Change location and enter a zip code or town. It's remembered for next time."
+      },
+      {
+        "title": "Save your places",
+        "text": "On the Traffic tab, tap Add place and search for an address to save Home, Work and more for live drive times."
+      },
+      {
+        "title": "Explore the tabs",
+        "text": "Switch between Weather, Traffic, News and Places. Tap a saved place for its details and the voice command to navigate there."
+      }
+    ],
+    "github": "https://github.com/jxman/tesla-app",
+    "techStack": ["React", "Vite", "Tailwind CSS", "Netlify Functions"]
+  }
+]

@@ -90,6 +90,7 @@ The site was migrated from Gatsby 5 to Next.js 15 in November 2025, and will con
 │  ├── /index.html (homepage)                                        │
 │  ├── /about/index.html                                             │
 │  ├── /projects/index.html                                          │
+│  ├── /apps/index.html (+ /apps/<slug>/ per app)                    │
 │  ├── /blog/index.html                                              │
 │  ├── /_next/ (JS bundles)                                          │
 │  ├── /images/ (optimized assets)                                   │
@@ -186,11 +187,16 @@ nextjs-personal-site/
 │   │   ├── layout.tsx          # Root layout with metadata
 │   │   ├── page.tsx            # Homepage (/)
 │   │   ├── about/page.tsx      # About page
+│   │   ├── apps/               # Apps (marketing page per app)
+│   │   │   ├── page.tsx        # Apps listing
+│   │   │   └── [slug]/         # App detail pages (from apps.json)
+│   │   ├── tools/page.tsx      # Redirects old /tools to /apps
 │   │   ├── projects/           # Projects section
 │   │   │   ├── page.tsx        # Projects listing
 │   │   │   ├── aws-health/     # Project detail pages
 │   │   │   ├── aws-rss/
 │   │   │   ├── aws-site/
+│   │   │   ├── brew-updates/   # Brew Updates case study
 │   │   │   └── lawn/
 │   │   ├── blog/               # Blog section
 │   │   │   ├── page.tsx        # Blog listing
@@ -209,6 +215,9 @@ nextjs-personal-site/
 │   │   ├── Footer.tsx          # Footer with links
 │   │   ├── BlogCard.tsx        # Blog post card component
 │   │   ├── ProjectCard.tsx     # Project card component
+│   │   ├── AppCard.tsx         # App card for /apps
+│   │   ├── AppIcon.tsx         # App icon with fallback
+│   │   ├── CopyCode.tsx        # Copyable Quick Start command
 │   │   ├── StructuredData.tsx  # JSON-LD schema markup
 │   │   ├── AnimatedSection.tsx # Intersection Observer animations
 │   │   ├── ScrollToTop.tsx     # Scroll-to-top button
@@ -218,8 +227,10 @@ nextjs-personal-site/
 │   │   ├── about.md            # About page content
 │   │   ├── resume.md           # Resume content
 │   │   ├── blog-posts.json     # Blog metadata (centralized)
+│   │   ├── apps.json           # Apps: features, Quick Start, CTAs
 │   │   └── projects-enhanced.json  # Projects data with tech stacks
 │   ├── lib/                    # Utility functions
+│   │   ├── apps.ts             # Apps data helpers
 │   │   └── markdown.ts         # Markdown processing
 │   └── types/                  # TypeScript type definitions
 ├── public/                     # Static assets (copied to /out)
