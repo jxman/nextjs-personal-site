@@ -93,9 +93,9 @@ export default function IndexPage() {
                   About Me
                 </Link>
                 <Link
-                  href="/projects"
+                  href="/apps"
                   className="btn btn-outline btn-lg hover:scale-105 transition-transform duration-200"
-                  aria-label="View John's portfolio of projects"
+                  aria-label="Explore the free apps John builds and runs"
                 >
                   <svg
                     className="w-5 h-5 mr-2"
@@ -107,10 +107,10 @@ export default function IndexPage() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                      d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
                     />
                   </svg>
-                  View Projects
+                  Explore Apps
                 </Link>
                 <Link
                   href="/contact"
