@@ -58,11 +58,12 @@ const screens = [
 ]
 
 const highlights = [
-  'Unattended updates: a launchd LaunchAgent runs the script daily at 3 AM to update Homebrew, upgrade outdated formulae and casks (respecting pins and exclusions), and clean up.',
+  'Unattended updates: a LaunchAgent runs the script on your schedule (daily, weekly or monthly) to update Homebrew, upgrade outdated formulae and casks (respecting pins and exclusions), and clean up.',
   'Safety net: a Brewfile backup is taken before every run, runs never overlap thanks to a run lock, and network calls retry with backoff.',
   'Health and security reports: every run saves a brew doctor report, a Grype vulnerability scan of the Cellar, a brew vulns (OSV.dev) scan, and a list of deprecated or disabled packages.',
   'Machine-readable results: each run writes a JSON summary and sends a macOS notification that links straight back to that run in the app.',
   'Housekeeping visibility: the app surfaces leftover packages nothing needs any more, packages Homebrew is retiring, and packages with security issues worth upgrading, replacing or removing.',
+  'Simple to install and keep current: a notarized download (or a one-line Homebrew cask install) sets everything up on first launch, and the app updates itself with signed Sparkle releases.',
   'The app never upgrades packages itself. Update All, Dry Run and Upgrade Selected all launch the same deployed script, so every run gets the same backup, lock, logs and summary as a scheduled run.',
 ]
 
@@ -75,6 +76,7 @@ const techStack = [
   'launchd',
   'Grype',
   'OSV.dev',
+  'Sparkle',
   'XcodeGen',
   'ShellCheck',
   'SwiftLint',
@@ -121,15 +123,16 @@ export default function BrewUpdates() {
                   Brew Updates
                 </h1>
                 <p className="text-base sm:text-lg text-base-content/70 max-w-3xl">
-                  A scheduled Bash script that keeps Homebrew updated, backed
-                  up, health-checked and scanned for vulnerabilities, with a
-                  native macOS app on top for viewing results and acting on
-                  them. It runs entirely on your Mac, so instead of a live site
-                  here is a tour of the app.
+                  A Mac app that keeps Homebrew and everything you installed
+                  with it updated, backed up, health-checked and scanned for
+                  vulnerabilities, on a schedule, and shows you what changed. It
+                  runs entirely on your Mac, so instead of a live site here is a
+                  tour of the app.
                 </p>
                 <div className="flex flex-wrap justify-center gap-2 mt-4">
                   <div className="badge badge-outline">Desktop Application</div>
                   <div className="badge badge-outline">macOS 15+</div>
+                  <div className="badge badge-outline">Apple silicon</div>
                   <div className="badge badge-success badge-outline">
                     Active
                   </div>
@@ -143,7 +146,7 @@ export default function BrewUpdates() {
                   src="/images/brew-updates/app-tour.gif"
                   alt="Animated tour of the Brew Updates app: Dashboard, Installed, Runs, Security, Doctor and Backups"
                   width={1000}
-                  height={584}
+                  height={577}
                   unoptimized
                 />
                 <figcaption className="text-sm text-base-content/60 text-center mt-3">
@@ -191,7 +194,7 @@ export default function BrewUpdates() {
                           src={screen.image}
                           alt={`Brew Updates ${screen.name} screen`}
                           width={1600}
-                          height={935}
+                          height={923}
                           unoptimized
                         />
                       </a>
@@ -222,11 +225,19 @@ export default function BrewUpdates() {
                 </div>
               </div>
 
-              {/* GitHub */}
-              <div className="flex justify-center">
+              {/* Download and GitHub */}
+              <div className="flex flex-wrap justify-center gap-3">
                 <a
-                  href="https://github.com/jxman/homebrew-update-assistant"
+                  href="https://github.com/jxman/brew-updates/releases/latest"
                   className="btn btn-primary"
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                >
+                  Download the App
+                </a>
+                <a
+                  href="https://github.com/jxman/brew-updates"
+                  className="btn btn-outline"
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                 >
