@@ -243,37 +243,36 @@ export default function IndexPage() {
                 <div className="card-body">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="badge badge-primary">New</div>
-                    <div className="badge badge-outline">Multi-Cloud</div>
-                    <div className="badge badge-accent">AI</div>
+                    <div className="badge badge-outline">Security</div>
+                    <div className="badge badge-accent">macOS</div>
                   </div>
 
                   <h3 className="card-title text-2xl mb-4">
                     <Link
-                      href="/blog/cloud-status-hub-ai-insight"
+                      href="/blog/brew-updates-release"
                       className="hover:text-primary transition-colors"
                     >
-                      Beyond the Outage Notification: Building Cloud Status Hub
-                      with AI Insight
+                      Using AI to Defend Against AI Threats: Building Brew
+                      Updates
                     </Link>
                   </h3>
 
                   <p className="text-base-content/70 mb-6 leading-relaxed">
-                    Why I built a single view of AWS, Azure, GCP, and OCI health
-                    — and how AI-generated technical and executive briefs turn a
-                    simple outage alert into real-time guidance on impact,
-                    recovery, and resiliency.
+                    AI is accelerating threats, so I used AI to build a defense:
+                    Brew Updates, my first Mac app, which keeps Homebrew
+                    updated, backed up and scanned for vulnerabilities.
                   </p>
 
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <div className="flex items-center gap-4 text-sm text-base-content/60">
-                      <span>Published: October 7, 2026</span>
+                      <span>Published: November 23, 2026</span>
                       <span className="hidden sm:inline">•</span>
-                      <span>7 min read</span>
+                      <span>6 min read</span>
                     </div>
 
                     <div className="flex gap-3">
                       <Link
-                        href="/blog/cloud-status-hub-ai-insight"
+                        href="/blog/brew-updates-release"
                         className="btn btn-primary hover:scale-105 transition-transform duration-200"
                       >
                         Read More

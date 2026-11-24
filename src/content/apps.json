@@ -24,6 +24,7 @@
       "width": 1600,
       "height": 923
     },
+    "ogImage": "/images/blog/brew-updates.png",
     "tour": {
       "src": "/images/brew-updates/app-tour.gif",
       "alt": "Animated tour of the Brew Updates app: Dashboard, Installed, Runs, Security, Doctor and Backups",
@@ -156,6 +157,10 @@
       }
     ],
     "caseStudy": "/projects/brew-updates",
+    "relatedPost": {
+      "label": "Read: Using AI to Defend Against AI Threats",
+      "href": "/blog/brew-updates-release"
+    },
     "github": "https://github.com/jxman/brew-updates",
     "techStack": ["Swift 6", "SwiftUI", "Bash", "launchd", "Grype", "Sparkle"]
   },

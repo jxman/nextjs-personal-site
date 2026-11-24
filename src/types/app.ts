@@ -52,6 +52,8 @@ export interface App {
   primaryCta: AppLink
   secondaryCta?: AppLink
   hero: AppImage
+  /** 1200x630 image for link previews (og:image, twitter:image); falls back to the hero */
+  ogImage?: string
   tour?: AppImage
   features: AppFeature[]
   quickStart: AppQuickStartStep[]

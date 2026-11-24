@@ -35,7 +35,7 @@ export async function generateMetadata({
   if (!app) return {}
 
   const title = `${app.name} - ${app.tagline}`
-  const image = `${SITE_URL}${app.hero.src}`
+  const image = `${SITE_URL}${app.ogImage ?? app.hero.src}`
 
   return {
     title: app.name,
