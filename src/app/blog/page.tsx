@@ -39,10 +39,10 @@ export default function BlogPage() {
           </p>
           <a
             href="/feed.xml"
-            className="btn btn-outline btn-sm mt-6 gap-2"
+            className="inline-flex items-center gap-1.5 mt-3 text-sm text-base-content/60 hover:text-primary transition-colors"
             aria-label="Subscribe to the blog via RSS"
           >
-            <FaRss aria-hidden="true" />
+            <FaRss className="w-3.5 h-3.5" aria-hidden="true" />
             RSS Feed
           </a>
         </div>
