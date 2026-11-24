@@ -40,7 +40,7 @@ export default function ProjectCard({
             {...(isExternal
               ? { target: '_blank', rel: 'noopener noreferrer' }
               : {})}
-            className="w-full h-full"
+            className="relative block w-full h-full"
           >
             <Image
               src={image}
