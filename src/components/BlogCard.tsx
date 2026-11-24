@@ -31,6 +31,9 @@ export default function BlogCard({
       year: 'numeric',
       month: 'long',
       day: 'numeric',
+      // publishedDate is a date-only string parsed as UTC midnight; format in
+      // UTC so the shown day matches the date written, on any build machine
+      timeZone: 'UTC',
     })
   }
 
