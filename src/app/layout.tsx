@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   alternates: {
     canonical: '/',
+    types: {
+      'application/rss+xml': [
+        { url: '/feed.xml', title: 'John Xanthopoulos - Blog' },
+      ],
+    },
   },
   openGraph: {
     title: 'John Xanthopoulos - IT Executive & Developer',

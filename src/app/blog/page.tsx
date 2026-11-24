@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { FaRss } from 'react-icons/fa'
 import Layout from '@/components/Layout'
 import BlogCard from '@/components/BlogCard'
 import blogData from '@/content/blog-posts.json'
@@ -36,6 +37,14 @@ export default function BlogPage() {
             Insights on technology leadership, development practices, and my
             journey with AI-powered development
           </p>
+          <a
+            href="/feed.xml"
+            className="btn btn-outline btn-sm mt-6 gap-2"
+            aria-label="Subscribe to the blog via RSS"
+          >
+            <FaRss aria-hidden="true" />
+            RSS Feed
+          </a>
         </div>
 
         {/* Featured Post */}
