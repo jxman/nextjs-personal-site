@@ -2,7 +2,7 @@
 
 This document outlines planned improvements and enhancements for the Next.js portfolio website.
 
-**Last Updated:** August 5, 2026
+**Last Updated:** November 24, 2026
 **Status:** Active Development - Content & Security Updates 📝
 
 ---
@@ -12,6 +12,11 @@ This document outlines planned improvements and enhancements for the Next.js por
 ⚠️ **Known Issue (August 5, 2026):**
 
 - Next.js 15.5.22 has 2 open Snyk-flagged vulnerabilities (high: CVE-2025-59472, medium: CVE-2026-27980) only fixed in Next.js 16.x. Deferred pending a dedicated major-version upgrade — see [SECURITY_UPDATE_2026-08-05.md](./SECURITY_UPDATE_2026-08-05.md).
+
+✅ **Recently Completed (November 24, 2026):**
+
+- ✅ RSS feed for the blog at `/feed.xml` (RSS 2.0, `force-static` route handler in `src/app/feed.xml/route.ts`, built from `blog-posts.json`), with autodiscovery `<link>` in the root layout and a subtle "RSS Feed" link on `/blog`
+- ✅ Fixed blog card dates showing one day early: `BlogCard` now formats `publishedDate` with `timeZone: 'UTC'` so output no longer depends on the build machine's time zone
 
 ✅ **Recently Completed (November 21, 2026):**
 
@@ -216,7 +221,7 @@ This document outlines planned improvements and enhancements for the Next.js por
 - [ ] Structured data (JSON-LD) for personal/professional schema
 - [ ] Breadcrumb navigation
 - [ ] Canonical URLs for all pages
-- [ ] RSS feed for blog
+- [x] RSS feed for blog (completed Nov 24, 2026)
 - [ ] Optimize all images with alt text
 - [ ] Meta description optimization
 - [ ] Open Graph image optimization

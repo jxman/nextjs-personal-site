@@ -71,6 +71,7 @@ Deployment logic lives in `scripts/deploy.sh`; run `./scripts/deploy.sh --help` 
 src/
 ├── app/                      # Next.js App Router (file-based routing)
 │   ├── layout.tsx            # Root layout with metadata
+│   ├── feed.xml/route.ts     # RSS feed (force-static route handler, built from blog-posts.json)
 │   ├── page.tsx              # Homepage (/)
 │   ├── about/page.tsx        # /about
 │   ├── projects/             # /projects/*
@@ -250,7 +251,12 @@ npm run lint
    - No dynamic routes without `generateStaticParams`
    - No `next/image` optimization (must use `unoptimized: true`)
 
-4. **Migration-Specific**
+4. **Date Formatting**
+   - `publishedDate` in `blog-posts.json` is date-only (`YYYY-MM-DD`), which JS parses as UTC midnight
+   - Always pass `timeZone: 'UTC'` to `toLocaleDateString` (see `BlogCard.tsx`); otherwise static builds on a US machine show the previous day
+   - RSS `pubDate` uses 12:00 UTC on that date
+
+5. **Migration-Specific**
    - Don't copy `node_modules` from Gatsby project
    - Remove all Gatsby-specific packages and imports
    - Replace `Helmet` with Next.js metadata exports

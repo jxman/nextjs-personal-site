@@ -95,6 +95,7 @@ The site was migrated from Gatsby 5 to Next.js 15 in November 2025, and will con
 │  ├── /_next/ (JS bundles)                                          │
 │  ├── /images/ (optimized assets)                                   │
 │  ├── /sitemap.xml                                                  │
+│  ├── /feed.xml (RSS)                                               │
 │  └── /robots.txt                                                   │
 │                                                                     │
 │  • Static website hosting                                          │
@@ -157,6 +158,7 @@ Developer ────▶ Markdown/JSON ────▶ Next.js Build ───�
 ### SEO & Analytics
 
 - **Sitemap:** [next-sitemap 4.2.3](https://github.com/iamvishnusankar/next-sitemap) - Automated sitemap with priority structure
+- **RSS Feed:** Static route handler (`src/app/feed.xml/route.ts`) - RSS 2.0 feed generated at build time from `blog-posts.json`
 - **Analytics:** Google Analytics (G-2HLT4VSZHW) - Site traffic tracking
 - **Meta Tags:** Next.js Metadata API - Open Graph, Twitter Cards
 - **Structured Data:** JSON-LD schemas (Person, WebSite, Organization)
@@ -198,6 +200,7 @@ nextjs-personal-site/
 │   │   │   ├── aws-site/
 │   │   │   ├── brew-updates/   # Brew Updates case study
 │   │   │   └── lawn/
+│   │   ├── feed.xml/route.ts   # RSS feed (static route handler)
 │   │   ├── blog/               # Blog section
 │   │   │   ├── page.tsx        # Blog listing
 │   │   │   ├── [slug]/         # Dynamic blog routes
@@ -378,6 +381,7 @@ npm run invalidate
 
 - 🔍 **SEO Optimized** - Meta tags, Open Graph, Twitter Cards on all pages
 - 🗺️ **Smart Sitemap** - Priority-based structure (homepage: 1.0, key pages: 0.8, blog: 0.7)
+- 📡 **RSS Feed** - `/feed.xml` lists every blog post (title, link, date, excerpt, tags), built from `blog-posts.json`; advertised via an autodiscovery `<link>` on every page and a link on the blog page
 - 🔗 **Canonical URLs** - All 16 pages include canonical tags to prevent duplicate content
 - 🤖 **Robots.txt** - Search engine crawling instructions
 - 📊 **Google Analytics** - GA4 integration with page view tracking
@@ -409,6 +413,7 @@ npm run invalidate
 | `/blog/aws-services-dashboard-release`    | AWS Dashboard blog post                    | Static |
 | `/blog/lawnsmartapp-release`              | LawnSmart App blog post                    | Static |
 | `/blog/ai-pair-programming-journey`       | AI Development blog post                   | Static |
+| `/feed.xml`                               | RSS 2.0 feed of blog posts                 | Static |
 | `/resume`                                 | Professional resume                        | Static |
 | `/contact`                                | Contact form                               | Static |
 
@@ -545,6 +550,20 @@ IT Executive & Developer | 20+ Years in Technology
 ---
 
 ## 🎯 Project History
+
+### November 2026 - RSS Feed & Date Fix
+
+**RSS Feed (Nov 24, 2026)**
+
+- ✅ Added `/feed.xml` (RSS 2.0) as a `force-static` route handler, generated from `blog-posts.json` so new posts appear after the next build
+- ✅ Feed carries title, link, GUID, author, excerpt, category and tags per post; `pubDate` is fixed at 12:00 UTC on the post's `publishedDate`
+- ✅ Added RSS autodiscovery (`alternates.types` in `layout.tsx`) and a subtle "RSS Feed" link in the blog page header
+
+**Blog Date Fix (Nov 24, 2026)**
+
+- ✅ `BlogCard` showed every post date one day early: date-only strings parse as UTC midnight but were formatted in the build machine's zone (EST). Dates are now formatted with `timeZone: 'UTC'`
+
+---
 
 ### August 2026 - Security Updates
 

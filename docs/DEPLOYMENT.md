@@ -14,6 +14,7 @@ The Gatsby to Next.js 15 migration is complete and ready for production deployme
 - [x] Google Analytics integrated (G-2HLT4VSZHW)
 - [x] Sitemap generated automatically
 - [x] robots.txt generated automatically
+- [x] RSS feed generated at build time (`/feed.xml`)
 - [x] Open Graph and Twitter card metadata
 - [x] Build optimized for static export
 - [x] Zero TypeScript errors
@@ -101,6 +102,7 @@ npm run invalidate
 
 - [ ] Check sitemap: https://www.synepho.com/sitemap.xml
 - [ ] Check robots.txt: https://www.synepho.com/robots.txt
+- [ ] Check RSS feed: https://www.synepho.com/feed.xml (valid XML, lists all posts in `blog-posts.json`)
 - [ ] Verify favicon appears in browser tab
 - [ ] Test social sharing (LinkedIn, Twitter, Facebook)
 - [ ] Verify Google Analytics tracking (check Real-Time in GA4)
