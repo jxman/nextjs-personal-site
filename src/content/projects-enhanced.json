@@ -39,7 +39,8 @@
       "Neon Postgres",
       "Tailwind CSS"
     ],
-    "category": "Cloud Infrastructure"
+    "category": "Cloud Infrastructure",
+    "imageDark": "/images/cloud-status-hub-dark.png"
   },
   {
     "id": 2,
@@ -60,12 +61,14 @@
       "Vite",
       "TanStack Query"
     ],
-    "category": "Cloud Infrastructure"
+    "category": "Cloud Infrastructure",
+    "imageDark": "/images/aws-services-dashboard-dark.png"
   },
   {
     "id": 1,
     "name": "Lawn.Smart - USDA Zone-Intelligent Lawn Care",
     "image": "/images/lawn-smart-app.png",
+    "imageDark": "/images/lawn-smart-app-dark.png",
     "text": "A fully redesigned USDA zone-customized lawn care PWA built with React and Tailwind CSS. The v2 release introduces a complete UI overhaul designed with Claude Design — featuring a three-column desktop layout, purpose-built mobile experience with bottom navigation, and a semantic design token system for consistent styling across all components.",
     "description": "V2 highlights include a Dashboard, Calendar, History, and Settings tab structure; a pinned Critical Task hero card on mobile; month pill navigation; time-aware greetings; and soft amber alert styling replacing the original harsh dark-on-dark cards. New features include a Calendar view with task dot indicators, a yearly History tracker, a monthly notes journal, and a sidebar category filter. Amazon product recommendations now use brand-consistent dark green buttons. Covers all 50 US states and hardiness zones 3a–11b.",
     "link": "https://www.lawnsmartapp.com",
@@ -87,6 +90,7 @@
     "id": 3,
     "name": "Next.js Personal Portfolio",
     "image": "/images/personal-site.png",
+    "imageDark": "/images/personal-site-dark.png",
     "text": "Modern, responsive personal portfolio and blog built with Next.js 15 App Router, TypeScript, and Tailwind CSS. Features static site generation with 16 pre-rendered pages, comprehensive SEO optimization with Open Graph and Twitter Cards.",
     "description": "Deployed to AWS S3 with CloudFront CDN for global edge caching. Includes technology leadership insights, cloud architecture discussions, and project showcases. Migrated from Gatsby to Next.js for improved developer experience and modern React patterns.",
     "link": "https://synepho.com/",
@@ -120,7 +124,8 @@
       "OpenWeather API",
       "Netlify"
     ],
-    "category": "Web Application"
+    "category": "Web Application",
+    "imageDark": "/images/tesla-drive-companion-dark.png"
   },
   {
     "id": 5,

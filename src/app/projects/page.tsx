@@ -17,6 +17,7 @@ interface Project {
   id: number
   name: string
   image: string
+  imageDark?: string
   text: string
   description: string
   link: string

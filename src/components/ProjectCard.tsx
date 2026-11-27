@@ -1,10 +1,11 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import ThemedImage from '@/components/ThemedImage'
 
 interface ProjectCardProps {
   id: number
   name: string
   image: string
+  imageDark?: string
   text: string
   description?: string
   link: string
@@ -19,6 +20,7 @@ interface ProjectCardProps {
 export default function ProjectCard({
   name,
   image,
+  imageDark,
   text,
   link,
   app_link,
@@ -42,8 +44,9 @@ export default function ProjectCard({
               : {})}
             className="relative block w-full h-full"
           >
-            <Image
+            <ThemedImage
               src={image}
+              srcDark={imageDark}
               alt={`${name} project screenshot`}
               fill
               className="object-cover hover:scale-110 transition-transform duration-300"
@@ -51,8 +54,9 @@ export default function ProjectCard({
             />
           </Link>
         ) : (
-          <Image
+          <ThemedImage
             src={image}
+            srcDark={imageDark}
             alt={`${name} project screenshot`}
             fill
             className="object-cover"

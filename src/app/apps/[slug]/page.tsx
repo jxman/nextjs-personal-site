@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import ThemedImage from '@/components/ThemedImage'
 import { notFound } from 'next/navigation'
 import {
   FaArrowLeft,
@@ -187,9 +187,12 @@ export default async function AppPage({ params }: PageProps<'/apps/[slug]'>) {
         {/* Hero image or tour */}
         <AnimatedSection animation="fadeInUp" className="mb-16">
           <figure>
-            <Image
+            <ThemedImage
               className="w-full h-auto rounded-2xl shadow-2xl border border-base-200"
               src={(app.tour ?? app.hero).src}
+              srcDark={(app.tour ?? app.hero).srcDark}
+              darkWidth={(app.tour ?? app.hero).darkWidth}
+              darkHeight={(app.tour ?? app.hero).darkHeight}
               alt={(app.tour ?? app.hero).alt}
               width={(app.tour ?? app.hero).width}
               height={(app.tour ?? app.hero).height}
@@ -299,9 +302,12 @@ export default async function AppPage({ params }: PageProps<'/apps/[slug]'>) {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <Image
+                    <ThemedImage
                       className="w-full h-auto hover:opacity-90 transition-opacity"
                       src={screen.image.src}
+                      srcDark={screen.image.srcDark}
+                      darkWidth={screen.image.darkWidth}
+                      darkHeight={screen.image.darkHeight}
                       alt={screen.image.alt}
                       width={screen.image.width}
                       height={screen.image.height}

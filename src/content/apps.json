@@ -187,7 +187,8 @@
       "src": "/images/cloud-status-hub.png",
       "alt": "Cloud Status Hub showing AWS, Azure, OCI and GCP status cards and active incidents",
       "width": 1280,
-      "height": 800
+      "height": 800,
+      "srcDark": "/images/cloud-status-hub-dark.png"
     },
     "features": [
       {
@@ -271,7 +272,8 @@
       "src": "/images/aws-services-dashboard.png",
       "alt": "AWS Services Dashboard showing region, service and mapping counts",
       "width": 2400,
-      "height": 1296
+      "height": 1296,
+      "srcDark": "/images/aws-services-dashboard-dark.png"
     },
     "features": [
       {
@@ -353,6 +355,7 @@
     },
     "hero": {
       "src": "/images/lawn-smart-app.png",
+      "srcDark": "/images/lawn-smart-app-dark.png",
       "alt": "Lawn.Smart dashboard with this month's prioritized lawn care tasks and product picks",
       "width": 1200,
       "height": 722
@@ -431,7 +434,8 @@
       "src": "/images/tesla-drive-companion.png",
       "alt": "Tesla Drive Companion weather tab with current conditions, driving insight and 5-day forecast",
       "width": 1280,
-      "height": 800
+      "height": 800,
+      "srcDark": "/images/tesla-drive-companion-dark.png"
     },
     "features": [
       {

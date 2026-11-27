@@ -5,6 +5,11 @@ export interface AppLink {
 
 export interface AppImage {
   src: string
+  /** Dark-mode capture, shown when the site is in light mode */
+  srcDark?: string
+  /** Size of `srcDark` when it differs from `width`/`height` */
+  darkWidth?: number
+  darkHeight?: number
   alt: string
   width: number
   height: number
